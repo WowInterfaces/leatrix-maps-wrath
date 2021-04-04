@@ -1,0 +1,2 @@
+2.5.00.alpha.2 - 4th April 2021
+- Initial alpha release for The Burning Crusade (Beta).
