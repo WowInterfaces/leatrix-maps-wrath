@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.03 (5th April 2021)
+	-- 	Leatrix Maps 2.5.04 (5th April 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.03"
+	LeaMapsLC["AddonVer"] = "2.5.04"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -1112,6 +1112,9 @@
 			-- Flight points
 			local tATex, tHTex, tNTex = "TaxiNode_Alliance", "TaxiNode_Horde", "TaxiNode_Neutral"
 
+			-- Portals
+			local pATex, pHTex, pNTex = "TaxiNode_Continent_Alliance", "TaxiNode_Continent_Horde", "TaxiNode_Continent_Neutral"
+
 			-- Boat harbors, zeppelin towers and tram stations (these are just templates, they will be replaced)
 			local fATex, fHTex, fNTex = "Vehicle-TempleofKotmogu-CyanBall", "Vehicle-TempleofKotmogu-CyanBall", "Vehicle-TempleofKotmogu-CyanBall"
 
@@ -1374,9 +1377,16 @@
 					{"FlightN", 56.2, 57.8, L["Sanctum of the Stars"] .. ", " .. L["Shadowmoon Valley"], nil, tNTex, nil, nil},
 					{"Raid", 71.0, 46.4, L["Black Temple"], L["Raid"], rdTex, 70, 70},
 				},
+				--[[Shattrath City]] [1955] = {
+					{"FlightN", 64.1, 41.1, L["Shattrath City"] .. ", " .. L["Terokkar Forest"], nil, tNTex, nil, nil},
+					{"TravelN", 48.5, 42.0, L["Isle of Quel'Danas"], L["Portal"], pNTex},
+					{"TravelA", 57.2, 48.3, L["Stormwind"], L["Portal"], pATex},
+					{"TravelH", 56.8, 48.9, L["Orgrimmar"], L["Portal"], pHTex},
+				},
 				--[[Terokkar Forest]] [1952] = {
 					{"FlightA", 59.4, 55.4, L["Allerian Stronghold"] .. ", " .. L["Terokkar Forest"], nil, tATex, nil, nil},
 					{"FlightH", 49.2, 43.4, L["Stonebreaker Hold"] .. ", " .. L["Terokkar Forest"], nil, tHTex, nil, nil},
+					{"FlightN", 33.1, 23.1, L["Shattrath City"] .. ", " .. L["Terokkar Forest"], nil, tNTex, nil, nil},
 					{"Dungeon", 43.2, 65.6, L["Sethekk Halls"], L["Dungeon"], dnTex, 66, 70},
 					{"Dungeon", 36.1, 65.6, L["Auchenai Crypts"], L["Dungeon"], dnTex, 64, 70},
 					{"Dungeon", 39.6, 71.0, L["Shadow Labyrinth"], L["Dungeon"], dnTex, 69, 70},
@@ -1391,6 +1401,12 @@
 				},
 
 			}
+
+			-- Add Caverns of Time portal to Shattrath if reputation with Keepers of Time is revered or higher
+			local name, description, standingID = GetFactionInfoByID(989) 
+			if standingID and standingID >= 7 then
+				PinData[1955] = PinData[1955] or {}; tinsert(PinData[1955], {"TravelN", 74.7, 31.4, L["Caverns of Time"], L["Portal from Zephyr"], pNTex})
+			end
 
 			-- Add situational data
 			local void, class = UnitClass("player")
@@ -1465,18 +1481,24 @@
 								if pinInfo[1] == "TravelA" then
 									pin.Texture:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps.blp")
 									pin.Texture:SetTexCoord(0, 0.125, 0.5, 1)
+									pin.Texture:SetSize(32, 32)
 									pin.HighlightTexture:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps.blp")
 									pin.HighlightTexture:SetTexCoord(0, 0.125, 0.5, 1)
+									pin.HighlightTexture:SetSize(32, 32)
 								elseif pinInfo[1] == "TravelH" then
 									pin.Texture:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps.blp")
 									pin.HighlightTexture:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps.blp")
 									pin.Texture:SetTexCoord(0.125, 0.25, 0.5, 1)
+									pin.Texture:SetSize(32, 32)
 									pin.HighlightTexture:SetTexCoord(0.125, 0.25, 0.5, 1)
+									pin.HighlightTexture:SetSize(32, 32)
 								elseif pinInfo[1] == "TravelN" then
 									pin.Texture:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps.blp")
 									pin.HighlightTexture:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps.blp")
 									pin.Texture:SetTexCoord(0.25, 0.375, 0.5, 1)
+									pin.Texture:SetSize(32, 32)
 									pin.HighlightTexture:SetTexCoord(0.25, 0.375, 0.5, 1)
+									pin.HighlightTexture:SetSize(32, 32)
 								elseif pinInfo[1] == "Dunraid" then
 									pin.Texture:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps.blp")
 									pin.HighlightTexture:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps.blp")
