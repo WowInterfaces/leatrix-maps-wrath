@@ -1,2 +1,5 @@
+2.5.01 - 5th April 2021
+- Added alliance flight points for Azuremyst Isle and Bloodmyst Isle.  Added horde flight points for Eversong Woods and Ghostlands.
+
 2.5.00 - 4th April 2021
 - Initial release for Burning Crusade Beta.
