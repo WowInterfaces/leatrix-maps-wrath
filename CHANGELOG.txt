@@ -1,8 +1,6 @@
-2.5.02 - 5th April 2021
-- Added alliance flight point for Rebel Camp (Stranglethorn Vale) and neutral flight point for Mudsprocket (Dustwallow Marsh).
-
-2.5.01 - 5th April 2021
-- Added alliance flight points for Azuremyst Isle and Bloodmyst Isle.  Added horde flight points for Eversong Woods and Ghostlands.
+2.5.03 - 5th April 2021
+- If 'Remove map border' is enabled, the zone map dropdown menu will now be hidden.
+- Added alliance flight points for Rebel Camp (Stranglethorn Vale), Azuremyst Isle and Bloodmyst Isle, horde flight points for Eversong Woods and Ghostlands and a neutral flight point for Mudsprocket (Dustwallow Marsh).
 
 2.5.00 - 4th April 2021
 - Initial release for Burning Crusade Beta.

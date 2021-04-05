@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.02 (5th April 2021)
+	-- 	Leatrix Maps 2.5.03 (5th April 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.02"
+	LeaMapsLC["AddonVer"] = "2.5.03"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -496,6 +496,7 @@
 				-- Hide dropdown menus
 				WorldMapZoneDropDown:Hide()
 				WorldMapContinentDropDown:Hide()
+				WorldMapZoneMinimapDropDown:Hide()
 
 				-- Hide zoom out button
 				WorldMapZoomOutButton:Hide()
