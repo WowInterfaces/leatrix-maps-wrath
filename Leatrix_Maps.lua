@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.04 (5th April 2021)
+	-- 	Leatrix Maps 2.5.05 (8th April 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.04"
+	LeaMapsLC["AddonVer"] = "2.5.05"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -1242,6 +1242,7 @@
 				},
 				--[[Tranquillien]] [1942] = {
 					{"FlightH", 45.4, 30.5, L["Tranquillien"] .. ", " .. L["Ghostlands"], nil, tHTex, nil, nil},
+					{"FlightN", 74.6, 67.0, L["Zul'Aman"] .. ", " .. L["Ghostlands"], nil, tNTex, nil, nil},
 				},
 				--[[The Barrens]] [1413] = {
 					{"Dungeon", 46.0, 36.4, L["Wailing Caverns"], L["Dungeon"], dnTex, 17, 24}, {"Dungeon", 42.9, 90.2, L["Razorfen Kraul"], L["Dungeon"], dnTex, 29, 38}, {"Dungeon", 49.0, 93.9, L["Razorfen Downs"], L["Dungeon"], dnTex, 37, 46},
