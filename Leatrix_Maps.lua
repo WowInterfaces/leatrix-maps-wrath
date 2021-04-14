@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.05 (8th April 2021)
+	-- 	Leatrix Maps 2.5.06 (14th April 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.05"
+	LeaMapsLC["AddonVer"] = "2.5.06"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
