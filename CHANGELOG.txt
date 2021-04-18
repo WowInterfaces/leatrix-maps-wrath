@@ -1,4 +1,4 @@
-2.5.06 - 14th April 2021
+2.5.07 - 18th April 2021
 - Initial release for Burning Crusade Beta.
 - If 'Remove map border' is enabled, the zone map dropdown menu will now be hidden.
 - Added new flight point icons for Rebel Camp (Stranglethorn Vale), Azuremyst Isle, Bloodmyst Isle, Eversong Woods, Ghostlands, Mudsprocket (Dustwallow Marsh) and Shattrath City (Terokkar Forest).
