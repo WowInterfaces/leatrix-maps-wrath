@@ -1,5 +1,7 @@
-2.5.07 - 18th April 2021
-- Initial release for Burning Crusade Beta.
+2.5.08 - 19th April 2021
+- Initial release for Burning Crusade Classic.
+- Leatrix Maps for Burning Crusade Classic is based on Leatrix Maps for World of Warcraft Classic with the changes listed below.
 - If 'Remove map border' is enabled, the zone map dropdown menu will now be hidden.
 - Added new flight point icons for Rebel Camp (Stranglethorn Vale), Azuremyst Isle, Bloodmyst Isle, Eversong Woods, Ghostlands, Mudsprocket (Dustwallow Marsh) and Shattrath City (Terokkar Forest).
 - Added new portal icons for Shattrath City.
+- Thanks to Blizzard for the day one beta access allowing me to bring Leatrix addons to the BCC community.
