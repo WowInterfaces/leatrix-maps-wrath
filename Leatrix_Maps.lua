@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.08 (19th April 2021)
+	-- 	Leatrix Maps 2.5.09 (20th April 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.08"
+	LeaMapsLC["AddonVer"] = "2.5.09"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -59,7 +59,7 @@
 		if LeaMapsLC["EnhanceBattleMap"] == "On" then
 
 			-- Group icon texture
-			local partyTexture = "Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps_Icon.blp"
+			local partyTexture = "WhiteCircle-RaidBlips"
 
 			-- Create configuraton panel
 			local battleFrame = LeaMapsLC:CreatePanel("Enhance battlefield map", "battleFrame")
@@ -73,7 +73,7 @@
 			-- Add preview texture
 			local prevIcon = battleFrame:CreateTexture(nil, "ARTWORK")
 			prevIcon:SetPoint("CENTER", battleFrame, "TOPLEFT", 240, -132)
-			prevIcon:SetTexture(partyTexture)
+			prevIcon:SetAtlas(partyTexture)
 			prevIcon:SetSize(30,30)
 			prevIcon:SetVertexColor(0.78, 0.61, 0.43, 1)
 
@@ -308,7 +308,7 @@
 		if LeaMapsLC["UseClassIcons"] == "On" then
 
 			local WorldMapUnitPin, WorldMapUnitPinSizes
-			local partyTexture = "Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps_Icon.blp"
+			local partyTexture = "WhiteCircle-RaidBlips"
 
 			-- Set group icon textures
 			for pin in WorldMapFrame:EnumeratePinsByTemplate("GroupMembersPinTemplate") do
@@ -338,7 +338,7 @@
 			-- Add preview texture
 			local prevIcon = classFrame:CreateTexture(nil, "ARTWORK")
 			prevIcon:SetPoint("CENTER", classFrame, "TOPLEFT", 240, -152)
-			prevIcon:SetTexture(partyTexture)
+			prevIcon:SetAtlas(partyTexture)
 			prevIcon:SetSize(30,30)
 			prevIcon:SetVertexColor(0.78, 0.61, 0.43, 1)
 

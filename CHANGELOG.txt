@@ -1,4 +1,4 @@
-2.5.08 - 19th April 2021
+2.5.09 - 20th April 2021
 - Initial release for Burning Crusade Classic.
 - Leatrix Maps for Burning Crusade Classic is based on Leatrix Maps for World of Warcraft Classic with the changes listed below.
 - If 'Remove map border' is enabled, the zone map dropdown menu will now be hidden.
