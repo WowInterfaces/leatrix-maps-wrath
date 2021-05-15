@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.09 (20th April 2021)
+	-- 	Leatrix Maps 2.5.10 (15th May 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.09"
+	LeaMapsLC["AddonVer"] = "2.5.10"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -66,7 +66,7 @@
 
 			-- Add controls
 			LeaMapsLC:MakeTx(battleFrame, "Settings", 16, -72)
-			LeaMapsLC:MakeSL(battleFrame, "BattleGroupIconSize", "Group Icons", "Drag to set the group icon size.", 20, 40, 1, 36, -122, "%.0f")
+			LeaMapsLC:MakeSL(battleFrame, "BattleGroupIconSize", "Group Icons", "Drag to set the group icon size.", 8, 32, 1, 36, -122, "%.0f")
 			LeaMapsLC:MakeSL(battleFrame, "BattlePlayerArrowSize", "Player Arrow", "Drag to set the player arrow size.", 12, 24, 1, 36, -182, "%.0f")
 			LeaMapsLC:MakeSL(battleFrame, "BattleMapSize", "Map Size", "Drag to set the battlefield map size.", 0.5, 3, 0.1, 206, -182, "%.0f")
 
@@ -167,7 +167,7 @@
 
 			-- Function to refresh size slider and update battlefield map if it's loaded
 			local function SetIconSize()
-				LeaMapsCB["BattleGroupIconSize"].f:SetText(LeaMapsLC["BattleGroupIconSize"] .. " (" .. string.format("%.0f%%", LeaMapsLC["BattleGroupIconSize"] / 20 * 100) .. ")")
+				LeaMapsCB["BattleGroupIconSize"].f:SetText(LeaMapsLC["BattleGroupIconSize"] .. " (" .. string.format("%.0f%%", LeaMapsLC["BattleGroupIconSize"] / 16 * 100) .. ")")
 				if IsAddOnLoaded("Blizzard_BattlefieldMap") then FixGroupPin() end
 				prevIcon:SetSize(LeaMapsLC["BattleGroupIconSize"], LeaMapsLC["BattleGroupIconSize"])
 			end
@@ -187,7 +187,7 @@
 
 			-- Reset button click
 			battleFrame.r:HookScript("OnClick", function()
-				LeaMapsLC["BattleGroupIconSize"] = 20
+				LeaMapsLC["BattleGroupIconSize"] = 16
 				LeaMapsLC["BattlePlayerArrowSize"] = 12
 				LeaMapsLC["BattleMapSize"] = 1
 				SetIconSize()
@@ -208,7 +208,7 @@
 			LeaMapsCB["EnhanceBattleMapBtn"]:HookScript("OnClick", function()
 				if IsShiftKeyDown() and IsControlKeyDown() then
 					-- Preset profile
-					LeaMapsLC["BattleGroupIconSize"] = 20
+					LeaMapsLC["BattleGroupIconSize"] = 16
 					LeaMapsLC["BattlePlayerArrowSize"] = 12
 					LeaMapsLC["BattleMapSize"] = 1
 					SetIconSize()
@@ -333,7 +333,7 @@
 			-- Add controls
 			LeaMapsLC:MakeTx(classFrame, "Settings", 16, -72)
 			LeaMapsLC:MakeWD(classFrame, "Set the group icon size.", 16, -92)
-			LeaMapsLC:MakeSL(classFrame, "ClassIconSize", "Group Icons", "Drag to set the group icon size.", 20, 40, 1, 36, -142, "%.0f")
+			LeaMapsLC:MakeSL(classFrame, "ClassIconSize", "Group Icons", "Drag to set the group icon size.", 10, 40, 1, 36, -142, "%.0f")
 
 			-- Add preview texture
 			local prevIcon = classFrame:CreateTexture(nil, "ARTWORK")
@@ -372,7 +372,7 @@
 			LeaMapsCB["UseClassIconsBtn"]:HookScript("OnClick", function()
 				if IsShiftKeyDown() and IsControlKeyDown() then
 					-- Preset profile
-					LeaMapsLC["ClassIconSize"] = 27
+					LeaMapsLC["ClassIconSize"] = 20
 					SetIconSize()
 					if classFrame:IsShown() then classFrame:Hide(); classFrame:Show(); end
 				else
@@ -560,11 +560,11 @@
 			-- Add controls
 			LeaMapsLC:MakeTx(arrowFrame, "Settings", 16, -72)
 			LeaMapsLC:MakeWD(arrowFrame, "Set the player arrow size.", 16, -92)
-			LeaMapsLC:MakeSL(arrowFrame, "PlayerArrowSize", "Player Arrow", "Drag to set the player arrow size.|n|nWow Classic default is 16.|nWow Retail default is 27.", 16, 32, 1, 36, -142, "%.0f")
+			LeaMapsLC:MakeSL(arrowFrame, "PlayerArrowSize", "Player Arrow", "Drag to set the player arrow size.", 14, 56, 1, 36, -142, "%.0f")
 
 			-- Function to set player arrow size
 			local function SetArrowSize()
-				LeaMapsCB["PlayerArrowSize"].f:SetText(LeaMapsLC["PlayerArrowSize"] .. " (" .. string.format("%.0f%%", LeaMapsLC["PlayerArrowSize"] / 16 * 100) .. ")")
+				LeaMapsCB["PlayerArrowSize"].f:SetText(LeaMapsLC["PlayerArrowSize"] .. " (" .. string.format("%.0f%%", LeaMapsLC["PlayerArrowSize"] / 28 * 100) .. ")")
 				if LeaMapsLC["EnlargePlayerArrow"] == "On" then
 					WorldMapUnitPinSizes.player = LeaMapsLC["PlayerArrowSize"]
 				else
@@ -586,7 +586,7 @@
 
 			-- Reset button click
 			arrowFrame.r:HookScript("OnClick", function()
-				LeaMapsLC["PlayerArrowSize"] = 27
+				LeaMapsLC["PlayerArrowSize"] = 28
 				SetArrowSize()
 				arrowFrame:Hide(); arrowFrame:Show()
 			end)
@@ -595,7 +595,7 @@
 			LeaMapsCB["EnlargePlayerArrowBtn"]:HookScript("OnClick", function()
 				if IsShiftKeyDown() and IsControlKeyDown() then
 					-- Preset profile
-					LeaMapsLC["PlayerArrowSize"] = 27
+					LeaMapsLC["PlayerArrowSize"] = 28
 					SetArrowSize()
 					if arrowFrame:IsShown() then arrowFrame:Hide(); arrowFrame:Show(); end
 				else
@@ -2598,9 +2598,9 @@
 				LeaMapsDB["NoMapBorder"] = "On"
 				LeaMapsDB["RememberZoom"] = "On"
 				LeaMapsDB["EnlargePlayerArrow"] = "On"
-				LeaMapsDB["PlayerArrowSize"] = 27
+				LeaMapsDB["PlayerArrowSize"] = 28
 				LeaMapsDB["UseClassIcons"] = "On"
-				LeaMapsDB["ClassIconSize"] = 27
+				LeaMapsDB["ClassIconSize"] = 20
 				LeaMapsDB["UnlockMapFrame"] = "On"
 				LeaMapsDB["MapPosA"] = "CENTER"
 				LeaMapsDB["MapPosR"] = "CENTER"
@@ -2633,7 +2633,7 @@
 
 				-- More
 				LeaMapsDB["EnhanceBattleMap"] = "On"
-				LeaMapsDB["BattleGroupIconSize"] = 20
+				LeaMapsDB["BattleGroupIconSize"] = 16
 				LeaMapsDB["BattlePlayerArrowSize"] = 12
 				LeaMapsDB["BattleMapSize"] = 1
 				LeaMapsDB["ShowMinimapIcon"] = "On"
@@ -2695,9 +2695,9 @@
 			LeaMapsLC:LoadVarChk("NoMapBorder", "On")					-- Remove map border
 			LeaMapsLC:LoadVarChk("RememberZoom", "On")					-- Remember zoom level
 			LeaMapsLC:LoadVarChk("EnlargePlayerArrow", "On")			-- Enlarge player arrow
-			LeaMapsLC:LoadVarNum("PlayerArrowSize", 27, 16, 32)			-- Player arrow size
+			LeaMapsLC:LoadVarNum("PlayerArrowSize", 28, 14, 56)			-- Player arrow size
 			LeaMapsLC:LoadVarChk("UseClassIcons", "On")					-- Use class icons
-			LeaMapsLC:LoadVarNum("ClassIconSize", 20, 20, 40)			-- Class icon size
+			LeaMapsLC:LoadVarNum("ClassIconSize", 20, 10, 40)			-- Class icon size
 			LeaMapsLC:LoadVarChk("UnlockMapFrame", "On")				-- Unlock map frame
 			LeaMapsLC:LoadVarAnc("MapPosA", "CENTER")					-- Map anchor
 			LeaMapsLC:LoadVarAnc("MapPosR", "CENTER")					-- Map relative
@@ -2730,7 +2730,7 @@
 
 			-- More
 			LeaMapsLC:LoadVarChk("EnhanceBattleMap", "Off")				-- Enhance battlefield map
-			LeaMapsLC:LoadVarNum("BattleGroupIconSize", 20, 20, 40)		-- Battlefield group icon size
+			LeaMapsLC:LoadVarNum("BattleGroupIconSize", 16, 8, 32)		-- Battlefield group icon size
 			LeaMapsLC:LoadVarNum("BattlePlayerArrowSize", 12, 12, 24)	-- Battlefield player arrow size
 			LeaMapsLC:LoadVarNum("BattleMapSize", 1, 0.5, 3)			-- Battlefield map size
 			LeaMapsLC:LoadVarChk("ShowMinimapIcon", "On")				-- Show minimap button
