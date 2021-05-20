@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.33.alpha.1 (20th May 2021)
+	-- 	Leatrix Maps 2.5.33.alpha.2 (20th May 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.33.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.33.alpha.2"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -1592,6 +1592,9 @@
 		----------------------------------------------------------------------
 
 		do
+
+			-- Dont reveal specific areas
+			Leatrix_Maps["Reveal"][1273] = nil -- Alterac Valley
 
 			-- Create table to store revealed overlays
 			local overlayTextures = {}

@@ -1,5 +1,5 @@
-2.5.33.alpha.1 - 20th May 2021
-- Maintenance update.
+2.5.33.alpha.2 - 20th May 2021
+- Fixed an issue with 'Show unexplored areas' which caused the Alterac Valley map to always appear unexplored.
 
 2.5.10 - 15th May 2021
 - Welcome to Burning Crusade Classic.
