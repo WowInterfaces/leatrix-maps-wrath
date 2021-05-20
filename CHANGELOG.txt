@@ -1,10 +1,8 @@
-2.5.10 - 15th May 2021
-- Enlarge player arrow - default icon size is now 28 (was 27) and the range is now 50% to 200%.
-- Class colored icons - range is now 50% to 200%.
-- Enhance battlefield map - default icon size is now 16 (was 20) and the range is now 50% to 200%.
+2.5.33.alpha.1 - 20th May 2021
+- Maintenance update.
 
-2.5.09 - 20th April 2021
-- Initial release for Burning Crusade Classic.
+2.5.10 - 15th May 2021
+- Welcome to Burning Crusade Classic.
 - Leatrix Maps for Burning Crusade Classic is based on Leatrix Maps for World of Warcraft Classic with the changes listed below.
 - If 'Remove map border' is enabled, the zone map dropdown menu will now be hidden.
 - Added new flight point icons for Rebel Camp (Stranglethorn Vale), Azuremyst Isle, Bloodmyst Isle, Eversong Woods, Ghostlands, Mudsprocket (Dustwallow Marsh) and Shattrath City (Terokkar Forest).
