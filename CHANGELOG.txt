@@ -1,5 +1,6 @@
-2.5.33.alpha.2 - 20th May 2021
+2.5.33.alpha.3 - 22nd May 2021
 - Fixed an issue with 'Show unexplored areas' which caused the Alterac Valley map to always appear unexplored.
+- Added the missing, neutral flight point for Emerald Sanctuary, Felwood.
 
 2.5.10 - 15th May 2021
 - Welcome to Burning Crusade Classic.
