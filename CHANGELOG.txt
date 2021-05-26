@@ -1,4 +1,4 @@
-2.5.33.alpha.5 - 23rd May 2021
+2.5.37 - 26th May 2021
 - Revised the dungeon icon level ranges.
 - If 'Show zone levels' is enabled, dungeon icons will now show minimum level requried to enter (if known) and level range required to use meeting stones (if known).
 - Fixed an issue with 'Show unexplored areas' which caused the Alterac Valley map to always appear unexplored.
