@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.38.alpha.1 (28th May 2021)
+	-- 	Leatrix Maps 2.5.38.alpha.2 (1st June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.38.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.38.alpha.2"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -793,7 +793,7 @@
 
 			-- Create cursor coordinates frame
 			local cCursor = CreateFrame("Frame", nil, WorldMapFrame)
-			cCursor:SetPoint("BOTTOMLEFT", 73, 7)
+			cCursor:SetPoint("BOTTOMLEFT", 73, 8)
 			cCursor:SetSize(200, 16)
 			cCursor.x = cCursor:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge") 
 			cCursor.x:SetJustifyH"LEFT"
@@ -803,7 +803,7 @@
 
 			-- Create player coordinates frame
 			local cPlayer = CreateFrame("Frame", nil, WorldMapFrame)
-			cPlayer:SetPoint("BOTTOMRIGHT", -46, 7)
+			cPlayer:SetPoint("BOTTOMRIGHT", -46, 8)
 			cPlayer:SetSize(200, 16)
 			cPlayer.x = cPlayer:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge") 
 			cPlayer.x:SetJustifyH"LEFT"

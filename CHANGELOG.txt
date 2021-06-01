@@ -1,4 +1,4 @@
-2.5.38.alpha.1 - 28th May 2021
+2.5.38.alpha.2 - 1st June 2021
 - Added the missing boat harbors that link Auberdine, Darkshore with Valaar's Berth, Azuremyst Isle.
 
 2.5.37 - 26th May 2021
