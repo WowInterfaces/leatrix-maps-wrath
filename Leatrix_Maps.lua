@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.39.alpha.1 (3rd June 2021)
+	-- 	Leatrix Maps 2.5.39.alpha.2 (3rd June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.39.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.39.alpha.2"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -1498,7 +1498,7 @@
 											color = QuestDifficultyColors["difficult"]
 										end
 										color = ConvertRGBtoColorString(color)
-										myPOI["description"] = myPOI["description"] .. color .." (req: " .. dungeonReqLevel .. ")" .. FONT_COLOR_CODE_CLOSE
+										myPOI["description"] = myPOI["description"] .. color .." (" .. L["req"] .. ": " .. dungeonReqLevel .. ")" .. FONT_COLOR_CODE_CLOSE
 									end
 								end
 
