@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.39 (8th June 2021)
+	-- 	Leatrix Maps 2.5.40 (8th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.39"
+	LeaMapsLC["AddonVer"] = "2.5.40"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -61,7 +61,7 @@
 			-- Add preview texture
 			local prevIcon = battleFrame:CreateTexture(nil, "ARTWORK")
 			prevIcon:SetPoint("CENTER", battleFrame, "TOPLEFT", 240, -132)
-			prevIcon:SetAtlas(partyTexture)
+			prevIcon:SetTexture(partyTexture)
 			prevIcon:SetSize(30,30)
 			prevIcon:SetVertexColor(0.78, 0.61, 0.43, 1)
 
@@ -326,7 +326,7 @@
 			-- Add preview texture
 			local prevIcon = classFrame:CreateTexture(nil, "ARTWORK")
 			prevIcon:SetPoint("CENTER", classFrame, "TOPLEFT", 240, -152)
-			prevIcon:SetAtlas(partyTexture)
+			prevIcon:SetTexture(partyTexture)
 			prevIcon:SetSize(30,30)
 			prevIcon:SetVertexColor(0.78, 0.61, 0.43, 1)
 

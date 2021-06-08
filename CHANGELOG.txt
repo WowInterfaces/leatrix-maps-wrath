@@ -1,3 +1,8 @@
+2.5.40 - 8th June 2021
+- If you are updating from 2.5.38 or earlier, you you need to restart your game client after installing this update.
+- Added the preview icon back to 'Class colored icons' and 'Enhance battlefield map'.
+- Note that the size range of the class colored icons has changed so you may wish to adjust it in the configuration panel.
+
 2.5.39 - 8th June 2021
 - You need to restart your game client after installing this update.
 - Fixed an issue with 'Class colored icons' which caused the icons to be invisible.
