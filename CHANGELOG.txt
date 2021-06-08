@@ -1,4 +1,6 @@
-2.5.39.alpha.2 - 3rd June 2021
+2.5.39 - 8th June 2021
+- You need to restart your game client after installing this update.
+- Fixed an issue with 'Class colored icons' which caused the icons to be invisible.
 - Updated translations.
 
 2.5.38 - 2nd June 2021
