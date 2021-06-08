@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.41.alpha.1 (8th June 2021)
+	-- 	Leatrix Maps 2.5.41.alpha.2 (8th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.41.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.41.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -260,7 +260,9 @@
 				local newMapID = WorldMapFrame.mapID
 				local newPlayerZone = C_Map.GetBestMapForUnit("player")
 				if newMapID and newMapID > 0 and newPlayerZone and newPlayerZone > 0 and constPlayerZone and constPlayerZone > 0 and newMapID == constPlayerZone then
-					WorldMapFrame:SetMapID(newPlayerZone)
+					if C_Map.MapHasArt(newPlayerZone) then -- Needed for dungeons
+						WorldMapFrame:SetMapID(newPlayerZone)
+					end
 				end
 				constPlayerZone = C_Map.GetBestMapForUnit("player")
 			end)
