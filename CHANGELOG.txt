@@ -1,4 +1,4 @@
-2.5.41.alpha.2 - 8th June 2021
+2.5.41 - 9th June 2021
 - Updated the group icon for 'Class-colored icons' and 'Enhance battlefield map'.
 - Fixed a bug with 'Auto-change zones' which caused a Lua error when entering Outland dungeons.
 
