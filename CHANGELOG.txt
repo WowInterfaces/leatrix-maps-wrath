@@ -1,3 +1,6 @@
+2.5.42.alpha.1 - 10th June 2021
+- Added the missing Alliance flight point for 'Shatter Point' (Hellfire Peninsula).
+
 2.5.41 - 9th June 2021
 - Updated the group icon for 'Class-colored icons' and 'Enhance battlefield map'.
 - Fixed a bug with 'Auto-change zones' which caused a Lua error when entering Outland dungeons.
