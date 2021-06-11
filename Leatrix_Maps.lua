@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.2 (11th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.3 (11th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.2"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.3"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1136,7 +1136,6 @@
 				--[[Azuremyst Isle]] [1943] = {
 					{"FlightA", 31.9, 46.4, L["The Exodar"] .. ", " .. L["Azuremyst Isle"], nil, tATex, nil, nil},
 					{"TravelA", 20.3, 54.2, L["Boat to"] .. " " .. L["Auberdine"] .. ", " .. L["Darkshore"], nil, fATex, nil, nil},
-					{"Spirit", 28.3, 25.5, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 39.2, 19.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 47.2, 55.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 77.7, 48.8, L["Spirit Healer"], nil, spTex, nil, nil},
