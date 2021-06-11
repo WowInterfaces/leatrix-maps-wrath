@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.3 (11th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.4 (11th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.3"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.4"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1219,7 +1219,6 @@
 					{"Spirit", 64.1, 24.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Elwynn Forest]] [1429] = {
-					{"Spirit", 32.1, 52.2, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 39.5, 60.5, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 49.7, 42.5, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 83.6, 69.8, L["Spirit Healer"], nil, spTex, nil, nil},
