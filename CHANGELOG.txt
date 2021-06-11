@@ -1,5 +1,6 @@
-2.5.42.alpha.1 - 10th June 2021
-- Added the missing Alliance flight point for 'Shatter Point' (Hellfire Peninsula).
+2.5.42.alpha.2 - 11th June 2021
+- Added 'Show spirit healers' to 'Show points of interest'.  It's enabled by default.
+- Added 'Shatter Point' (Hellfire Peninsula), Magisters' Terrace and Sunwell Plateau (Isle of Quel'Danas) points of interest.
 
 2.5.41 - 9th June 2021
 - Updated the group icon for 'Class-colored icons' and 'Enhance battlefield map'.

@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.1 (10th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.2 (11th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1096,6 +1096,7 @@
 
 		-- Dungeon levels: https://wowpedia.fandom.com/wiki/Instances_by_level?direction=next&oldid=1191334
 		-- Meeting stone levels: https://www.reddit.com/r/classicwowtbc/comments/nfbdvb/tbc_classic_summoning_stone_level_requirements/
+		-- Spirit healers: https://db.endless.gg/?npc=6491
 
 		do
 
@@ -1111,6 +1112,9 @@
 			-- Boat harbors, zeppelin towers and tram stations (these are just templates, they will be replaced)
 			local fATex, fHTex, fNTex = "Vehicle-TempleofKotmogu-CyanBall", "Vehicle-TempleofKotmogu-CyanBall", "Vehicle-TempleofKotmogu-CyanBall"
 
+			-- Spirit healers
+			local spTex = "PortalRed"
+
 			-- Create map table
 			local PinData = {
 
@@ -1118,9 +1122,13 @@
 				--	Eastern Kingdoms
 				----------------------------------------------------------------------
 
+				--[[Alterac Mountains]] [1416] = {
+					{"Spirit", 42.9, 38.0, L["Spirit Healer"], nil, spTex, nil, nil},
+				},
 				--[[Arathi Highlands]] [1417] = {
 					{"FlightA", 45.8, 46.1, L["Refuge Pointe"] .. ", " .. L["Arathi Highlands"], nil, tATex, nil, nil},
 					{"FlightH", 73.1, 32.7, L["Hammerfall"] .. ", " .. L["Arathi Highlands"], nil, tHTex, nil, nil},
+					{"Spirit", 48.8, 55.6, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[The Exodar]] [1947] = {
 					{"FlightA", 68.5, 63.7, L["The Exodar"] .. ", " .. L["Azuremyst Isle"], nil, tATex, nil, nil},
@@ -1128,64 +1136,111 @@
 				--[[Azuremyst Isle]] [1943] = {
 					{"FlightA", 31.9, 46.4, L["The Exodar"] .. ", " .. L["Azuremyst Isle"], nil, tATex, nil, nil},
 					{"TravelA", 20.3, 54.2, L["Boat to"] .. " " .. L["Auberdine"] .. ", " .. L["Darkshore"], nil, fATex, nil, nil},
+					{"Spirit", 28.3, 25.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 39.2, 19.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 47.2, 55.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 77.7, 48.8, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Bloodmyst Isle]] [1950] = {
 					{"FlightA", 57.7, 53.9, L["Blood Watch"] .. ", " .. L["Bloodmyst Isle"], nil, tATex, nil, nil},
+					{"Spirit", 30.1, 45.9, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 58.1, 57.7, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Badlands]] [1418] = {
 					{"Dungeon", 44.6, 12.1, L["Uldaman"], L["Dungeon"], dnTex, 36, 40, 30, 36, 44},
 					{"FlightH", 4.0, 44.8, L["Kargath"] .. ", " .. L["Badlands"], nil, tHTex, nil, nil},
+					{"Spirit", 56.7, 23.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 8.4, 55.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 56.7, 73.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Blasted Lands]] [1419] = {
 					{"FlightA", 65.5, 24.3, L["Nethergarde Keep"] .. ", " .. L["Blasted Lands"], nil, tATex, nil, nil},
+					{"Spirit", 51.1, 12.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Tirisfal Glades]] [1420] = {
 					{"Dungeon", 82.6, 33.8, L["Scarlet Monastery"], L["Dungeon"], dnTex, 30, 40, 20, 28, 44},
 					{"TravelH", 60.7, 58.8, L["Zeppelin to"] .. " " .. L["Orgrimmar"] .. ", " .. L["Durotar"], nil, fHTex, nil, nil},
 					{"TravelH", 61.9, 59.1, L["Zeppelin to"] .. " " .. L["Grom'gol Base Camp"] .. ", " .. L["Stranglethorn Vale"], nil, fHTex, nil, nil},
+					{"Spirit", 30.8, 64.9, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 56.2, 49.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 79.0, 41.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 62.3, 67.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 82.0, 69.6, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Silverpine Forest]] [1421] = {
 					{"Dungeon", 44.8, 67.8, L["Shadowfang Keep"], L["Dungeon"], dnTex, 18, 21, 14, 17, 25},
 					{"FlightH", 45.6, 42.6, L["The Sepulcher"] .. ", " .. L["Silverpine Forest"], nil, tHTex, nil, nil},
+					{"Spirit", 44.1, 42.5, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Western Plaguelands]] [1422] = {
 					{"Dungeon", 69.7, 73.2, L["Scholomance"], L["Dungeon"], dnTex, 58, 60, 45, 56, 61},
 					{"FlightA", 42.9, 85.1, L["Chillwind Camp"] .. ", " .. L["Western Plaguelands"], nil, tATex, nil, nil},
+					{"Spirit", 59.7, 53.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 65.8, 74.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 45.0, 86.0, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Eastern Plaguelands]] [1423] = {
 					{"Dungeon", 31.3, 15.7, L["Stratholme (Main Gate)"], L["Dungeon"], dnTex, 58, 60, 45, 56, 61}, {"Dungeon", 47.9, 23.9, L["Stratholme (Service Gate)"], L["Dungeon"], dnTex, 58, 60, 45, 56, 61}, {"Dungeon", 39.9, 25.9, L["Naxxramas"], L["Raid"], rdTex, 60, 60, 51},
 					{"FlightA", 81.6, 59.3, L["Light's Hope Chapel"] .. ", " .. L["Eastern Plaguelands"], nil, tATex, nil, nil},
 					{"FlightH", 80.2, 57.0, L["Light's Hope Chapel"] .. ", " .. L["Eastern Plaguelands"], nil, tHTex, nil, nil},
+					{"Spirit", 47.3, 44.9, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 37.8, 70.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 39.2, 93.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 80.4, 65.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Hillsbrad Foothills]] [1424] = {
 					{"FlightA", 49.3, 52.3, L["Southshore"] .. ", " .. L["Hillsbrad Foothills"], nil, tATex, nil, nil},
 					{"FlightH", 60.1, 18.6, L["Tarren Mill"] .. ", " .. L["Hillsbrad Foothills"], nil, tHTex, nil, nil},
+					{"Spirit", 64.5, 19.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 51.8, 52.5, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[The Hinterlands]] [1425] = {
 					{"FlightA", 11.1, 46.2, L["Aerie Peak"] .. ", " .. L["The Hinterlands"], nil, tATex, nil, nil},
 					{"FlightH", 81.7, 81.8, L["Revantusk Village"] .. ", " .. L["The Hinterlands"], nil, tHTex, nil, nil},
+					{"Spirit", 16.9, 44.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 73.1, 68.2, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Dun Morogh]] [1426] = {
 					{"Dungeon", 24.3, 39.8, L["Gnomeregan"], L["Dungeon"], dnTex, 25, 28, 15, 24, 40},
+					{"Spirit", 30.0, 69.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 47.3, 54.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 54.4, 39.2, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Searing Gorge]] [1427] = {
 					{"Dunraid", 34.8, 85.3, L["Blackrock Mountain"], L["Blackrock Depths"] .. ", " .. L["Lower Blackrock Spire"] .. ", " .. L["Upper Blackrock Spire"] .. ", |n" .. L["Molten Core"] .. ", " .. L["Blackwing Lair"], dnTex, 48, 60, 40, 48, 61},
 					{"FlightA", 37.9, 30.8, L["Thorium Point"] .. ", " .. L["Searing Gorge"], nil, tATex, nil, nil},
 					{"FlightH", 34.8, 30.9, L["Thorium Point"] .. ", " .. L["Searing Gorge"], nil, tHTex, nil, nil},
+					{"Spirit", 35.5, 22.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 54.4, 51.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Burning Steppes]] [1428] = {
 					{"Dunraid", 29.4, 38.3, L["Blackrock Mountain"], L["Blackrock Depths"] .. ", " .. L["Lower Blackrock Spire"] .. ", " .. L["Upper Blackrock Spire"] .. ", |n" .. L["Molten Core"] .. ", " .. L["Blackwing Lair"], dnTex, 48, 60, 40, 48, 61},
 					{"FlightA", 84.3, 68.3, L["Morgan's Vigil"] .. ", " .. L["Burning Steppes"], nil, tATex, nil, nil},
 					{"FlightH", 65.7, 24.2, L["Flame Crest"] .. ", " .. L["Burning Steppes"], nil, tHTex, nil, nil},
+					{"Spirit", 64.1, 24.1, L["Spirit Healer"], nil, spTex, nil, nil},
+				},
+				--[[Elwynn Forest]] [1429] = {
+					{"Spirit", 32.1, 52.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 39.5, 60.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 49.7, 42.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 83.6, 69.8, L["Spirit Healer"], nil, spTex, nil, nil},
+				},
+				--[[Deadwind Pass]] [1430] = {
+					{"Spirit", 40.0, 74.2, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Duskwood]] [1431] = {
 					{"FlightA", 77.5, 44.3, L["Darkshire"] .. ", " .. L["Duskwood"], nil, tATex, nil, nil},
+					{"Spirit", 20.0, 49.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 75.1, 59.0, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Loch Modan]] [1432] = {
 					{"FlightA", 33.9, 50.9, L["Thelsamar"] .. ", " .. L["Loch Modan"], nil, tATex, nil, nil},
+					{"Spirit", 32.6, 47.0, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Redridge Mountains]] [1433] = {
 					{"FlightA", 30.6, 59.4, L["Lake Everstill"] .. ", " .. L["Redridge Mountains"], nil, tATex, nil, nil},
+					{"Spirit", 20.8, 56.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 33.8, 48.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Stranglethorn Vale]] [1434] = {
 					{"Raid", 53.9, 17.6, L["Zul'Gurub"], L["Raid"], rdTex, 60, 60, 50},
@@ -1196,19 +1251,25 @@
 					{"TravelN", 25.9, 73.1, L["Boat to"] .. " " .. L["Ratchet"] .. ", " .. L["The Barrens"], nil, fNTex, nil, nil},
 					{"TravelH", 31.4, 30.2, L["Zeppelin to"] .. " " .. L["Orgrimmar"] .. ", " .. L["Durotar"], nil, fHTex, nil, nil},
 					{"TravelH", 31.6, 29.1, L["Zeppelin to"] .. " " .. L["Undercity"] .. ", " .. L["Tirisfal Glades"], nil, fHTex, nil, nil},
+					{"Spirit", 38.4, 9.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 30.4, 73.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Swamp of Sorrows]] [1435] = {
 					{"Dungeon", 69.9, 53.6, L["Temple of Atal'Hakkar"], L["Dungeon"], dnTex, 47, 50, 35, 45, 54},
 					{"FlightH", 46.1, 54.8, L["Stonard"] .. ", " .. L["Swamp of Sorrows"], nil, tHTex, nil, nil},
+					{"Spirit", 50.3, 62.4, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Westfall]] [1436] = {
 					{"Dungeon", 42.5, 71.7, L["The Deadmines"], L["Dungeon"], dnTex, 18, 22, 10, 16, 24},
 					{"FlightA", 56.6, 52.6, L["Sentinel Hill"] .. ", " .. L["Westfall"], nil, tATex, nil, nil},
+					{"Spirit", 51.7, 49.7, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Wetlands]] [1437] = {
 					{"FlightA", 9.5, 59.7, L["Menethil Harbor"] .. ", " .. L["Wetlands"], nil, tATex, nil, nil},
 					{"TravelA", 5.0, 63.5, L["Boat to"] .. " " .. L["Theramore Isle"] .. ", " .. L["Dustwallow Marsh"], nil, fATex, nil, nil},
 					{"TravelA", 4.6, 57.1, L["Boat to"] .. " " .. L["Auberdine"] .. ", " .. L["Darkshore"], nil, fATex, nil, nil},
+					{"Spirit", 11.0, 43.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 49.3, 41.8, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Stormwind City]] [1453] = {
 					{"Dungeon", 42.3, 59.0, L["The Stockade"], L["Dungeon"], dnTex, 23, 29, 15, 21, 29},
@@ -1222,6 +1283,11 @@
 				--[[Undercity]] [1458] = {
 					{"FlightH", 63.3, 48.5, L["Trade Quarter"] .. ", " .. L["Undercity"], nil, tHTex, nil, nil},
 				},
+				--[[Isle of Quel'Danas]] [1957] = {
+					{"Spirit", 46.6, 32.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Dungeon", 61.2, 30.9, L["Magisters' Terrace"], L["Dungeon"], dnTex, 70, 70},
+					{"Raid", 44.3, 45.6, L["Sunwell Plateau"], L["Raid"], rdTex, 70, 70},
+				},
 
 				----------------------------------------------------------------------
 				--	Kalimdor
@@ -1230,12 +1296,26 @@
 				--[[Durotar]] [1411] = {
 					{"TravelH", 50.9, 13.9, L["Zeppelin to"] .. " " .. L["Undercity"] .. ", " .. L["Tirisfal Glades"], nil, fHTex, nil, nil, nil, nil},
 					{"TravelH", 50.6, 12.6, L["Zeppelin to"] .. " " .. L["Grom'gol Base Camp"] .. ", " .. L["Stranglethorn Vale"], nil, fHTex, nil, nil, nil, nil},
+					{"Spirit", 47.4, 17.9, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 53.5, 44.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 44.2, 69.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 57.2, 73.3, L["Spirit Healer"], nil, spTex, nil, nil},
+				},
+				--[[Mulgore]] [1412] = {
+					{"Spirit", 46.5, 55.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 42.6, 78.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Eversong Woods]] [1941] = {
 					{"FlightH", 54.4, 50.7, L["Silvermoon City"] .. ", " .. L["Eversong Woods"], nil, tHTex, nil, nil},
+					{"Spirit", 38.2, 17.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 48.0, 49.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 44.3, 71.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 60.0, 64.0, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Ghostlands]] [1942] = {
 					{"FlightH", 45.4, 30.5, L["Tranquillien"] .. ", " .. L["Ghostlands"], nil, tHTex, nil, nil},
+					{"Spirit", 43.9, 25.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 61.5, 57.0, L["Spirit Healer"], nil, spTex, nil, nil},
 					-- {"FlightN", 74.6, 67.0, L["Zul'Aman"] .. ", " .. L["Ghostlands"], nil, tNTex, nil, nil},
 				},
 				--[[The Barrens]] [1413] = {
@@ -1244,16 +1324,24 @@
 					{"FlightH", 51.5, 30.3, L["The Crossroads"] .. ", " .. L["The Barrens"], nil, tHTex, nil, nil},
 					{"FlightH", 44.4, 59.2, L["Camp Taurajo"] .. ", " .. L["The Barrens"], nil, tHTex, nil, nil},
 					{"TravelN", 63.7, 38.6, L["Boat to"] .. " " .. L["Booty Bay"] .. ", " .. L["Stranglethorn Vale"], nil, fNTex, nil, nil, nil, nil},
+					{"Spirit", 50.7, 32.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 60.2, 39.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 45.3, 61.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 45.8, 82.7, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Teldrassil]] [1438] = {
 					{"FlightA", 58.4, 94.0, L["Rut'theran Village"] .. ", " .. L["Teldrassil"], nil, tATex, nil, nil},
 					{"TravelA", 54.9, 96.8, L["Boat to"] .. " " .. L["Auberdine"] .. ", " .. L["Darkshore"], nil, fATex, nil, nil, nil, nil},
+					{"Spirit", 58.7, 42.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 56.2, 63.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Darkshore]] [1439] = {
 					{"FlightA", 36.3, 45.6, L["Auberdine"] .. ", " .. L["Darkshore"], nil, tATex, nil, nil},
 					{"TravelA", 32.4, 43.8, L["Boat to"] .. " " .. L["Menethil Harbor"] .. ", " .. L["Wetlands"], nil, fATex, nil, nil, nil, nil},
 					{"TravelA", 33.2, 40.1, L["Boat to"] .. " " .. L["Rut'theran Village"] .. ", " .. L["Teldrassil"], nil, fATex, nil, nil, nil, nil},
 					{"TravelA", 30.7, 41.0, L["Boat to"] .. " " .. L["Valaar's Berth"] .. ", " .. L["Azuremyst Isle"], nil, fATex, nil, nil},
+					{"Spirit", 41.8, 36.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 43.6, 92.4, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Ashenvale]] [1440] = {
 					{"Dungeon", 14.5, 14.2, L["Blackfathom Deeps"], L["Dungeon"], dnTex, 22, 24, 19, 20, 28},
@@ -1261,18 +1349,26 @@
 					{"FlightA", 85.0, 43.4, L["Forest Song"] .. ", " .. L["Ashenvale"], nil, tATex, nil, nil},
 					{"FlightH", 73.2, 61.6, L["Splintertree Post"] .. ", " .. L["Ashenvale"], nil, tHTex, nil, nil},
 					{"FlightH", 12.2, 33.8, L["Zoram'gar Outpost"] .. ", " .. L["Ashenvale"], nil, tHTex, nil, nil},
+					{"Spirit", 40.5, 52.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 80.7, 58.4, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Thousand Needles]] [1441] = {
 					{"FlightH", 45.1, 49.1, L["Freewind Post"] .. ", " .. L["Thousand Needles"], nil, tHTex, nil, nil},
+					{"Spirit", 30.6, 23.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 68.7, 53.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Stonetalon Mountains]] [1442] = {
 					{"FlightA", 36.4, 7.2, L["Stonetalon Peak"] .. ", " .. L["Stonetalon Mountains"], nil, tATex, nil, nil},
 					{"FlightH", 45.1, 59.8, L["Sun Rock Retreat"] .. ", " .. L["Stonetalon Mountains"], nil, tHTex, nil, nil},
+					{"Spirit", 40.3, 5.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 36.4, 75.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 57.5, 61.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Desolace]] [1443] = {
 					{"Dungeon", 29.1, 62.5, L["Maraudon"], L["Dungeon"], dnTex, 43, 48, 30, 40, 52},
 					{"FlightA", 64.7, 10.5, L["Nijel's Point"] .. ", " .. L["Desolace"], nil, tATex, nil, nil},
 					{"FlightH", 21.6, 74.1, L["Shadowprey Village"] .. ", " .. L["Desolace"], nil, tHTex, nil, nil},
+					{"Spirit", 50.4, 62.9, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Feralas]] [1444] = {
 					{"FlightA", 30.2, 43.2, L["Feathermoon Stronghold"] .. ", " .. L["Feralas"], nil, tATex, nil, nil},
@@ -1283,6 +1379,9 @@
 					{"Dungeon", 64.8, 30.2, L["Dire Maul (East)"], L["Dungeon"], dnTex, 55, 58, 45, 54, 61},
 					{"TravelA", 43.3, 42.8, L["Boat to"] .. " " .. L["Feathermoon Stronghold"] .. ", " .. L["Feralas"], nil, fATex, nil, nil},
 					{"TravelA", 31.0, 39.8, L["Boat to"] .. " " .. L["The Forgotten Coast"] .. ", " .. L["Feralas"], nil, fATex, nil, nil},
+					{"Spirit", 31.8, 48.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 54.8, 48.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 73.0, 44.5, L["Spirit Healer"], nil, spTex, nil, nil},
 					-- {"Dungeon", 77.1, 36.9, L["Dire Maul (East)"], L["The Hidden Reach (requires Crescent Key)"], dnTex, 56, 60},
 				},
 				--[[Dustwallow Marsh]] [1445] = {
@@ -1291,36 +1390,60 @@
 					{"FlightH", 35.6, 31.9, L["Brackenwall Village"] .. ", " .. L["Dustwallow Marsh"], nil, tHTex, nil, nil},
 					{"FlightN", 42.8, 72.5, L["Mudsprocket"] .. ", " .. L["Dustwallow Marsh"], nil, tNTex, nil, nil},
 					{"TravelA", 71.6, 56.4, L["Boat to"] .. " " .. L["Menethil Harbor"] .. ", " .. L["Wetlands"], nil, fATex, nil, nil, nil, nil},
+					{"Spirit", 39.5, 31.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 46.6, 57.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 41.2, 74.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 63.6, 42.4, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Tanaris]] [1446] = {
 					{"Dungeon", 38.7, 20.0, L["Zul'Farrak"], L["Dungeon"], dnTex, 42, 46, 35, 42, 50},
 					{"FlightA", 51.0, 29.3, L["Gadgetzan"] .. ", " .. L["Tanaris"], nil, tATex, nil, nil},
 					{"FlightH", 51.6, 25.4, L["Gadgetzan"] .. ", " .. L["Tanaris"], nil, tHTex, nil, nil},
+					{"Spirit", 53.9, 28.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 49.4, 59.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 69.0, 40.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 63.6, 49.4, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Azshara]] [1447] = {
 					{"FlightA", 11.9, 77.6, L["Talrendis Point"] .. ", " .. L["Azshara"], nil, tATex, nil, nil},
 					{"FlightH", 22.0, 49.6, L["Valormok"] .. ", " .. L["Azshara"], nil, tHTex, nil, nil},
+					{"Spirit", 70.4, 16.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 54.3, 71.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 14.0, 78.6, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Felwood]] [1448] = {
 					{"FlightA", 62.5, 24.2, L["Talonbranch Glade"] .. ", " .. L["Felwood"], nil, tATex, nil, nil},
 					{"FlightH", 34.4, 54.0, L["Bloodvenom Post"] .. ", " .. L["Felwood"], nil, tHTex, nil, nil},
 					{"FlightN", 51.4, 82.2, L["Emerald Sanctuary"] .. ", " .. L["Felwood"], nil, tNTex, nil, nil},
+					{"Spirit", 49.5, 31.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 56.8, 87.0, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Un'Goro Crater]] [1449] = {
 					{"FlightN", 45.2, 5.8, L["Marshal's Refuge"] .. ", " .. L["Un'Goro Crater"], nil, tNTex, nil, nil},
+					{"Spirit", 45.3, 7.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 50.0, 56.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 80.3, 50.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Moonglade]] [1450] =  {
 					{"FlightA", 48.1, 67.4, L["Lake Elune'ara"] .. ", " .. L["Moonglade"], nil, tATex, nil, nil},
 					{"FlightH", 32.1, 66.6, L["Moonglade"], nil, tHTex, nil, nil},
+					{"Spirit", 62.2, 70.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Silithus]] [1451] = {
 					{"Raid", 28.6, 92.4, L["Ahn'Qiraj"], L["Ruins of Ahn'Qiraj"] .. ", " .. L["Temple of Ahn'Qiraj"], rdTex, 60, 60, 50},
 					{"FlightA", 50.6, 34.5, L["Cenarion Hold"] .. ", " .. L["Silithus"], nil, tATex, nil, nil},
 					{"FlightH", 48.7, 36.7, L["Cenarion Hold"] .. ", " .. L["Silithus"], nil, tHTex, nil, nil},
+					{"Spirit", 47.2, 37.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 28.2, 87.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 81.2, 20.8, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Winterspring]] [1452] = {
 					{"FlightA", 62.3, 36.6, L["Everlook"] .. ", " .. L["Winterspring"], nil, tATex, nil, nil},
 					{"FlightH", 60.5, 36.3, L["Everlook"] .. ", " .. L["Winterspring"], nil, tHTex, nil, nil},
+					{"Spirit", 29.0, 43.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 61.5, 35.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 62.7, 61.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 39.4, 86.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Orgrimmar]] [1454] =  {
 					{"Dungeon", 52.6, 49.0, L["Ragefire Chasm"], L["Dungeon"], dnTex, 13, 16, 8, 13, 20},
@@ -1328,6 +1451,10 @@
 				},
 				--[[Thunder Bluff]] [1456] = {
 					{"FlightH", 47.0, 49.8, L["Central Mesa"] .. ", " .. L["Thunder Bluff"], nil, tHTex, nil, nil},
+					{"Spirit", 56.7, 19.1, L["Spirit Healer"], nil, spTex, nil, nil},
+				},
+				--[[Darnassus]] [1457] = {
+					{"Spirit", 77.7, 25.9, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 
 				----------------------------------------------------------------------
@@ -1341,6 +1468,15 @@
 					{"FlightH", 76.4, 65.8, L["Mok'Nathal Village"] .. ", " .. L["Blade's Edge Mountains"], nil, tHTex, nil, nil},
 					{"FlightN", 61.6, 39.6, L["Evergrove"] .. ", " .. L["Blade's Edge Mountains"], nil, tNTex, nil, nil},
 					{"Raid", 68.7, 24.3, L["Gruul's Lair"], L["Raid"], rdTex, 70, 70, 65},
+					{"Spirit", 37.2, 24.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 33.6, 58.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 38.3, 67.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 52.1, 60.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 60.4, 66.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 69.3, 58.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 74.6, 26.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 62.8, 37.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 61.8, 14.7, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Hellfire Peninsula]] [1944] = {
 					{"FlightA", 25.2, 37.2, L["Temple of Telhamat"] .. ", " .. L["Hellfire Peninsula"], nil, tATex, nil, nil},
@@ -1355,10 +1491,24 @@
 					{"Dungeon", 47.7, 52.0, L["The Shattered Halls"], L["Dungeon"], dnTex, 69, 70, 55},
 					{"Dungeon", 46.0, 51.8, L["The Blood Furnace"], L["Dungeon"], dnTex, 61, 63, 55},
 					{"FlightA", 78.4, 34.9, L["Shatter Point"] .. ", " .. L["Hellfire Peninsula"], nil, tATex, nil, nil},
+					{"Spirit", 22.8, 38.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 27.7, 63.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 60.0, 79.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 54.5, 66.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 57.5, 38.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 64.3, 22.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 86.8, 51.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 68.7, 27.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Nagrand]] [1951] = {
 					{"FlightA", 54.2, 75.0, L["Telaar"] .. ", " .. L["Nagrand"], nil, tATex, nil, nil},
 					{"FlightH", 57.2, 35.2, L["Garadar"] .. ", " .. L["Nagrand"], nil, tHTex, nil, nil},
+					{"Spirit", 20.4, 36.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 32.8, 56.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 39.8, 30.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 42.5, 46.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 66.6, 24.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 63.1, 69.3, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Netherstorm]] [1953] = {
 					{"FlightN", 33.8, 64.0, L["Area 52"] .. ", " .. L["Netherstorm"], nil, tNTex, nil, nil},
@@ -1368,6 +1518,10 @@
 					{"Dungeon", 71.7, 55.0, L["The Botanica"], L["Dungeon"], dnTex, 70, 70, 68},
 					{"Dungeon", 74.4, 57.7, L["The Arcatraz"], L["Dungeon"], dnTex, 70, 70, 68},
 					{"Dungeon", 70.6, 69.7, L["The Mechanar"], L["Dungeon"], dnTex, 70, 70, 68},
+					{"Spirit", 42.9, 29.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 33.8, 65.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 64.8, 66.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 56.6, 83.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Shadowmoon Valley]] [1948] = {
 					{"FlightA", 37.6, 55.4, L["Wildhammer Stronghold"] .. ", " .. L["Shadowmoon Valley"], nil, tATex, nil, nil},
@@ -1375,6 +1529,12 @@
 					{"FlightN", 63.2, 34.0, L["Altar of Sha'tar"] .. ", " .. L["Shadowmoon Valley"], nil, tNTex, nil, nil},
 					{"FlightN", 56.2, 57.8, L["Sanctum of the Stars"] .. ", " .. L["Shadowmoon Valley"], nil, tNTex, nil, nil},
 					{"Raid", 71.0, 46.4, L["Black Temple"], L["Raid"], rdTex, 70, 70},
+					{"Spirit", 32.2, 28.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 39.5, 56.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 57.5, 59.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 63.6, 32.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 65.5, 43.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 65.7, 45.7, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Shattrath City]] [1955] = {
 					{"FlightN", 64.1, 41.1, L["Shattrath City"] .. ", " .. L["Terokkar Forest"], nil, tNTex, nil, nil},
@@ -1390,6 +1550,11 @@
 					{"Dungeon", 36.1, 65.6, L["Auchenai Crypts"], L["Dungeon"], dnTex, 65, 67, 55},
 					{"Dungeon", 39.6, 71.0, L["Shadow Labyrinth"], L["Dungeon"], dnTex, 69, 70, 65},
 					{"Dungeon", 39.7, 60.2, L["Mana-Tombs"], L["Dungeon"], dnTex, 64, 66, 55},
+					{"Spirit", 39.9, 21.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 44.8, 40.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 59.5, 42.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 44.6, 71.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 62.9, 81.2, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Zangarmarsh]] [1946] = {
 					{"FlightA", 41.2, 28.8, L["Orebor Harborage"] .. ", " .. L["Zangarmarsh"], nil, tATex, nil, nil},
@@ -1397,6 +1562,12 @@
 					{"FlightH", 33.0, 51.0, L["Zabra'jin"] .. ", " .. L["Zangarmarsh"], nil, tHTex, nil, nil},
 					{"FlightH", 84.8, 55.0, L["Swamprat Post"] .. ", " .. L["Zangarmarsh"], nil, tHTex, nil, nil},
 					{"Raid", 50.4, 40.9, L["Coilfang Reservoir"], L["Serpentshrine Cavern"] .. ", " .. L["Slave Pens"] .. ",|n" .. L["Steamvault"] .. ", " .. L["Underbog"], dnTex, 62, 70, 55},
+					{"Spirit", 17.0, 48.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 36.8, 47.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 43.6, 31.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 47.5, 50.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 65.1, 50.9, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 77.2, 64.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 
 			}
@@ -1445,6 +1616,7 @@
 							or LeaMapsLC["ShowFlightPoints"] == "On" and playerFaction == "Horde" and (pinInfo[1] == "FlightH" or pinInfo[1] == "FlightN")
 							or LeaMapsLC["ShowTravelPoints"] == "On" and playerFaction == "Alliance" and (pinInfo[1] == "TravelA" or pinInfo[1] == "TravelN")
 							or LeaMapsLC["ShowTravelPoints"] == "On" and playerFaction == "Horde" and (pinInfo[1] == "TravelH" or pinInfo[1] == "TravelN")
+							or LeaMapsLC["ShowSpiritHealers"] == "On" and (pinInfo[1] == "Spirit")
 							then
 								local myPOI = {}
 								myPOI["position"] = CreateVector2D(pinInfo[2] / 100, pinInfo[3] / 100)
@@ -1544,6 +1716,9 @@
 									pin.Texture:SetSize(32, 32)
 									pin.HighlightTexture:SetTexCoord(0.375, 0.5, 0.5, 1)
 									pin.HighlightTexture:SetSize(32, 32)
+								elseif pinInfo[1] == "Spirit" then
+									pin.Texture:SetSize(38, 38)
+									pin.HighlightTexture:SetSize(38, 38)
 								end
 							end
 
@@ -1579,6 +1754,7 @@
 			LeaMapsLC:MakeCB(poiFrame, "ShowDungeonIcons", "Show dungeons and raids", 16, -92, false, "If checked, dungeons and raids will be shown.")
 			LeaMapsLC:MakeCB(poiFrame, "ShowFlightPoints", "Show flight points", 16, -112, false, "If checked, flight points will be shown.")
 			LeaMapsLC:MakeCB(poiFrame, "ShowTravelPoints", "Show boats, zeppelins and trams", 16, -132, false, "If checked, boat harbors, zeppelin towers and tram stations will be shown.")
+			LeaMapsLC:MakeCB(poiFrame, "ShowSpiritHealers", "Show spirit healers", 16, -152, false, "If checked, spirit healers will be shown.")
 
 			-- Function to refresh points of interest
 			local function SetPointsOfInterest()
@@ -1590,6 +1766,7 @@
 			LeaMapsCB["ShowDungeonIcons"]:HookScript("OnClick", SetPointsOfInterest)
 			LeaMapsCB["ShowFlightPoints"]:HookScript("OnClick", SetPointsOfInterest)
 			LeaMapsCB["ShowTravelPoints"]:HookScript("OnClick", SetPointsOfInterest)
+			LeaMapsCB["ShowSpiritHealers"]:HookScript("OnClick", SetPointsOfInterest)
 			LeaMapsCB["ShowZoneLevels"]:HookScript("OnClick", SetPointsOfInterest)
 
 			-- Back to Main Menu button click
@@ -1603,6 +1780,7 @@
 				LeaMapsLC["ShowDungeonIcons"] = "On"
 				LeaMapsLC["ShowFlightPoints"] = "On"
 				LeaMapsLC["ShowTravelPoints"] = "On"
+				LeaMapsLC["ShowSpiritHealers"] = "On"
 				SetPointsOfInterest()
 				poiFrame:Hide(); poiFrame:Show()
 			end)
@@ -1614,6 +1792,7 @@
 					LeaMapsLC["ShowDungeonIcons"] = "On"
 					LeaMapsLC["ShowFlightPoints"] = "On"
 					LeaMapsLC["ShowTravelPoints"] = "On"
+					LeaMapsLC["ShowSpiritHealers"] = "On"
 					SetPointsOfInterest()
 					if poiFrame:IsShown() then poiFrame:Hide(); poiFrame:Show(); end
 				else
@@ -2666,6 +2845,7 @@
 				LeaMapsDB["ShowDungeonIcons"] = "On"
 				LeaMapsDB["ShowFlightPoints"] = "On"
 				LeaMapsDB["ShowTravelPoints"] = "On"
+				LeaMapsDB["ShowSpiritHealers"] = "On"
 				LeaMapsDB["ShowZoneLevels"] = "On"
 				LeaMapsDB["ShowFishingLevels"] = "On"
 				LeaMapsDB["ShowCoords"] = "On"
@@ -2763,6 +2943,7 @@
 			LeaMapsLC:LoadVarChk("ShowDungeonIcons", "On")				-- Show dungeons and raids
 			LeaMapsLC:LoadVarChk("ShowFlightPoints", "On")				-- Show flight points
 			LeaMapsLC:LoadVarChk("ShowTravelPoints", "On")				-- Show boats, zeppelins and trams
+			LeaMapsLC:LoadVarChk("ShowSpiritHealers", "On")				-- Show spirit healers
 			LeaMapsLC:LoadVarChk("ShowZoneLevels", "On")				-- Show zone levels
 			LeaMapsLC:LoadVarChk("ShowFishingLevels", "On")				-- Show fishing levels
 			LeaMapsLC:LoadVarChk("ShowCoords", "On")					-- Show coordinates
@@ -2826,6 +3007,7 @@
 			LeaMapsDB["ShowDungeonIcons"] = LeaMapsLC["ShowDungeonIcons"]
 			LeaMapsDB["ShowFlightPoints"] = LeaMapsLC["ShowFlightPoints"]
 			LeaMapsDB["ShowTravelPoints"] = LeaMapsLC["ShowTravelPoints"]
+			LeaMapsDB["ShowSpiritHealers"] = LeaMapsLC["ShowSpiritHealers"]
 			LeaMapsDB["ShowZoneLevels"] = LeaMapsLC["ShowZoneLevels"]
 			LeaMapsDB["ShowFishingLevels"] = LeaMapsLC["ShowFishingLevels"]
 			LeaMapsDB["ShowCoords"] = LeaMapsLC["ShowCoords"]
