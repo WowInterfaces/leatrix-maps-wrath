@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.4 (11th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.5 (11th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.4"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.5"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1537,8 +1537,10 @@
 				--[[Shattrath City]] [1955] = {
 					{"FlightN", 64.1, 41.1, L["Shattrath City"] .. ", " .. L["Terokkar Forest"], nil, tNTex, nil, nil},
 					{"TravelN", 48.5, 42.0, L["Isle of Quel'Danas"], L["Portal"], pNTex},
-					{"TravelA", 57.2, 48.3, L["Stormwind"], L["Portal"], pATex},
-					{"TravelH", 56.8, 48.9, L["Orgrimmar"], L["Portal"], pHTex},
+					{"TravelA", 55.8, 36.5, L["Alliance Cities"], L["Darnassus"] .. ", " .. L["Stormwind"] .. ", " .. L["Ironforge"], pATex},
+					{"TravelH", 52.2, 52.9, L["Horde Cities"], L["Thunder Bluff"] .. ", " .. L["Orgrimmar"] .. ", " .. L["Undercity"], pHTex},
+					{"TravelA", 59.6, 46.7, L["The Exodar"], L["Portal"], pATex},
+					{"TravelH", 59.2, 48.4, L["Silvermoon City"], L["Portal"], pHTex},
 				},
 				--[[Terokkar Forest]] [1952] = {
 					{"FlightA", 59.4, 55.4, L["Allerian Stronghold"] .. ", " .. L["Terokkar Forest"], nil, tATex, nil, nil},
