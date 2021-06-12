@@ -1,4 +1,4 @@
-2.5.42.alpha.6 - 12th June 2021
+2.5.42.alpha.7 - 12th June 2021
 - Added 'Show spirit healers' to 'Show points of interest'.  It's enabled by default.
 - Added 'Shatter Point' (Hellfire Peninsula), Magisters' Terrace and Sunwell Plateau (Isle of Quel'Danas) points of interest.
 - Updated Shattrath portal icons.

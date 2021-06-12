@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.6 (12th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.7 (12th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.6"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.7"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1113,7 +1113,7 @@
 			local fATex, fHTex, fNTex = "Vehicle-TempleofKotmogu-CyanBall", "Vehicle-TempleofKotmogu-CyanBall", "Vehicle-TempleofKotmogu-CyanBall"
 
 			-- Spirit healers
-			local spTex = "PortalRed"
+			local spTex = "Vehicle-TempleofKotmogu-GreenBall"
 
 			-- Create map table
 			local PinData = {
@@ -1279,6 +1279,7 @@
 				},
 				--[[Undercity]] [1458] = {
 					{"FlightH", 63.3, 48.5, L["Trade Quarter"] .. ", " .. L["Undercity"], nil, tHTex, nil, nil},
+					{"Spirit", 67.9, 14.0, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Isle of Quel'Danas]] [1957] = {
 					{"Spirit", 46.6, 32.7, L["Spirit Healer"], nil, spTex, nil, nil},
@@ -1716,8 +1717,8 @@
 									pin.HighlightTexture:SetTexCoord(0.375, 0.5, 0.5, 1)
 									pin.HighlightTexture:SetSize(32, 32)
 								elseif pinInfo[1] == "Spirit" then
-									pin.Texture:SetSize(38, 38)
-									pin.HighlightTexture:SetSize(38, 38)
+									pin.Texture:SetSize(20, 20)
+									pin.HighlightTexture:SetSize(20, 20)
 								end
 							end
 
