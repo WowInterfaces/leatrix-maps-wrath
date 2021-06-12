@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.8 (12th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.9 (12th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.8"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.9"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1170,6 +1170,7 @@
 					{"Dungeon", 44.8, 67.8, L["Shadowfang Keep"], L["Dungeon"], dnTex, 18, 21, 14, 17, 25},
 					{"FlightH", 45.6, 42.6, L["The Sepulcher"] .. ", " .. L["Silverpine Forest"], nil, tHTex, nil, nil},
 					{"Spirit", 44.1, 42.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 55.6, 73.2, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Western Plaguelands]] [1422] = {
 					{"Dungeon", 69.7, 73.2, L["Scholomance"], L["Dungeon"], dnTex, 58, 60, 45, 56, 61},
@@ -1238,6 +1239,7 @@
 				--[[Redridge Mountains]] [1433] = {
 					{"FlightA", 30.6, 59.4, L["Lake Everstill"] .. ", " .. L["Redridge Mountains"], nil, tATex, nil, nil},
 					{"Spirit", 20.8, 56.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					-- Redridge Spirit Healer (33.8, 48.1)
 				},
 				--[[Stranglethorn Vale]] [1434] = {
 					{"Raid", 53.9, 17.6, L["Zul'Gurub"], L["Raid"], rdTex, 60, 60, 50},
@@ -1314,6 +1316,7 @@
 					{"FlightH", 45.4, 30.5, L["Tranquillien"] .. ", " .. L["Ghostlands"], nil, tHTex, nil, nil},
 					{"Spirit", 43.9, 25.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 61.5, 57.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					-- Zul'Aman Spirit Healer 80.4, 69.8
 					-- {"FlightN", 74.6, 67.0, L["Zul'Aman"] .. ", " .. L["Ghostlands"], nil, tNTex, nil, nil},
 				},
 				--[[The Barrens]] [1413] = {
@@ -1332,6 +1335,7 @@
 					{"TravelA", 54.9, 96.8, L["Boat to"] .. " " .. L["Auberdine"] .. ", " .. L["Darkshore"], nil, fATex, nil, nil, nil, nil},
 					{"Spirit", 58.7, 42.3, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 56.2, 63.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					-- Rut'theran Village Spirit Healer (56, 92.1)
 				},
 				--[[Darkshore]] [1439] = {
 					{"FlightA", 36.3, 45.6, L["Auberdine"] .. ", " .. L["Darkshore"], nil, tATex, nil, nil},
@@ -1442,7 +1446,6 @@
 					{"Spirit", 29.0, 43.0, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 61.5, 35.4, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 62.7, 61.3, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Spirit", 39.4, 86.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Orgrimmar]] [1454] =  {
 					{"Dungeon", 52.6, 49.0, L["Ragefire Chasm"], L["Dungeon"], dnTex, 13, 16, 8, 13, 20},
