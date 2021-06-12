@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.5 (11th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.6 (12th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.5"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.6"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1238,7 +1238,6 @@
 				--[[Redridge Mountains]] [1433] = {
 					{"FlightA", 30.6, 59.4, L["Lake Everstill"] .. ", " .. L["Redridge Mountains"], nil, tATex, nil, nil},
 					{"Spirit", 20.8, 56.6, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Spirit", 33.8, 48.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Stranglethorn Vale]] [1434] = {
 					{"Raid", 53.9, 17.6, L["Zul'Gurub"], L["Raid"], rdTex, 60, 60, 50},
