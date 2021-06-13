@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.10 (13th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.11 (13th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.10"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.11"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1437,7 +1437,7 @@
 					{"FlightA", 50.6, 34.5, L["Cenarion Hold"] .. ", " .. L["Silithus"], nil, tATex, nil, nil},
 					{"FlightH", 48.7, 36.7, L["Cenarion Hold"] .. ", " .. L["Silithus"], nil, tHTex, nil, nil},
 					{"Spirit", 47.2, 37.3, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Spirit", 28.2, 87.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 28.2, 87.1, L["Spirit Healer"], "(" .. L["Ahn'Qiraj"] .. ")", spTex, nil, nil},
 					{"Spirit", 81.2, 20.8, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[Winterspring]] [1452] = {
