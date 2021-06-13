@@ -1,6 +1,6 @@
-2.5.42.alpha.9 - 12th June 2021
+2.5.42.alpha.10 - 13th June 2021
 - Added 'Show spirit healers' to 'Show points of interest'.  It's enabled by default.
-- Added Shatter Point (Hellfire Peninsula), Magisters' Terrace (Isle of Quel'Danas), Sunwell Plateau (Isle of Quel'Danas), Caverns of Time (Tanaris) and Shattrath City (Terokkar Forest) points of interest.
+- Added Shatter Point (Hellfire Peninsula), Magisters' Terrace (Isle of Quel'Danas), Sunwell Plateau (Isle of Quel'Danas), Zul'Aman (Ghostlands), Caverns of Time (Tanaris) and Shattrath City (Terokkar Forest) points of interest.
 
 2.5.41 - 9th June 2021
 - Updated the group icon for 'Class-colored icons' and 'Enhance battlefield map'.

@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.9 (12th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.10 (13th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.9"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.10"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1239,7 +1239,6 @@
 				--[[Redridge Mountains]] [1433] = {
 					{"FlightA", 30.6, 59.4, L["Lake Everstill"] .. ", " .. L["Redridge Mountains"], nil, tATex, nil, nil},
 					{"Spirit", 20.8, 56.6, L["Spirit Healer"], nil, spTex, nil, nil},
-					-- Redridge Spirit Healer (33.8, 48.1)
 				},
 				--[[Stranglethorn Vale]] [1434] = {
 					{"Raid", 53.9, 17.6, L["Zul'Gurub"], L["Raid"], rdTex, 60, 60, 50},
@@ -1314,10 +1313,11 @@
 				},
 				--[[Ghostlands]] [1942] = {
 					{"FlightH", 45.4, 30.5, L["Tranquillien"] .. ", " .. L["Ghostlands"], nil, tHTex, nil, nil},
+					{"FlightN", 74.7, 67.1, L["Zul'Aman"] .. ", " .. L["Ghostlands"], L["(destination only)"], tNTex, nil, nil},
+					{"Raid", 82.3, 64.3, L["Zul'Aman"], L["Raid"], rdTex, 70, 70, 68},
 					{"Spirit", 43.9, 25.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 61.5, 57.0, L["Spirit Healer"], nil, spTex, nil, nil},
-					-- Zul'Aman Spirit Healer 80.4, 69.8
-					-- {"FlightN", 74.6, 67.0, L["Zul'Aman"] .. ", " .. L["Ghostlands"], nil, tNTex, nil, nil},
+					{"Spirit", 80.5, 69.1, L["Spirit Healer"], nil, spTex, nil, nil},
 				},
 				--[[The Barrens]] [1413] = {
 					{"Dungeon", 46.0, 36.4, L["Wailing Caverns"], L["Dungeon"], dnTex, 17, 21, 10, 16, 24}, {"Dungeon", 42.9, 90.2, L["Razorfen Kraul"], L["Dungeon"], dnTex, 24, 27, 17, 23, 31}, {"Dungeon", 49.0, 93.9, L["Razorfen Downs"], L["Dungeon"], dnTex, 34, 37, 25, 33, 41},
