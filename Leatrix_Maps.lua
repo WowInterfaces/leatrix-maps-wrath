@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.42.alpha.11 (13th June 2021)
+	-- 	Leatrix Maps 2.5.42.alpha.12 (13th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.42.alpha.11"
+	LeaMapsLC["AddonVer"] = "2.5.42.alpha.12"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1226,6 +1226,7 @@
 				},
 				--[[Deadwind Pass]] [1430] = {
 					{"Spirit", 40.0, 74.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Raid", 46.9, 74.7, L["Karazhan"], L["Raid"], rdTex, 70, 70, 68},
 				},
 				--[[Duskwood]] [1431] = {
 					{"FlightA", 77.5, 44.3, L["Darkshire"] .. ", " .. L["Duskwood"], nil, tATex, nil, nil},
