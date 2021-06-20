@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.43.alpha.1 (20th June 2021)
+	-- 	Leatrix Maps 2.5.43.alpha.2 (20th June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.43.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.43.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -60,19 +60,20 @@
 			-- Create configuraton panel
 			local battleFrame = LeaMapsLC:CreatePanel("Enhance battlefield map", "battleFrame")
 
-			-- Help button tooltip
-			battleFrame.h.tiptext = L["Drag the frame overlay to position the frame."]
+			-- Hide help button
+			battleFrame.h:Hide()
 
 			-- Add controls
 			LeaMapsLC:MakeTx(battleFrame, "Settings", 16, -72)
-			LeaMapsLC:MakeSL(battleFrame, "BattleGroupIconSize", "Group Icons", "Drag to set the group icon size.", 12, 24, 1, 206, -122, "%.0f")
-			LeaMapsLC:MakeSL(battleFrame, "BattlePlayerArrowSize", "Player Arrow", "Drag to set the player arrow size.", 12, 24, 1, 36, -122, "%.0f")
-			LeaMapsLC:MakeSL(battleFrame, "BattleMapSize", "Map Size", "Drag to set the battlefield map size.", 0.5, 3, 0.1, 36, -182, "%.0f")
-			LeaMapsLC:MakeSL(battleFrame, "BattleMapOpacity", "Map Opacity", "Drag to set the battlefield map opacity.", 0.1, 1, 0.1, 206, -182, "%.0f")
+			LeaMapsLC:MakeCB(battleFrame, "UnlockBattlefield", "Unlock battlefield map", 16, -92, false, "If checked, you can move the battlefield map by dragging any of its borders.")
+			LeaMapsLC:MakeSL(battleFrame, "BattleGroupIconSize", "Group Icons", "Drag to set the group icon size.", 12, 24, 1, 206, -152, "%.0f")
+			LeaMapsLC:MakeSL(battleFrame, "BattlePlayerArrowSize", "Player Arrow", "Drag to set the player arrow size.", 12, 24, 1, 36, -152, "%.0f")
+			LeaMapsLC:MakeSL(battleFrame, "BattleMapSize", "Map Size", "Drag to set the battlefield map size.", 0.5, 3, 0.1, 36, -212, "%.0f")
+			LeaMapsLC:MakeSL(battleFrame, "BattleMapOpacity", "Map Opacity", "Drag to set the battlefield map opacity.", 0.1, 1, 0.1, 206, -212, "%.0f")
 
 			-- Add preview texture
 			local prevIcon = battleFrame:CreateTexture(nil, "ARTWORK")
-			prevIcon:SetPoint("CENTER", battleFrame, "TOPLEFT", 400, -132)
+			prevIcon:SetPoint("CENTER", battleFrame, "TOPLEFT", 400, -162)
 			prevIcon:SetTexture(partyTexture)
 			prevIcon:SetSize(30,30)
 			prevIcon:SetVertexColor(0.78, 0.61, 0.43, 1)
@@ -90,32 +91,21 @@
 			BattlefieldMapFrame:ClearAllPoints()
 			BattlefieldMapFrame:SetPoint(LeaMapsLC["BattleMapA"], UIParent, LeaMapsLC["BattleMapR"], LeaMapsLC["BattleMapX"], LeaMapsLC["BattleMapY"])
 
-			-- Create drag frame
-			local dragframe = CreateFrame("FRAME", nil, nil, "BackdropTemplate")
-			dragframe:SetBackdropColor(0.0, 0.5, 1.0)
-			dragframe:SetBackdrop({edgeFile = "Interface/Tooltips/UI-Tooltip-Border", tile = false, tileSize = 0, edgeSize = 16, insets = {left = 0, right = 0, top = 0, bottom = 0}})
-			dragframe:SetToplevel(true)
-			dragframe:Hide()
-			dragframe:SetScale(LeaMapsLC["BattleMapSize"])
-			dragframe:SetAllPoints(BattlefieldMapFrame)
-			dragframe:SetToplevel(true)
-			dragframe:SetFrameStrata("HIGH")
-			LeaMapsLC.BattlefieldDragFrame = dragframe
-
-			dragframe.t = dragframe:CreateTexture()
-			dragframe.t:SetAllPoints()
-			dragframe.t:SetColorTexture(0.0, 1.0, 0.0, 0.5)
-			dragframe.t:SetAlpha(0.5)
-
-			-- Click handler
-			dragframe:SetScript("OnMouseDown", function(self, btn)
-				-- Start dragging if left clicked
-				if btn == "LeftButton" then
+			-- Unlock battlefield map frame
+			local eFrame = CreateFrame("Frame", nil, BattlefieldMapFrame.ScrollContainer)
+			eFrame:SetPoint("TOPLEFT", 0, 0)
+			eFrame:SetPoint("BOTTOMRIGHT", 0, 0)
+			eFrame:SetFrameLevel(BattlefieldMapFrame:GetFrameLevel() - 1)
+			eFrame:SetHitRectInsets(-15, -15, -15, -15)
+			eFrame:SetAlpha(0)
+			eFrame:EnableMouse(true)
+			eFrame:RegisterForDrag("LeftButton")
+			eFrame:SetScript("OnMouseDown", function()
+				if LeaMapsLC["UnlockBattlefield"] == "On" then
 					BattlefieldMapFrame:StartMoving()
 				end
 			end)
-
-			dragframe:SetScript("OnMouseUp", function()
+			eFrame:SetScript("OnMouseUp", function() 
 				-- Save frame positions
 				BattlefieldMapFrame:StopMovingOrSizing()
 				LeaMapsLC["BattleMapA"], void, LeaMapsLC["BattleMapR"], LeaMapsLC["BattleMapX"], LeaMapsLC["BattleMapY"] = BattlefieldMapFrame:GetPoint()
@@ -124,14 +114,26 @@
 				BattlefieldMapFrame:SetPoint(LeaMapsLC["BattleMapA"], UIParent, LeaMapsLC["BattleMapR"], LeaMapsLC["BattleMapX"], LeaMapsLC["BattleMapY"])
 			end)
 
-			-- Toggle drag frame with configuration panel
-			battleFrame:HookScript("OnShow", function() dragframe:Show()
+			-- Enable unlock border only when unlock is enabled
+			local function SetUnlockBorder()
+				if LeaMapsLC["UnlockBattlefield"] == "On" then
+					eFrame:Show()
+				else
+					eFrame:Hide()
+				end
+			end
+
+			-- Set unlock border when option is clicked and on startup
+			LeaMapsCB["UnlockBattlefield"]:HookScript("OnClick", SetUnlockBorder)
+			SetUnlockBorder()
+
+			-- Toggle battlefield map frame with configuration panel
+			battleFrame:HookScript("OnShow", function()
 				if BattlefieldMapFrame:IsShown() then LeaMapsLC.BFMapWasShown = true else LeaMapsLC.BFMapWasShown = false end
 				RunScript('BattlefieldMapFrame:Show()')
 			end)
 			battleFrame:HookScript("OnHide", function()
 				if not LeaMapsLC.BFMapWasShown then RunScript('BattlefieldMapFrame:Hide()') end
-				dragframe:Hide()
 			end)
 
 			----------------------------------------------------------------------
@@ -243,6 +245,7 @@
 
 			-- Reset button click
 			battleFrame.r:HookScript("OnClick", function()
+				LeaMapsLC["UnlockBattlefield"] = "On"
 				LeaMapsLC["BattleGroupIconSize"] = 12
 				LeaMapsLC["BattlePlayerArrowSize"] = 12
 				LeaMapsLC["BattleMapSize"] = 1
@@ -254,6 +257,7 @@
 				SetPlayerArrow()
 				DoMapSize()
 				DoMapOpacity()
+				SetUnlockBorder()
 				battleFrame:Hide(); battleFrame:Show()
 			end)
 
@@ -261,6 +265,7 @@
 			LeaMapsCB["EnhanceBattleMapBtn"]:HookScript("OnClick", function()
 				if IsShiftKeyDown() and IsControlKeyDown() then
 					-- Preset profile
+					LeaMapsLC["UnlockBattlefield"] = "On"
 					LeaMapsLC["BattleGroupIconSize"] = 12
 					LeaMapsLC["BattlePlayerArrowSize"] = 12
 					LeaMapsLC["BattleMapSize"] = 1
@@ -272,6 +277,7 @@
 					SetPlayerArrow()
 					DoMapSize()
 					DoMapOpacity()
+					SetUnlockBorder()
 					if battleFrame:IsShown() then battleFrame:Hide(); battleFrame:Show(); end
 				else
 					battleFrame:Show()
@@ -2928,6 +2934,7 @@
 
 				-- More
 				LeaMapsDB["EnhanceBattleMap"] = "On"
+				LeaMapsDB["UnlockBattlefield"] = "On"
 				LeaMapsDB["BattleGroupIconSize"] = 12
 				LeaMapsDB["BattlePlayerArrowSize"] = 12
 				LeaMapsDB["BattleMapSize"] = 1
@@ -3032,6 +3039,7 @@
 
 			-- More
 			LeaMapsLC:LoadVarChk("EnhanceBattleMap", "Off")				-- Enhance battlefield map
+			LeaMapsLC:LoadVarChk("UnlockBattlefield", "On")				-- Unlock battlefield map
 			LeaMapsLC:LoadVarNum("BattleGroupIconSize", 12, 12, 24)		-- Battlefield group icon size
 			LeaMapsLC:LoadVarNum("BattlePlayerArrowSize", 12, 12, 24)	-- Battlefield player arrow size
 			LeaMapsLC:LoadVarNum("BattleMapSize", 1, 0.5, 3)			-- Battlefield map size
@@ -3102,6 +3110,7 @@
 
 			-- More
 			LeaMapsDB["EnhanceBattleMap"] = LeaMapsLC["EnhanceBattleMap"]
+			LeaMapsDB["UnlockBattlefield"] = LeaMapsLC["UnlockBattlefield"]
 			LeaMapsDB["BattleGroupIconSize"] = LeaMapsLC["BattleGroupIconSize"]
 			LeaMapsDB["BattlePlayerArrowSize"] = LeaMapsLC["BattlePlayerArrowSize"]
 			LeaMapsDB["BattleMapSize"] = LeaMapsLC["BattleMapSize"]
