@@ -1,3 +1,6 @@
+2.5.43.alpha.1 - 20th June 2021
+- If 'Enhance battlefield map' is enabled, battlefield map position and opacity are now both set from the configuration panel.
+
 2.5.42 - 16th June 2021
 - Added 'Show spirit healers' to 'Show points of interest'.  It's enabled by default.
 - Added Shatter Point (Hellfire Peninsula), Magisters' Terrace (Isle of Quel'Danas), Sunwell Plateau (Isle of Quel'Danas), Zul'Aman (Ghostlands), Karazhan (Deadwind Pass), Caverns of Time (Tanaris) and Shattrath City (Terokkar Forest) points of interest.
