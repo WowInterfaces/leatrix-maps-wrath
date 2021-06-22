@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.43.alpha.2 (20th June 2021)
+	-- 	Leatrix Maps 2.5.43.alpha.3 (22nd June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.43.alpha.2"
+	LeaMapsLC["AddonVer"] = "2.5.43.alpha.3"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -3044,10 +3044,10 @@
 			LeaMapsLC:LoadVarNum("BattlePlayerArrowSize", 12, 12, 24)	-- Battlefield player arrow size
 			LeaMapsLC:LoadVarNum("BattleMapSize", 1, 0.5, 3)			-- Battlefield map size
 			LeaMapsLC:LoadVarNum("BattleMapOpacity", 1, 0.1, 1)			-- Battlefield map opacity
-			LeaMapsLC:LoadVarAnc("BattleMapA", "CENTER")				-- Battlefield map anchor
-			LeaMapsLC:LoadVarAnc("BattleMapR", "CENTER")				-- Battlefield map relative
-			LeaMapsLC:LoadVarNum("BattleMapX", 0, -5000, 5000)			-- Battlefield map X axis
-			LeaMapsLC:LoadVarNum("BattleMapY", 0, -5000, 5000)			-- Battlefield map Y axis
+			LeaMapsLC:LoadVarAnc("BattleMapA", "BOTTOMRIGHT")			-- Battlefield map anchor
+			LeaMapsLC:LoadVarAnc("BattleMapR", "BOTTOMRIGHT")			-- Battlefield map relative
+			LeaMapsLC:LoadVarNum("BattleMapX", -47, -5000, 5000)		-- Battlefield map X axis
+			LeaMapsLC:LoadVarNum("BattleMapY", 83, -5000, 5000)			-- Battlefield map Y axis
 
 			LeaMapsLC:LoadVarChk("ShowMinimapIcon", "On")				-- Show minimap button
 
