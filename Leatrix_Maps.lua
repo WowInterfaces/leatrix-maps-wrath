@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.43.alpha.3 (22nd June 2021)
+	-- 	Leatrix Maps 2.5.43.alpha.4 (23rd June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.43.alpha.3"
+	LeaMapsLC["AddonVer"] = "2.5.43.alpha.4"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -326,7 +326,7 @@
 		if LeaMapsLC["HideTownCityIcons"] == "On" then
 			hooksecurefunc(BaseMapPoiPinMixin, "OnAcquired", function(self)
 				local wmapID = WorldMapFrame.mapID
-				if wmapID and wmapID == 1414 or wmapID == 1415 or wmapID == 947 then
+				if wmapID and wmapID == 1414 or wmapID == 1415 or wmapID == 947 or wmapID == 1945 then
 					if self.Texture and self.Texture:GetTexture() == 136441 then 
 						local a, b, c, d, e, f, g, h = self.Texture:GetTexCoord()
 						if a == 0.5 and b == 0 and c == 0.5 and d == 0.125 and e == 0.625 and f == 0 and g == 0.625 and h == 0.125 then

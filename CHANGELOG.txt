@@ -1,5 +1,6 @@
-2.5.43.alpha.3 - 22nd June 2021
+2.5.43.alpha.4 - 23rd June 2021
 - If 'Enhance battlefield map' is enabled, battlefield map position and opacity are now both set from the configuration panel.
+- The 'Hide town and city icons' option now applies to the Outland map too.
 
 2.5.42 - 16th June 2021
 - Added 'Show spirit healers' to 'Show points of interest'.  It's enabled by default.
