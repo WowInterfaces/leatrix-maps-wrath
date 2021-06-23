@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.43.alpha.4 (23rd June 2021)
+	-- 	Leatrix Maps 2.5.43.alpha.5 (23rd June 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.43.alpha.4"
+	LeaMapsLC["AddonVer"] = "2.5.43.alpha.5"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1591,7 +1591,7 @@
 				--[[Shadowmoon Valley]] [1948] = {
 					{"FlightA", 37.6, 55.4, L["Wildhammer Stronghold"] .. ", " .. L["Shadowmoon Valley"], nil, tATex, nil, nil},
 					{"FlightH", 30.2, 29.2, L["Shadowmoon Village"] .. ", " .. L["Shadowmoon Valley"], nil, tHTex, nil, nil},
-					{"FlightN", 63.2, 34.0, L["Altar of Sha'tar"] .. ", " .. L["Shadowmoon Valley"], nil, tNTex, nil, nil},
+					{"FlightN", 63.4, 30.4, L["Altar of Sha'tar"] .. ", " .. L["Shadowmoon Valley"], nil, tNTex, nil, nil},
 					{"FlightN", 56.2, 57.8, L["Sanctum of the Stars"] .. ", " .. L["Shadowmoon Valley"], nil, tNTex, nil, nil},
 					{"Raid", 71.0, 46.4, L["Black Temple"], L["Raid"], rdTex, 70, 70},
 					{"Spirit", 32.2, 28.6, L["Spirit Healer"], nil, spTex, nil, nil},
