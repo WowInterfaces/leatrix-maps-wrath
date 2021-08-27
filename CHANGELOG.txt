@@ -1,3 +1,6 @@
+2.5.54 - 27th August 2021
+- Maintenance update.
+
 2.5.50 - 19th August 2021
 - Fixed an issue with malformed translations.
 
