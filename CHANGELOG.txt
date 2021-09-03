@@ -1,5 +1,5 @@
-2.5.55.alpha.1 - 3rd September 2021
-- Added workaround for taint error when opening the guild frame.  For now, the zone and continent map dropdown menus are hidden.
+2.5.55.alpha.2 - 4th September 2021
+- Fixed a taint error when opening the guild frame.  As a result of this fix, the zone and continent map dropdown menus are now hidden.
 
 2.5.50 - 19th August 2021
 - Fixed an issue with malformed translations.

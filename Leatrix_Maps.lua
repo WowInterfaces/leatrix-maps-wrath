@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.55.alpha.1 (3rd September 2021)
+	-- 	Leatrix Maps 2.5.55.alpha.2 (4th September 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.55.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.55.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -43,6 +43,9 @@
 		-- Hide world map dropdown menus to prevent GuildControlSetRank() taint
 		WorldMapZoneDropDown:Hide()
 		WorldMapContinentDropDown:Hide()
+
+		-- Hide right-click to zoom out message
+		WorldMapMagnifyingGlassButton:Hide()
 
 		----------------------------------------------------------------------
 		-- Enhance battlefield map
