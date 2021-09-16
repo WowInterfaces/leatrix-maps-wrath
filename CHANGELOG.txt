@@ -1,3 +1,6 @@
+2.5.56 - 16th September 2021
+- Updated for World of Warcraft game version 2.5.2.
+
 2.5.55 - 6th September 2021
 - Fixed a taint error when opening the guild frame.  As a result of this fix, the zone and continent map dropdown menus are now hidden.
 
