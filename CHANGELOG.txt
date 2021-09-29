@@ -1,4 +1,4 @@
-2.5.58.alpha.1 - 25th September 2021
+2.5.58 - 29th September 2021
 - The zone map dropdown menu (normally shown in the map border) is now shown in the Leatrix Maps panel instead.
 - The zoom out button is now hidden.
 
