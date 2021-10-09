@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.58 (29th September 2021)
+	-- 	Leatrix Maps 2.5.59.alpha.1 (9th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.58"
+	LeaMapsLC["AddonVer"] = "2.5.59.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -350,6 +350,60 @@
 					end
 				end
 			end)
+		end
+
+		----------------------------------------------------------------------
+		-- Center map on player (no reload required)
+		----------------------------------------------------------------------
+
+		do
+
+			local cTime = -1
+
+			-- Function to update map
+			local function cUpdate(self, elapsed)
+				if cTime > 2 or cTime == -1 then
+					if not IsMouseButtonDown("LeftButton") then
+						local position = C_Map.GetPlayerMapPosition(WorldMapFrame.mapID, "player")
+						if position then
+							local x, y = position.x, position.y
+							if x then
+								local minX, maxX, minY, maxY = WorldMapFrame.ScrollContainer:CalculateScrollExtentsAtScale(WorldMapFrame.ScrollContainer:GetCanvasScale())
+								local cx = Clamp(x, minX, maxX)
+								local cy = Clamp(y, minY, maxY)
+								WorldMapFrame.ScrollContainer:SetPanTarget(cx, cy)
+							end
+							cTime = 0
+						end
+					end
+				end
+				cTime = cTime + elapsed
+			end
+
+			-- Create frame for update
+			local cFrame = CreateFrame("FRAME", nil, WorldMapFrame)
+
+			-- Function to set update state
+			local function SetUpdateFunc()
+				cTime = -1
+				if LeaMapsLC["CenterMapOnPlayer"] == "On" then
+					cFrame:SetScript("OnUpdate", cUpdate)
+				else
+					cFrame:SetScript("OnUpdate", nil)
+				end
+			end
+
+			-- Set update state when option is clicked and on startup
+			LeaMapsCB["CenterMapOnPlayer"]:HookScript("OnClick", SetUpdateFunc)
+			SetUpdateFunc()
+
+			-- Update location immediately when map is shown
+			WorldMapFrame:HookScript("OnShow", function()
+				if LeaMapsLC["CenterMapOnPlayer"] == "On" then
+					cTime = -1
+				end
+			end)
+
 		end
 
 		----------------------------------------------------------------------
@@ -3067,6 +3121,7 @@
 				LeaMapsDB["NoFadeCursor"] = "On"
 				LeaMapsDB["StickyMapFrame"] = "Off"
 				LeaMapsDB["AutoChangeZones"] = "Off"
+				LeaMapsDB["CenterMapOnPlayer"] = "On"
 				LeaMapsDB["UseDefaultMap"] = "Off"
 
 				-- Elements
@@ -3173,6 +3228,7 @@
 			LeaMapsLC:LoadVarChk("NoFadeCursor", "On")					-- Use stationary opacity
 			LeaMapsLC:LoadVarChk("StickyMapFrame", "Off")				-- Sticky map frame
 			LeaMapsLC:LoadVarChk("AutoChangeZones", "Off")				-- Auto change zones
+			LeaMapsLC:LoadVarChk("CenterMapOnPlayer", "Off")			-- Center map on player
 			LeaMapsLC:LoadVarChk("UseDefaultMap", "Off")				-- Use default map
 
 			-- Elements
@@ -3245,6 +3301,7 @@
 			LeaMapsDB["NoFadeCursor"] = LeaMapsLC["NoFadeCursor"]
 			LeaMapsDB["StickyMapFrame"] = LeaMapsLC["StickyMapFrame"]
 			LeaMapsDB["AutoChangeZones"] = LeaMapsLC["AutoChangeZones"]
+			LeaMapsDB["CenterMapOnPlayer"] = LeaMapsLC["CenterMapOnPlayer"]
 			LeaMapsDB["UseDefaultMap"] = LeaMapsLC["UseDefaultMap"]
 
 			-- Elements
@@ -3386,7 +3443,8 @@
 	LeaMapsLC:MakeCB(PageF, "SetMapOpacity", "Set map opacity", 16, -192, false, "If checked, you will be able to set the opacity of the map.")
 	LeaMapsLC:MakeCB(PageF, "StickyMapFrame", "Sticky map frame", 16, -212, true, "If checked, the map frame will remain open until you close it.")
 	LeaMapsLC:MakeCB(PageF, "AutoChangeZones", "Auto change zones", 16, -232, true, "If checked, when your character changes zones, the map will automatically change to the new zone.")
-	LeaMapsLC:MakeCB(PageF, "UseDefaultMap", "Use default map", 16, -252, true, "If checked, the default fullscreen map will be used.|n|nNote that enabling this option will lock out some of the other options.")
+	LeaMapsLC:MakeCB(PageF, "CenterMapOnPlayer", "Center map on player", 16, -252, false, "If checked, the map will stay centered on your location as long as you are not dragging the map or in a dungeon.")
+	LeaMapsLC:MakeCB(PageF, "UseDefaultMap", "Use default map", 16, -272, true, "If checked, the default fullscreen map will be used.|n|nNote that enabling this option will lock out some of the other options.")
 
 	LeaMapsLC:MakeTx(PageF, "Elements", 225, -72)
 	LeaMapsLC:MakeCB(PageF, "RevealMap", "Show unexplored areas", 225, -92, false, "If checked, unexplored areas of the map will be shown.")
