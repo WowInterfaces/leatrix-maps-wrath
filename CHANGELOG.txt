@@ -1,4 +1,4 @@
-2.5.61.alpha.5 - 16th October 2021
+2.5.61.alpha.6 - 16th October 2021
 - Added a new setting to 'Enhance battlefield map' which lets you keep the battleifeld map centered on you.
 - The 'Show unexplored areas' option will now reveal unexplored areas on the battlefield map as well as the world map.  Toggling the option now requires a UI reload.
 - If 'Unlock battlefield map' is enabled, you can drag the bottom-right corner of the battlefield map to resize it (this is in addition to the 'Map Size' slider).
