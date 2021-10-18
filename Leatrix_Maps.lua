@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.61.alpha.11 (18th October 2021)
+	-- 	Leatrix Maps 2.5.61.alpha.12 (18th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.61.alpha.11"
+	LeaMapsLC["AddonVer"] = "2.5.61.alpha.12"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -646,6 +646,13 @@
 
 		if LeaMapsLC["UseDefaultMap"] == "Off" then
 
+			-- Replace function to account for frame scale
+			WorldMapFrame.ScrollContainer.GetCursorPosition = function(f)
+				local x,y = MapCanvasScrollControllerMixin.GetCursorPosition(f)
+				local s = WorldMapFrame:GetScale() * UIParent:GetEffectiveScale()
+				return x/s, y/s
+			end
+
 			-- Create configuraton panel
 			local UnlockMapPanel = LeaMapsLC:CreatePanel("Unlock map frame", "UnlockMapPanel")
 
@@ -683,13 +690,7 @@
 				end
 			end)
 
-			-- Replace function to account for frame scale
-			WorldMapFrame.ScrollContainer.GetCursorPosition = function(f)
-				local x,y = MapCanvasScrollControllerMixin.GetCursorPosition(f)
-				local s = WorldMapFrame:GetScale() * UIParent:GetEffectiveScale()
-				return x/s, y/s
-			end
-
+			-- Scale handle
 			local moveDistance, mapX, mapY, mapLeft, mapTop, mapNormalScale, mapEffectiveScale = 0, 0, 0, 0, 0, 1
 
 			-- Function to get movement distance
