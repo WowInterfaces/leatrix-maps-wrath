@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.61.alpha.8 (18th October 2021)
+	-- 	Leatrix Maps 2.5.61.alpha.9 (18th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.61.alpha.8"
+	LeaMapsLC["AddonVer"] = "2.5.61.alpha.9"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2605,7 +2605,7 @@
 				-- Set chain style according to value
 				SetCVar("showBattlefieldMinimap", zoneMapSetting - 1)
 				-- From WorldMapZoneMinimapDropDown_OnClick in Blizzard_WorldMap
-				SHOW_BATTLEFIELD_MINIMAP = zoneMapSetting - 1
+				_G.SHOW_BATTLEFIELD_MINIMAP = zoneMapSetting - 1
 				if (DoesInstanceTypeMatchBattlefieldMapSettings()) then
 					if (not BattlefieldMapFrame) then
 						BattlefieldMap_LoadUI()
