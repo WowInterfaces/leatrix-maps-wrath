@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.61.alpha.10 (18th October 2021)
+	-- 	Leatrix Maps 2.5.61.alpha.11 (18th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.61.alpha.10"
+	LeaMapsLC["AddonVer"] = "2.5.61.alpha.11"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -70,9 +70,6 @@
 
 			-- Create configuraton panel
 			local battleFrame = LeaMapsLC:CreatePanel("Enhance battlefield map", "battleFrame")
-
-			-- Hide help button
-			battleFrame.h:Hide()
 
 			-- Add controls
 			LeaMapsLC:MakeTx(battleFrame, "Settings", 16, -72)
@@ -590,9 +587,6 @@
 			-- Create configuraton panel
 			local classFrame = LeaMapsLC:CreatePanel("Class colored icons", "classFrame")
 
-			-- Help button hidden
-			classFrame.h:Hide()
-
 			-- Add controls
 			LeaMapsLC:MakeTx(classFrame, "Settings", 16, -72)
 			LeaMapsLC:MakeWD(classFrame, "Set the group icon size.", 16, -92)
@@ -663,9 +657,6 @@
 				WorldMapFrame:SetScale(LeaMapsLC["MapScale"])
 				LeaMapsCB["MapScale"].f:SetText(string.format("%.1f%%", LeaMapsLC["MapScale"] / 1 * 100))
 			end)
-
-			-- Help button hidden
-			UnlockMapPanel.h:Hide()
 
 			-- Back to Main Menu button click
 			UnlockMapPanel.b:HookScript("OnClick", function()
@@ -861,9 +852,6 @@
 
 			-- Create panel
 			local arrowFrame = LeaMapsLC:CreatePanel("Enlarge player arrow", "arrowFrame")
-
-			-- Help button hidden
-			arrowFrame.h:Hide()
 
 			-- Add controls
 			LeaMapsLC:MakeTx(arrowFrame, "Settings", 16, -72)
@@ -1062,9 +1050,6 @@
 
 			-- Create configuraton panel
 			local levelFrame = LeaMapsLC:CreatePanel("Show zone levels", "levelFrame")
-
-			-- Help button hidden
-			levelFrame.h:Hide()
 
 			-- Add controls
 			LeaMapsLC:MakeTx(levelFrame, "Settings", 16, -72)
@@ -1345,9 +1330,6 @@
 
 			-- Create configuraton panel
 			local alphaFrame = LeaMapsLC:CreatePanel("Set map opacity", "alphaFrame")
-
-			-- Help button hidden
-			alphaFrame.h:Hide()
 
 			-- Add controls
 			LeaMapsLC:MakeTx(alphaFrame, "Settings", 16, -72)
@@ -2078,9 +2060,6 @@
 			-- Create configuraton panel
 			local poiFrame = LeaMapsLC:CreatePanel("Show points of interest", "poiFrame")
 
-			-- Help button hidden
-			poiFrame.h:Hide()
-
 			-- Add controls
 			LeaMapsLC:MakeTx(poiFrame, "Settings", 16, -72)
 			LeaMapsLC:MakeCB(poiFrame, "ShowDungeonIcons", "Show dungeons and raids", 16, -92, false, "If checked, dungeons and raids will be shown.")
@@ -2334,9 +2313,6 @@
 
 			-- Create tint frame
 			local tintFrame = LeaMapsLC:CreatePanel("Show unexplored areas", "tintFrame")
-
-			-- Help button hidden
-			tintFrame.h:Hide()
 
 			-- Add controls
 			LeaMapsLC:MakeTx(tintFrame, "Settings", 16, -72)
@@ -2733,15 +2709,7 @@
 
 		-- Add reset, help and back buttons
 		Side.r = LeaMapsLC:CreateButton("ResetButton", Side, "Reset", "BOTTOMLEFT", 16, 60, 25, "Click to reset the settings on this page.")
-		Side.h = LeaMapsLC:CreateButton("HelpButton", Side, "Help", "TOPLEFT", 76, -292, 25, true, "No help is available for this page.")
 		Side.b = LeaMapsLC:CreateButton("BackButton", Side, "Back to Main Menu", "BOTTOMRIGHT", -16, 60, 25, "Click to return to the main menu.")
-
-		-- Reposition help button so it doesn't overlap reset button
-		Side.h:ClearAllPoints()
-		Side.h:SetPoint("LEFT", Side.r, "RIGHT", 10, 0)
-
-		-- Remove the click texture from the help button
-		Side.h:SetPushedTextOffset(0, 0)
 
 		-- Add a reload button and synchronise it with the main panel reload button
 		local reloadb = LeaMapsLC:CreateButton("ConfigReload", Side, "Reload", "BOTTOMRIGHT", -16, 10, 25, LeaMapsCB["ReloadUIButton"].tiptext)
