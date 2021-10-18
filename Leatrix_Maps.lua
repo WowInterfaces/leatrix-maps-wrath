@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.61.alpha.7 (16th October 2021)
+	-- 	Leatrix Maps 2.5.61.alpha.8 (18th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.61.alpha.7"
+	LeaMapsLC["AddonVer"] = "2.5.61.alpha.8"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2015,7 +2015,7 @@
 				end
 			end
 
-			LeaMapsGlobalPinMixin = BaseMapPoiPinMixin:CreateSubPin("PIN_FRAME_LEVEL_DUNGEON_ENTRANCE")
+			_G.LeaMapsGlobalPinMixin = BaseMapPoiPinMixin:CreateSubPin("PIN_FRAME_LEVEL_DUNGEON_ENTRANCE")
 
 			function LeaMapsGlobalPinMixin:OnAcquired(myInfo)
 				BaseMapPoiPinMixin.OnAcquired(self, myInfo)
