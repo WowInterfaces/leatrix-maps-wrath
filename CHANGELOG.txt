@@ -1,4 +1,4 @@
-2.5.62.alpha.1 - 24th October 2021
+2.5.62 - 28th October 2021
 - Fixed a few locale issues with invalid translations.
 
 2.5.61 - 21st October 2021
