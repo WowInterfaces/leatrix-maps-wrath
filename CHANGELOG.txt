@@ -1,4 +1,4 @@
-2.5.63.alpha.2 - 29th October 2021
+2.5.63 - 29th October 2021
 - Maintenance update.
 
 2.5.62 - 28th October 2021
