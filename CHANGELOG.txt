@@ -1,5 +1,8 @@
+2.5.64.alpha.1 - 29th October 2021
+- Added new option called 'Increase zoom level'.  If enabled, you will be able to zoom further into the world map (currently, it's twice as much).
+
 2.5.63 - 29th October 2021
-- Maintenance update.
+- Replaced packager to fix CurseForge App issue.
 
 2.5.62 - 28th October 2021
 - Fixed a few locale issues with invalid translations.

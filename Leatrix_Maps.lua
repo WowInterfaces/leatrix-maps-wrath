@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.63 (29th October 2021)
+	-- 	Leatrix Maps 2.5.64.alpha.1 (29th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.63"
+	LeaMapsLC["AddonVer"] = "2.5.64.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1209,6 +1209,41 @@
 				else
 					if nextZoomOutScale < self:GetCanvasScale() then
 						self:InstantPanAndZoom(nextZoomOutScale, x, y)
+					end
+				end
+			end)
+
+		end
+
+
+		----------------------------------------------------------------------
+		-- Increase zoom level
+		----------------------------------------------------------------------
+
+		if LeaMapsLC["IncreaseZoom"] == "On" then
+			hooksecurefunc(WorldMapFrame.ScrollContainer, "CreateZoomLevels", function(self)
+				local layers = C_Map.GetMapArtLayers(self.mapID)
+				local widthScale = self:GetWidth() / layers[1].layerWidth
+				local heightScale = self:GetHeight() / layers[1].layerHeight
+				self.baseScale = math.min(widthScale, heightScale)
+
+				local currentScale = 0
+				local MIN_SCALE_DELTA = 0.01
+				self.zoomLevels = {}
+				for layerIndex, layerInfo in ipairs(layers) do
+					layerInfo.maxScale = layerInfo.maxScale * 2 -- Maximum zoom scale is 2x
+					local zoomDeltaPerStep, numZoomLevels
+					local zoomDelta = layerInfo.maxScale - layerInfo.minScale
+					if zoomDelta > 0 then
+						numZoomLevels = 6 + layerInfo.additionalZoomSteps -- Zoom has 6 levels
+						zoomDeltaPerStep = zoomDelta / (numZoomLevels - 1)
+					else
+						numZoomLevels = 1
+						zoomDeltaPerStep = 1
+					end
+					for zoomLevelIndex = 0, numZoomLevels - 1 do
+						currentScale = math.max(layerInfo.minScale + zoomDeltaPerStep * zoomLevelIndex, currentScale + MIN_SCALE_DELTA)		
+						table.insert(self.zoomLevels, {scale = currentScale * self.baseScale, layerIndex = layerIndex})
 					end
 				end
 			end)
@@ -3050,6 +3085,7 @@
 	-- Set reload button status
 	function LeaMapsLC:ReloadCheck()
 		if	(LeaMapsLC["NoMapBorder"] ~= LeaMapsDB["NoMapBorder"])				-- Remove map border
+		or	(LeaMapsLC["IncreaseZoom"] ~= LeaMapsDB["IncreaseZoom"])			-- Increase zoom level
 		or	(LeaMapsLC["UseClassIcons"] ~= LeaMapsDB["UseClassIcons"])			-- Use class colors
 		or	(LeaMapsLC["StickyMapFrame"] ~= LeaMapsDB["StickyMapFrame"])		-- Sticky map frame
 		or	(LeaMapsLC["AutoChangeZones"] ~= LeaMapsDB["AutoChangeZones"])		-- Auto change zones
@@ -3354,6 +3390,7 @@
 				-- Mechanics
 				LeaMapsDB["NoMapBorder"] = "On"
 				LeaMapsDB["RememberZoom"] = "On"
+				LeaMapsDB["IncreaseZoom"] = "On"
 				LeaMapsDB["EnlargePlayerArrow"] = "On"
 				LeaMapsDB["PlayerArrowSize"] = 28
 				LeaMapsDB["UseClassIcons"] = "On"
@@ -3462,6 +3499,7 @@
 			-- Mechanics
 			LeaMapsLC:LoadVarChk("NoMapBorder", "On")					-- Remove map border
 			LeaMapsLC:LoadVarChk("RememberZoom", "On")					-- Remember zoom level
+			LeaMapsLC:LoadVarChk("IncreaseZoom", "Off")					-- Increase zoom level
 			LeaMapsLC:LoadVarChk("EnlargePlayerArrow", "On")			-- Enlarge player arrow
 			LeaMapsLC:LoadVarNum("PlayerArrowSize", 28, 14, 56)			-- Player arrow size
 			LeaMapsLC:LoadVarChk("UseClassIcons", "On")					-- Use class icons
@@ -3536,6 +3574,7 @@
 			-- Mechanics
 			LeaMapsDB["NoMapBorder"] = LeaMapsLC["NoMapBorder"]
 			LeaMapsDB["RememberZoom"] = LeaMapsLC["RememberZoom"]
+			LeaMapsDB["IncreaseZoom"] = LeaMapsLC["IncreaseZoom"]
 			LeaMapsDB["EnlargePlayerArrow"] = LeaMapsLC["EnlargePlayerArrow"]
 			LeaMapsDB["PlayerArrowSize"] = LeaMapsLC["PlayerArrowSize"]
 			LeaMapsDB["UseClassIcons"] = LeaMapsLC["UseClassIcons"]
@@ -3689,14 +3728,15 @@
 	LeaMapsLC:MakeTx(PageF, "Mechanics", 16, -72)
 	LeaMapsLC:MakeCB(PageF, "NoMapBorder", "Remove map border", 16, -92, true, "If checked, the map border will be removed.")
 	LeaMapsLC:MakeCB(PageF, "RememberZoom", "Remember zoom level", 16, -112, false, "If checked, opening the map will use the same zoom level from when you last closed it as long as the map zone has not changed.")
-	LeaMapsLC:MakeCB(PageF, "EnlargePlayerArrow", "Enlarge player arrow", 16, -132, false, "If checked, you will be able to enlarge the player arrow.")
-	LeaMapsLC:MakeCB(PageF, "UseClassIcons", "Class colored icons", 16, -152, true, "If checked, group icons will use a modern, class-colored design.")
-	LeaMapsLC:MakeCB(PageF, "UnlockMapFrame", "Unlock map frame", 16, -172, false, "If checked, you will be able to scale and move the map.|n|nScale the map by dragging the scale handle in the bottom-right corner.|n|nMove the map by dragging the border and frame edges.")
-	LeaMapsLC:MakeCB(PageF, "SetMapOpacity", "Set map opacity", 16, -192, false, "If checked, you will be able to set the opacity of the map.")
-	LeaMapsLC:MakeCB(PageF, "StickyMapFrame", "Sticky map frame", 16, -212, true, "If checked, the map frame will remain open until you close it.")
-	LeaMapsLC:MakeCB(PageF, "AutoChangeZones", "Auto change zones", 16, -232, true, "If checked, when your character changes zones, the map will automatically change to the new zone.")
-	LeaMapsLC:MakeCB(PageF, "CenterMapOnPlayer", "Center map on player", 16, -252, false, "If checked, the map will stay centered on your location as long as you are not dragging the map or in a dungeon.")
-	LeaMapsLC:MakeCB(PageF, "UseDefaultMap", "Use default map", 16, -272, true, "If checked, the default fullscreen map will be used.|n|nNote that enabling this option will lock out some of the other options.")
+	LeaMapsLC:MakeCB(PageF, "IncreaseZoom", "Increase zoom level", 16, -132, true, "If checked, you will be able to zoom further into the world map.")
+	LeaMapsLC:MakeCB(PageF, "EnlargePlayerArrow", "Enlarge player arrow", 16, -152, false, "If checked, you will be able to enlarge the player arrow.")
+	LeaMapsLC:MakeCB(PageF, "UseClassIcons", "Class colored icons", 16, -172, true, "If checked, group icons will use a modern, class-colored design.")
+	LeaMapsLC:MakeCB(PageF, "UnlockMapFrame", "Unlock map frame", 16, -192, false, "If checked, you will be able to scale and move the map.|n|nScale the map by dragging the scale handle in the bottom-right corner.|n|nMove the map by dragging the border and frame edges.")
+	LeaMapsLC:MakeCB(PageF, "SetMapOpacity", "Set map opacity", 16, -212, false, "If checked, you will be able to set the opacity of the map.")
+	LeaMapsLC:MakeCB(PageF, "StickyMapFrame", "Sticky map frame", 16, -232, true, "If checked, the map frame will remain open until you close it.")
+	LeaMapsLC:MakeCB(PageF, "AutoChangeZones", "Auto change zones", 16, -252, true, "If checked, when your character changes zones, the map will automatically change to the new zone.")
+	LeaMapsLC:MakeCB(PageF, "CenterMapOnPlayer", "Center map on player", 16, -272, false, "If checked, the map will stay centered on your location as long as you are not dragging the map or in a dungeon.")
+	LeaMapsLC:MakeCB(PageF, "UseDefaultMap", "Use default map", 16, -292, true, "If checked, the default fullscreen map will be used.|n|nNote that enabling this option will lock out some of the other options.")
 
 	LeaMapsLC:MakeTx(PageF, "Elements", 225, -72)
 	LeaMapsLC:MakeCB(PageF, "RevealMap", "Show unexplored areas", 225, -92, true, "If checked, unexplored areas of the map will be shown on the world map and the battlefield map.")
