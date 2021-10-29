@@ -3,9 +3,11 @@
 ## Title: Leatrix Maps
 ## Notes: Enhancements for your maps.
 
-## Version: 2.5.62
+## Version: 2.5.63.alpha.1
 ## Author: Leatrix
 ## SavedVariables: LeaMapsDB
+
+## X-Curse-Project-ID: 463868
 
 Leatrix_Maps_Library.lua
 Leatrix_Maps_Locale.lua
