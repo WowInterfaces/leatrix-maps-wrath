@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.64.alpha.4 (30th October 2021)
+	-- 	Leatrix Maps 2.5.64.alpha.5 (30th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.64.alpha.4"
+	LeaMapsLC["AddonVer"] = "2.5.64.alpha.5"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2453,10 +2453,10 @@
 			-- Add controls
 			LeaMapsLC:MakeTx(tintFrame, "Settings", 16, -72)
 			LeaMapsLC:MakeCB(tintFrame, "RevTint", "Tint unexplored areas", 16, -92, false, "If checked, unexplored areas will be tinted.")
-			LeaMapsLC:MakeSL(tintFrame, "tintRed", "Red", "Drag to set the amount of red.", 0, 1, 0.1, 36, -142, "%.1f")
-			LeaMapsLC:MakeSL(tintFrame, "tintGreen", "Green", "Drag to set the amount of green.", 0, 1, 0.1, 36, -192, "%.1f")
-			LeaMapsLC:MakeSL(tintFrame, "tintBlue", "Blue", "Drag to set the amount of blue.", 0, 1, 0.1, 206, -142, "%.1f")
-			LeaMapsLC:MakeSL(tintFrame, "tintAlpha", "Opacity", "Drag to set the opacity.", 0.1, 1, 0.1, 206, -192, "%.1f")
+			LeaMapsLC:MakeSL(tintFrame, "tintRed", "Red", "Drag to set the amount of red.", 0, 1, 0.1, 36, -152, "%.1f")
+			LeaMapsLC:MakeSL(tintFrame, "tintGreen", "Green", "Drag to set the amount of green.", 0, 1, 0.1, 36, -212, "%.1f")
+			LeaMapsLC:MakeSL(tintFrame, "tintBlue", "Blue", "Drag to set the amount of blue.", 0, 1, 0.1, 206, -152, "%.1f")
+			LeaMapsLC:MakeSL(tintFrame, "tintAlpha", "Opacity", "Drag to set the opacity.", 0.1, 1, 0.1, 206, -212, "%.1f")
 
 			-- Add preview color block
 			local prvTitle = LeaMapsLC:MakeWD(tintFrame, "Preview", 386, -130); prvTitle:Hide()
@@ -2750,7 +2750,7 @@
 
 		do
 
-			LeaMapsLC:CreateDropDown("ZoneMapMenu", "Zone Map", LeaMapsLC["PageF"], 146, "TOPLEFT", 224, -332, {"Never", "Battlegrounds", "Always"}, "Choose where the zone map should be shown.")
+			LeaMapsLC:CreateDropDown("ZoneMapMenu", "Zone Map", LeaMapsLC["PageF"], 146, "TOPLEFT", 16, -382, {"Never", "Battlegrounds", "Always"}, "Choose where the zone map should be shown.")
 
 			-- Set zone map visibility
 			local function SetZoneMapStyle()
@@ -2827,7 +2827,7 @@
 
 		-- Set frame parameters
 		Side:Hide()
-		Side:SetSize(470, 430)
+		Side:SetSize(470, 480)
 		Side:SetClampedToScreen(true)
 		Side:SetFrameStrata("FULLSCREEN_DIALOG")
 		Side:SetFrameLevel(20)
@@ -2870,7 +2870,7 @@
 
 		-- Set textures
 		LeaMapsLC:CreateBar("FootTexture", Side, 470, 48, "BOTTOM", 0.5, 0.5, 0.5, 1.0, "Interface\\ACHIEVEMENTFRAME\\UI-GuildAchievement-Parchment-Horizontal-Desaturated.png")
-		LeaMapsLC:CreateBar("MainTexture", Side, 470, 383, "TOPRIGHT", 0.7, 0.7, 0.7, 0.7,  "Interface\\ACHIEVEMENTFRAME\\UI-GuildAchievement-Parchment-Horizontal-Desaturated.png")
+		LeaMapsLC:CreateBar("MainTexture", Side, 470, 433, "TOPRIGHT", 0.7, 0.7, 0.7, 0.7,  "Interface\\ACHIEVEMENTFRAME\\UI-GuildAchievement-Parchment-Horizontal-Desaturated.png")
 
 		-- Allow movement
 		Side:EnableMouse(true)
@@ -3759,7 +3759,7 @@
 
 	-- Set frame parameters
 	LeaMapsLC["PageF"] = PageF
-	PageF:SetSize(470, 430)
+	PageF:SetSize(470, 480)
 	PageF:Hide()
 	PageF:SetFrameStrata("FULLSCREEN_DIALOG")
 	PageF:SetFrameLevel(20)
@@ -3783,7 +3783,7 @@
 	-- Add textures
 	local MainTexture = PageF:CreateTexture(nil, "BORDER")
 	MainTexture:SetTexture("Interface\\ACHIEVEMENTFRAME\\UI-GuildAchievement-Parchment-Horizontal-Desaturated.png")
-	MainTexture:SetSize(470, 383)
+	MainTexture:SetSize(470, 433)
 	MainTexture:SetPoint("TOPRIGHT")
 	MainTexture:SetVertexColor(0.7, 0.7, 0.7, 0.7)
 	MainTexture:SetTexCoord(0.09, 1, 0, 1)
@@ -3830,29 +3830,35 @@
 	CloseB:SetPoint("TOPRIGHT", 0, 0)
 
 	-- Add content
-	LeaMapsLC:MakeTx(PageF, "Mechanics", 16, -72)
+	LeaMapsLC:MakeTx(PageF, "Appearance", 16, -72)
 	LeaMapsLC:MakeCB(PageF, "NoMapBorder", "Remove map border", 16, -92, true, "If checked, the map border will be removed.")
-	LeaMapsLC:MakeCB(PageF, "RememberZoom", "Remember zoom level", 16, -112, false, "If checked, opening the map will use the same zoom level from when you last closed it as long as the map zone has not changed.")
-	LeaMapsLC:MakeCB(PageF, "IncreaseZoom", "Increase zoom level", 16, -132, false, "If checked, you will be able to zoom further into the world map.")
-	LeaMapsLC:MakeCB(PageF, "EnlargePlayerArrow", "Enlarge player arrow", 16, -152, false, "If checked, you will be able to enlarge the player arrow.")
-	LeaMapsLC:MakeCB(PageF, "UseClassIcons", "Class colored icons", 16, -172, true, "If checked, group icons will use a modern, class-colored design.")
-	LeaMapsLC:MakeCB(PageF, "UnlockMapFrame", "Unlock map frame", 16, -192, false, "If checked, you will be able to scale and move the map.|n|nScale the map by dragging the scale handle in the bottom-right corner.|n|nMove the map by dragging the border and frame edges.")
-	LeaMapsLC:MakeCB(PageF, "SetMapOpacity", "Set map opacity", 16, -212, false, "If checked, you will be able to set the opacity of the map.")
-	LeaMapsLC:MakeCB(PageF, "StickyMapFrame", "Sticky map frame", 16, -232, true, "If checked, the map frame will remain open until you close it.")
-	LeaMapsLC:MakeCB(PageF, "AutoChangeZones", "Auto change zones", 16, -252, true, "If checked, when your character changes zones, the map will automatically change to the new zone.")
-	LeaMapsLC:MakeCB(PageF, "CenterMapOnPlayer", "Center map on player", 16, -272, false, "If checked, the map will stay centered on your location as long as you are not dragging the map or in a dungeon.")
-	LeaMapsLC:MakeCB(PageF, "UseDefaultMap", "Use default map", 16, -292, true, "If checked, the default fullscreen map will be used.|n|nNote that enabling this option will lock out some of the other options.")
+	LeaMapsLC:MakeCB(PageF, "SetMapOpacity", "Set map opacity", 16, -112, false, "If checked, you will be able to set the opacity of the map.")
 
-	LeaMapsLC:MakeTx(PageF, "Elements", 225, -72)
-	LeaMapsLC:MakeCB(PageF, "RevealMap", "Show unexplored areas", 225, -92, true, "If checked, unexplored areas of the map will be shown on the world map and the battlefield map.")
-	LeaMapsLC:MakeCB(PageF, "ShowPointsOfInterest", "Show points of interest", 225, -112, false, "If checked, points of interest will be shown.")
-	LeaMapsLC:MakeCB(PageF, "ShowZoneLevels", "Show zone levels", 225, -132, false, "If checked, zone, dungeon and fishing skill levels will be shown.")
-	LeaMapsLC:MakeCB(PageF, "ShowCoords", "Show coordinates", 225, -152, false, "If checked, coordinates will be shown.")
-	LeaMapsLC:MakeCB(PageF, "HideTownCityIcons", "Hide town and city icons", 225, -172, true, "If checked, town and city icons will not be shown on the continent maps.")
+	LeaMapsLC:MakeTx(PageF, "Icons", 16, -152)
+	LeaMapsLC:MakeCB(PageF, "EnlargePlayerArrow", "Enlarge player arrow", 16, -172, false, "If checked, you will be able to enlarge the player arrow.")
+	LeaMapsLC:MakeCB(PageF, "UseClassIcons", "Class colored icons", 16, -192, true, "If checked, group icons will use a modern, class-colored design.")
 
-	LeaMapsLC:MakeTx(PageF, "More", 225, -212)
-	LeaMapsLC:MakeCB(PageF, "EnhanceBattleMap", "Enhance battlefield map", 225, -232, true, "If checked, you will be able to customise the battlefield map.")
-	LeaMapsLC:MakeCB(PageF, "ShowMinimapIcon", "Show minimap button", 225, -252, false, "If checked, the minimap button will be shown.")
+	LeaMapsLC:MakeTx(PageF, "Zoom", 16, -232)
+	LeaMapsLC:MakeCB(PageF, "RememberZoom", "Remember zoom level", 16, -252, false, "If checked, opening the map will use the same zoom level from when you last closed it as long as the map zone has not changed.")
+	LeaMapsLC:MakeCB(PageF, "IncreaseZoom", "Increase zoom level", 16, -272, false, "If checked, you will be able to zoom further into the world map.")
+	LeaMapsLC:MakeCB(PageF, "CenterMapOnPlayer", "Center map on player", 16, -292, false, "If checked, the map will stay centered on your location as long as you are not dragging the map or in a dungeon.")
+
+	LeaMapsLC:MakeTx(PageF, "System", 225, -72)
+	LeaMapsLC:MakeCB(PageF, "UnlockMapFrame", "Unlock map frame", 225, -92, false, "If checked, you will be able to scale and move the map.|n|nScale the map by dragging the scale handle in the bottom-right corner.|n|nMove the map by dragging the border and frame edges.")
+	LeaMapsLC:MakeCB(PageF, "AutoChangeZones", "Auto change zones", 225, -112, true, "If checked, when your character changes zones, the map will automatically change to the new zone.")
+	LeaMapsLC:MakeCB(PageF, "StickyMapFrame", "Sticky map frame", 225, -132, true, "If checked, the map frame will remain open until you close it.")
+	LeaMapsLC:MakeCB(PageF, "UseDefaultMap", "Use default map", 225, -152, true, "If checked, the default fullscreen map will be used.|n|nNote that enabling this option will lock out some of the other options.")
+
+	LeaMapsLC:MakeTx(PageF, "Elements", 225, -192)
+	LeaMapsLC:MakeCB(PageF, "RevealMap", "Show unexplored areas", 225, -212, true, "If checked, unexplored areas of the map will be shown on the world map and the battlefield map.")
+	LeaMapsLC:MakeCB(PageF, "ShowPointsOfInterest", "Show points of interest", 225, -232, false, "If checked, points of interest will be shown.")
+	LeaMapsLC:MakeCB(PageF, "ShowZoneLevels", "Show zone levels", 225, -252, false, "If checked, zone, dungeon and fishing skill levels will be shown.")
+	LeaMapsLC:MakeCB(PageF, "ShowCoords", "Show coordinates", 225, -272, false, "If checked, coordinates will be shown.")
+	LeaMapsLC:MakeCB(PageF, "HideTownCityIcons", "Hide town and city icons", 225, -292, true, "If checked, town and city icons will not be shown on the continent maps.")
+
+	LeaMapsLC:MakeTx(PageF, "More", 225, -332)
+	LeaMapsLC:MakeCB(PageF, "EnhanceBattleMap", "Enhance battlefield map", 225, -352, true, "If checked, you will be able to customise the battlefield map.")
+	LeaMapsLC:MakeCB(PageF, "ShowMinimapIcon", "Show minimap button", 225, -372, false, "If checked, the minimap button will be shown.")
 
  	LeaMapsLC:CfgBtn("IncreaseZoomBtn", LeaMapsCB["IncreaseZoom"])
  	LeaMapsLC:CfgBtn("RevTintBtn", LeaMapsCB["RevealMap"])
