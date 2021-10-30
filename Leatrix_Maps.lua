@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.64.alpha.1 (29th October 2021)
+	-- 	Leatrix Maps 2.5.64.alpha.2 (30th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.64.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.64.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1221,6 +1221,53 @@
 		----------------------------------------------------------------------
 
 		if LeaMapsLC["IncreaseZoom"] == "On" then
+
+			-- Create configuraton panel
+			local IncreaseZoomFrame = LeaMapsLC:CreatePanel("Increase zoom level", "IncreaseZoomFrame")
+
+			-- Add controls
+			LeaMapsLC:MakeTx(IncreaseZoomFrame, "Settings", 16, -72)
+			LeaMapsLC:MakeWD(IncreaseZoomFrame, "Set the maximum zoom scale.", 16, -92)
+			LeaMapsLC:MakeSL(IncreaseZoomFrame, "IncreaseZoomMax", "Maximum", "Drag to set the maximum zoom level.", 1, 6, 0.1, 36, -142, "%.1f")
+
+			-- Function to set maximum zoom level
+			local function SetZoomFunc()
+				WorldMapFrame.ScrollContainer:CreateZoomLevels()
+				if WorldMapFrame:IsShown() then
+					WorldMapFrame.ScrollContainer:SetZoomTarget(WorldMapFrame.ScrollContainer:GetScaleForMaxZoom())
+				end
+			end
+
+			-- Set group icon size when options are changed and on startup
+			LeaMapsCB["IncreaseZoomMax"]:HookScript("OnValueChanged", SetZoomFunc)
+			--SetZoomFunc()
+
+			-- Back to Main Menu button click
+			IncreaseZoomFrame.b:HookScript("OnClick", function()
+				IncreaseZoomFrame:Hide()
+				LeaMapsLC["PageF"]:Show()
+			end)
+
+			-- Reset button click
+			IncreaseZoomFrame.r:HookScript("OnClick", function()
+				LeaMapsLC["IncreaseZoomMax"] = 2
+				SetZoomFunc()
+				IncreaseZoomFrame:Hide(); IncreaseZoomFrame:Show()
+			end)
+
+			-- Show configuration panel when configuration button is clicked
+			LeaMapsCB["IncreaseZoomBtn"]:HookScript("OnClick", function()
+				if IsShiftKeyDown() and IsControlKeyDown() then
+					-- Preset profile
+					LeaMapsLC["IncreaseZoomMax"] = 2
+					SetZoomFunc()
+				else
+					IncreaseZoomFrame:Show()
+					LeaMapsLC["PageF"]:Hide()
+				end
+			end)
+
+			-- Set zoom level
 			hooksecurefunc(WorldMapFrame.ScrollContainer, "CreateZoomLevels", function(self)
 				local layers = C_Map.GetMapArtLayers(self.mapID)
 				local widthScale = self:GetWidth() / layers[1].layerWidth
@@ -1231,11 +1278,11 @@
 				local MIN_SCALE_DELTA = 0.01
 				self.zoomLevels = {}
 				for layerIndex, layerInfo in ipairs(layers) do
-					layerInfo.maxScale = layerInfo.maxScale * 2 -- Maximum zoom scale is 2x
+					layerInfo.maxScale = layerInfo.maxScale * LeaMapsLC["IncreaseZoomMax"]
 					local zoomDeltaPerStep, numZoomLevels
 					local zoomDelta = layerInfo.maxScale - layerInfo.minScale
 					if zoomDelta > 0 then
-						numZoomLevels = 6 + layerInfo.additionalZoomSteps -- Zoom has 6 levels
+						numZoomLevels = 2 + layerInfo.additionalZoomSteps * LeaMapsLC["IncreaseZoomMax"]
 						zoomDeltaPerStep = zoomDelta / (numZoomLevels - 1)
 					else
 						numZoomLevels = 1
@@ -2931,6 +2978,7 @@
 
 	-- Set lock state for configuration buttons
 	function LeaMapsLC:SetDim()
+		LeaMapsLC:LockOption("IncreaseZoom", "IncreaseZoomBtn", true) -- Increase zoom level
 		LeaMapsLC:LockOption("RevealMap", "RevTintBtn", true) -- Reveal map
 		LeaMapsLC:LockOption("EnlargePlayerArrow", "EnlargePlayerArrowBtn", false) -- Enlarge player arrow
 		LeaMapsLC:LockOption("UseClassIcons", "UseClassIconsBtn", true) -- Class colored icons
@@ -3500,6 +3548,7 @@
 			LeaMapsLC:LoadVarChk("NoMapBorder", "On")					-- Remove map border
 			LeaMapsLC:LoadVarChk("RememberZoom", "On")					-- Remember zoom level
 			LeaMapsLC:LoadVarChk("IncreaseZoom", "Off")					-- Increase zoom level
+			LeaMapsLC:LoadVarNum("IncreaseZoomMax", 2, 1, 6)			-- Increase zoom level maximum
 			LeaMapsLC:LoadVarChk("EnlargePlayerArrow", "On")			-- Enlarge player arrow
 			LeaMapsLC:LoadVarNum("PlayerArrowSize", 28, 14, 56)			-- Player arrow size
 			LeaMapsLC:LoadVarChk("UseClassIcons", "On")					-- Use class icons
@@ -3575,6 +3624,7 @@
 			LeaMapsDB["NoMapBorder"] = LeaMapsLC["NoMapBorder"]
 			LeaMapsDB["RememberZoom"] = LeaMapsLC["RememberZoom"]
 			LeaMapsDB["IncreaseZoom"] = LeaMapsLC["IncreaseZoom"]
+			LeaMapsDB["IncreaseZoomMax"] = LeaMapsLC["IncreaseZoomMax"]
 			LeaMapsDB["EnlargePlayerArrow"] = LeaMapsLC["EnlargePlayerArrow"]
 			LeaMapsDB["PlayerArrowSize"] = LeaMapsLC["PlayerArrowSize"]
 			LeaMapsDB["UseClassIcons"] = LeaMapsLC["UseClassIcons"]
@@ -3749,6 +3799,7 @@
 	LeaMapsLC:MakeCB(PageF, "EnhanceBattleMap", "Enhance battlefield map", 225, -232, true, "If checked, you will be able to customise the battlefield map.")
 	LeaMapsLC:MakeCB(PageF, "ShowMinimapIcon", "Show minimap button", 225, -252, false, "If checked, the minimap button will be shown.")
 
+ 	LeaMapsLC:CfgBtn("IncreaseZoomBtn", LeaMapsCB["IncreaseZoom"])
  	LeaMapsLC:CfgBtn("RevTintBtn", LeaMapsCB["RevealMap"])
  	LeaMapsLC:CfgBtn("EnlargePlayerArrowBtn", LeaMapsCB["EnlargePlayerArrow"])
  	LeaMapsLC:CfgBtn("UseClassIconsBtn", LeaMapsCB["UseClassIcons"])
