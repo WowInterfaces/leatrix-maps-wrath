@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.64.alpha.3 (30th October 2021)
+	-- 	Leatrix Maps 2.5.64.alpha.4 (30th October 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.64.alpha.3"
+	LeaMapsLC["AddonVer"] = "2.5.64.alpha.4"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -80,6 +80,7 @@
 			LeaMapsLC:MakeSL(battleFrame, "BattlePlayerArrowSize", "Player Arrow", "Drag to set the player arrow size.", 12, 24, 1, 36, -172, "%.0f")
 			LeaMapsLC:MakeSL(battleFrame, "BattleMapSize", "Map Size", "Drag to set the battlefield map size.|n|nIf the map is unlocked, you can also resize the battlefield map by dragging the bottom-right corner.", 150, 900, 1, 36, -232, "%.0f")
 			LeaMapsLC:MakeSL(battleFrame, "BattleMapOpacity", "Map Opacity", "Drag to set the battlefield map opacity.", 0.1, 1, 0.1, 206, -232, "%.0f")
+			LeaMapsLC:MakeSL(battleFrame, "BattleMaxZoom", "Max Zoom", "Drag to set the maximum zoom level.|n|nOpen the battlefield map to see the maximum zoom level change as you drag the slider.", 1, 6, 0.1, 36, -292, "%.0f")
 
 			-- Add preview texture
 			local prevIcon = battleFrame:CreateTexture(nil, "ARTWORK")
@@ -144,6 +145,57 @@
 			end)
 			battleFrame:HookScript("OnHide", function()
 				if not LeaMapsLC.BFMapWasShown then RunScript('BattlefieldMapFrame:Hide()') end
+			end)
+
+			----------------------------------------------------------------------
+			-- Battlefield map maximum zoom
+			----------------------------------------------------------------------
+
+			-- Function to set maximum zoom level
+			local function SetZoomFunc()
+				BattlefieldMapFrame.ScrollContainer:CreateZoomLevels()
+				BattlefieldMapFrame.ScrollContainer:SetZoomTarget(BattlefieldMapFrame.ScrollContainer:GetScaleForMaxZoom())
+				LeaMapsCB["BattleMaxZoom"].f:SetFormattedText("%.0f%%", LeaMapsLC["BattleMaxZoom"] / 1 * 100)
+			end
+
+			-- Set zoom level when options are changed
+			LeaMapsCB["BattleMaxZoom"]:HookScript("OnValueChanged", SetZoomFunc)
+			battleFrame.r:HookScript("OnClick", function()
+				LeaMapsLC["BattleMaxZoom"] = 1
+			end)
+			LeaMapsCB["EnhanceBattleMapBtn"]:HookScript("OnClick", function()
+				if not BattlefieldMapFrame:IsShown() then BattlefieldMapFrame:Show() end
+				if IsShiftKeyDown() and IsControlKeyDown() then
+					LeaMapsLC["BattleMaxZoom"] = 2
+				end
+			end)
+
+			-- Set zoom level
+			hooksecurefunc(BattlefieldMapFrame.ScrollContainer, "CreateZoomLevels", function(self)
+				if LeaMapsLC["BattleMaxZoom"] == 1 then return end
+				local layers = C_Map.GetMapArtLayers(self.mapID)
+				local widthScale = self:GetWidth() / layers[1].layerWidth
+				local heightScale = self:GetHeight() / layers[1].layerHeight
+				self.baseScale = math.min(widthScale, heightScale)
+				local currentScale = 0
+				local MIN_SCALE_DELTA = 0.01
+				self.zoomLevels = {}
+				for layerIndex, layerInfo in ipairs(layers) do
+					layerInfo.maxScale = layerInfo.maxScale * LeaMapsLC["BattleMaxZoom"]
+					local zoomDeltaPerStep, numZoomLevels
+					local zoomDelta = layerInfo.maxScale - layerInfo.minScale
+					if zoomDelta > 0 then
+						numZoomLevels = 2 + layerInfo.additionalZoomSteps * LeaMapsLC["BattleMaxZoom"]
+						zoomDeltaPerStep = zoomDelta / (numZoomLevels - 1)
+					else
+						numZoomLevels = 1
+						zoomDeltaPerStep = 1
+					end
+					for zoomLevelIndex = 0, numZoomLevels - 1 do
+						currentScale = math.max(layerInfo.minScale + zoomDeltaPerStep * zoomLevelIndex, currentScale + MIN_SCALE_DELTA)		
+						table.insert(self.zoomLevels, {scale = currentScale * self.baseScale, layerIndex = layerIndex})
+					end
+				end
 			end)
 
 			----------------------------------------------------------------------
@@ -1239,7 +1291,7 @@
 				LeaMapsCB["IncreaseZoomMax"].f:SetFormattedText("%.0f%%", LeaMapsLC["IncreaseZoomMax"] / 1 * 100)
 			end
 
-			-- Set group icon size when options are clicked
+			-- Set zoom level when options are changed
 			LeaMapsCB["IncreaseZoomMax"]:HookScript("OnValueChanged", SetZoomFunc)
 			LeaMapsCB["IncreaseZoom"]:HookScript("OnClick", SetZoomFunc)
 
@@ -2775,7 +2827,7 @@
 
 		-- Set frame parameters
 		Side:Hide()
-		Side:SetSize(470, 410)
+		Side:SetSize(470, 430)
 		Side:SetClampedToScreen(true)
 		Side:SetFrameStrata("FULLSCREEN_DIALOG")
 		Side:SetFrameLevel(20)
@@ -2818,7 +2870,7 @@
 
 		-- Set textures
 		LeaMapsLC:CreateBar("FootTexture", Side, 470, 48, "BOTTOM", 0.5, 0.5, 0.5, 1.0, "Interface\\ACHIEVEMENTFRAME\\UI-GuildAchievement-Parchment-Horizontal-Desaturated.png")
-		LeaMapsLC:CreateBar("MainTexture", Side, 470, 363, "TOPRIGHT", 0.7, 0.7, 0.7, 0.7,  "Interface\\ACHIEVEMENTFRAME\\UI-GuildAchievement-Parchment-Horizontal-Desaturated.png")
+		LeaMapsLC:CreateBar("MainTexture", Side, 470, 383, "TOPRIGHT", 0.7, 0.7, 0.7, 0.7,  "Interface\\ACHIEVEMENTFRAME\\UI-GuildAchievement-Parchment-Horizontal-Desaturated.png")
 
 		-- Allow movement
 		Side:EnableMouse(true)
@@ -3483,6 +3535,7 @@
 				LeaMapsDB["BattleGroupIconSize"] = 12
 				LeaMapsDB["BattlePlayerArrowSize"] = 12
 				LeaMapsDB["BattleMapOpacity"] = 1
+				LeaMapsDB["BattleMaxZoom"] = 2
 				LeaMapsDB["BattleMapA"] = "BOTTOMRIGHT"
 				LeaMapsDB["BattleMapR"] = "BOTTOMRIGHT"
 				LeaMapsDB["BattleMapX"] = -47
@@ -3593,6 +3646,7 @@
 			LeaMapsLC:LoadVarNum("BattleGroupIconSize", 12, 12, 24)		-- Battlefield group icon size
 			LeaMapsLC:LoadVarNum("BattlePlayerArrowSize", 12, 12, 24)	-- Battlefield player arrow size
 			LeaMapsLC:LoadVarNum("BattleMapOpacity", 1, 0.1, 1)			-- Battlefield map opacity
+			LeaMapsLC:LoadVarNum("BattleMaxZoom", 1, 1, 6)				-- Battlefield map zoom
 			LeaMapsLC:LoadVarAnc("BattleMapA", "BOTTOMRIGHT")			-- Battlefield map anchor
 			LeaMapsLC:LoadVarAnc("BattleMapR", "BOTTOMRIGHT")			-- Battlefield map relative
 			LeaMapsLC:LoadVarNum("BattleMapX", -47, -5000, 5000)		-- Battlefield map X axis
@@ -3669,6 +3723,7 @@
 			LeaMapsDB["BattleGroupIconSize"] = LeaMapsLC["BattleGroupIconSize"]
 			LeaMapsDB["BattlePlayerArrowSize"] = LeaMapsLC["BattlePlayerArrowSize"]
 			LeaMapsDB["BattleMapOpacity"] = LeaMapsLC["BattleMapOpacity"]
+			LeaMapsDB["BattleMaxZoom"] = LeaMapsLC["BattleMaxZoom"]
 			LeaMapsDB["BattleMapA"] = LeaMapsLC["BattleMapA"]
 			LeaMapsDB["BattleMapR"] = LeaMapsLC["BattleMapR"]
 			LeaMapsDB["BattleMapX"] = LeaMapsLC["BattleMapX"]
@@ -3704,7 +3759,7 @@
 
 	-- Set frame parameters
 	LeaMapsLC["PageF"] = PageF
-	PageF:SetSize(470, 410)
+	PageF:SetSize(470, 430)
 	PageF:Hide()
 	PageF:SetFrameStrata("FULLSCREEN_DIALOG")
 	PageF:SetFrameLevel(20)
@@ -3728,7 +3783,7 @@
 	-- Add textures
 	local MainTexture = PageF:CreateTexture(nil, "BORDER")
 	MainTexture:SetTexture("Interface\\ACHIEVEMENTFRAME\\UI-GuildAchievement-Parchment-Horizontal-Desaturated.png")
-	MainTexture:SetSize(470, 363)
+	MainTexture:SetSize(470, 383)
 	MainTexture:SetPoint("TOPRIGHT")
 	MainTexture:SetVertexColor(0.7, 0.7, 0.7, 0.7)
 	MainTexture:SetTexCoord(0.09, 1, 0, 1)
