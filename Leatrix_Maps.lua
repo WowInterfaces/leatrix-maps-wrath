@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.68.alpha.1 (15th November 2021)
+	-- 	Leatrix Maps 2.5.68.alpha.2 (15th November 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.68.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.68.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -91,7 +91,6 @@
 
 			-- Hide battlefield tab button when it's shown and on startup
 			hooksecurefunc(BattlefieldMapTab, "Show", function() BattlefieldMapTab:Hide() end)
-			BattlefieldMapTab:Hide()
 
 			-- Make battlefield map movable
 			BattlefieldMapFrame:SetMovable(true)
@@ -2785,6 +2784,9 @@
 		----------------------------------------------------------------------
 		-- Final code
 		----------------------------------------------------------------------
+
+		-- Hide the battlefield map tab because it's shown even when enhance battlefield map is disabled
+		BattlefieldMapTab:Hide()
 
 		-- Show first run message
 		if not LeaMapsDB["FirstRunMessageSeen"] then
