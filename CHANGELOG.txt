@@ -1,4 +1,4 @@
-2.5.70.alpha.5 - 1st December 2021
+2.5.70 - 1st December 2021
 - Added a new setting under 'Show points of interest' called 'Show zone crossings'.  If enabled, zone crossings will be shown.  These are clickable arrows indicating zone exit pathways.
 - Player arrow and group icon maximum size (for both world map and battlefield map) and battlefield maximum size increased to 400%.
 - Changed the Leatrix Maps minimap icon.
