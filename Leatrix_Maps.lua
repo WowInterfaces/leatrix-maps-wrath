@@ -2054,6 +2054,8 @@
 					{"Spirit", 64.3, 22.8, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 86.8, 51.2, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 68.7, 27.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 40.3, 85.9, L["Terokkar Forest"] .. " " .. L["(via Razorthorn Trail)"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 6.7, 50.4, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 0, 1946},
 				},
 				--[[Nagrand]] [1951] = {
 					{"FlightA", 54.2, 75.0, L["Telaar"] .. ", " .. L["Nagrand"], nil, tATex, nil, nil},
@@ -2064,6 +2066,9 @@
 					{"Spirit", 42.5, 46.4, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 66.6, 24.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 63.1, 69.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 33.5, 17.8, L["Zangararsh"], nil, arTex, nil, nil, nil, nil, nil, 0, 1946},
+					{"Arrow", 77.5, 77.0, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 72.3, 36.6, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 0, 1946},
 				},
 				--[[Netherstorm]] [1953] = {
 					{"FlightN", 33.8, 64.0, L["Area 52"] .. ", " .. L["Netherstorm"], nil, tNTex, nil, nil},
@@ -2090,6 +2095,7 @@
 					{"Spirit", 63.6, 32.2, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 65.5, 43.0, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 65.7, 45.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 22.7, 28.6, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
 				},
 				--[[Shattrath City]] [1955] = {
 					{"FlightN", 64.1, 41.1, L["Shattrath City"] .. ", " .. L["Terokkar Forest"], nil, tNTex, nil, nil},
@@ -2098,6 +2104,12 @@
 					{"TravelH", 52.2, 52.9, L["Horde Cities"], L["Thunder Bluff"] .. ", " .. L["Orgrimmar"] .. ", " .. L["Undercity"], pHTex},
 					{"TravelA", 59.6, 46.7, L["The Exodar"], L["Portal"], pATex},
 					{"TravelH", 59.2, 48.4, L["Silvermoon City"], L["Portal"], pHTex},
+					{"Arrow", 62.3, 7.9, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 79.0, 57.5, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 23.0, 49.5, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 0, 1951},
+					{"Arrow", 68.3, 65.1, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 71.1, 21.9, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 76.3, 43.2, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
 				},
 				--[[Terokkar Forest]] [1952] = {
 					{"FlightA", 59.4, 55.4, L["Allerian Stronghold"] .. ", " .. L["Terokkar Forest"], nil, tATex, nil, nil},
@@ -2112,6 +2124,10 @@
 					{"Spirit", 59.5, 42.6, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 44.6, 71.2, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 62.9, 81.2, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 70.6, 49.4, L["Shadowmoon Valley"], nil, arTex, nil, nil, nil, nil, nil, 0, 1948},
+					{"Arrow", 58.3, 19.3, L["Hellfire Peninsula"] .. " " .. L["(via Razorthorn Trail)"], nil, arTex, nil, nil, nil, nil, nil, 0, 1944},
+					{"Arrow", 20.3, 56.3, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 0, 1951},
+					{"Arrow", 33.1, 6.2, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 0, 1946},
 				},
 				--[[Zangarmarsh]] [1946] = {
 					{"FlightA", 41.2, 28.8, L["Orebor Harborage"] .. ", " .. L["Zangarmarsh"], nil, tATex, nil, nil},
@@ -2125,6 +2141,11 @@
 					{"Spirit", 47.5, 50.3, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 65.1, 50.9, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 77.2, 64.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 81.2, 64.4, L["Hellfire Peninsula"], nil, arTex, nil, nil, nil, nil, nil, 0, 1944},
+					{"Arrow", 82.0, 90.8, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 69.6, 35.3, L["Blade's Edge Mountains"] .. " " .. L["(via Blades' Run)"], nil, arTex, nil, nil, nil, nil, nil, 0, 1949},
+					{"Arrow", 40.3, 27.4, L["Blade's Edge Mountains"] .. " " .. L["(via Blade Tooth Canyon)"], nil, arTex, nil, nil, nil, nil, nil, 0, 1949},
+					{"Arrow", 21.1, 70.5, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 0, 1951},
 				},
 
 			}
