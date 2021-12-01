@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.70.alpha.3 (1st December 2021)
+	-- 	Leatrix Maps 2.5.70.alpha.4 (1st December 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.70.alpha.3"
+	LeaMapsLC["AddonVer"] = "2.5.70.alpha.4"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1605,6 +1605,7 @@
 					{"Spirit", 82.0, 69.6, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 83.4, 70.6, L["Western Plaguelands"] .. " " .. L["(via The Bulwark)"], nil, arTex, nil, nil, nil, nil, nil, 4.7, 1422},
 					{"Arrow", 61.9, 65.0, L["Undercity"], nil, arTex, nil, nil, nil, nil, nil, 3, 1458},
+					{"Arrow", 54.9, 72.7, L["Silverpine Forest"], nil, arTex, nil, nil, nil, nil, nil, 3, 1421},
 				},
 				--[[Silverpine Forest]] [1421] = {
 					{"Dungeon", 44.8, 67.8, L["Shadowfang Keep"], L["Dungeon"], dnTex, 18, 21, 14, 17, 25},
@@ -1869,7 +1870,7 @@
 					{"Spirit", 68.7, 53.3, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 74.9, 93.3, L["Tanaris"], nil, arTex, nil, nil, nil, nil, nil, 3.2, 1446},
 					{"Arrow", 8.3, 11.9, L["Feralas"], nil, arTex, nil, nil, nil, nil, nil, 0.7, 1444},
-					{"Arrow", 32.2, 23.9, L["The Barrens"], nil, arTex, nil, nil, nil, nil, nil, 5.4, 1413},
+					{"Arrow", 32.2, 23.9, L["The Barrens"] .. " " .. L["(via The Great Lift)"], nil, arTex, nil, nil, nil, nil, nil, 5.4, 1413},
 				},
 				--[[Stonetalon Mountains]] [1442] = {
 					{"FlightA", 36.4, 7.2, L["Stonetalon Peak"] .. ", " .. L["Stonetalon Mountains"], nil, tATex, nil, nil},
@@ -2032,6 +2033,9 @@
 					{"Spirit", 74.6, 26.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 62.8, 37.4, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 61.8, 14.7, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 37.3, 80.5, L["Zangarmarsh"] .. " " .. L["(via Blade Tooth Canyon)"], nil, arTex, nil, nil, nil, nil, nil, 3, 1946},
+					{"Arrow", 51.7, 74.7, L["Zangarmarsh"] .. " " .. L["(via Blades' Run)"], nil, arTex, nil, nil, nil, nil, nil, 3, 1946},
+					{"Arrow", 82.4, 28.7, L["Netherstorm"], nil, arTex, nil, nil, nil, nil, nil, 4.7, 1953},
 				},
 				--[[Hellfire Peninsula]] [1944] = {
 					{"FlightA", 25.2, 37.2, L["Temple of Telhamat"] .. ", " .. L["Hellfire Peninsula"], nil, tATex, nil, nil},
@@ -2054,8 +2058,8 @@
 					{"Spirit", 64.3, 22.8, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 86.8, 51.2, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 68.7, 27.1, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Arrow", 40.3, 85.9, L["Terokkar Forest"] .. " " .. L["(via Razorthorn Trail)"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
-					{"Arrow", 6.7, 50.4, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 0, 1946},
+					{"Arrow", 40.3, 85.9, L["Terokkar Forest"] .. " " .. L["(via Razorthorn Trail)"], nil, arTex, nil, nil, nil, nil, nil, 2.7, 1952},
+					{"Arrow", 6.7, 50.4, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 1.6, 1946},
 				},
 				--[[Nagrand]] [1951] = {
 					{"FlightA", 54.2, 75.0, L["Telaar"] .. ", " .. L["Nagrand"], nil, tATex, nil, nil},
@@ -2067,8 +2071,9 @@
 					{"Spirit", 66.6, 24.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 63.1, 69.3, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 33.5, 17.8, L["Zangararsh"], nil, arTex, nil, nil, nil, nil, nil, 0, 1946},
-					{"Arrow", 77.5, 77.0, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
-					{"Arrow", 72.3, 36.6, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 0, 1946},
+					{"Arrow", 77.5, 77.0, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.7, 1952},
+					{"Arrow", 72.3, 36.6, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 5.4, 1946},
+					{"Arrow", 77.5, 55.7, L["Shattrath City"] .. " " .. L["(via Aldor)"], nil, arTex, nil, nil, nil, nil, nil, 5.4, 1955},
 				},
 				--[[Netherstorm]] [1953] = {
 					{"FlightN", 33.8, 64.0, L["Area 52"] .. ", " .. L["Netherstorm"], nil, tNTex, nil, nil},
@@ -2082,6 +2087,7 @@
 					{"Spirit", 33.8, 65.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 64.8, 66.6, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 56.6, 83.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 22.7, 55.6, L["Blade's Edge Mountains"], nil, arTex, nil, nil, nil, nil, nil, 1.5, 1949},
 				},
 				--[[Shadowmoon Valley]] [1948] = {
 					{"FlightA", 37.6, 55.4, L["Wildhammer Stronghold"] .. ", " .. L["Shadowmoon Valley"], nil, tATex, nil, nil},
@@ -2095,7 +2101,7 @@
 					{"Spirit", 63.6, 32.2, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 65.5, 43.0, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 65.7, 45.7, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Arrow", 22.7, 28.6, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 22.7, 28.6, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0.8, 1952},
 				},
 				--[[Shattrath City]] [1955] = {
 					{"FlightN", 64.1, 41.1, L["Shattrath City"] .. ", " .. L["Terokkar Forest"], nil, tNTex, nil, nil},
@@ -2104,12 +2110,12 @@
 					{"TravelH", 52.2, 52.9, L["Horde Cities"], L["Thunder Bluff"] .. ", " .. L["Orgrimmar"] .. ", " .. L["Undercity"], pHTex},
 					{"TravelA", 59.6, 46.7, L["The Exodar"], L["Portal"], pATex},
 					{"TravelH", 59.2, 48.4, L["Silvermoon City"], L["Portal"], pHTex},
-					{"Arrow", 62.3, 7.9, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
-					{"Arrow", 79.0, 57.5, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
-					{"Arrow", 23.0, 49.5, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 0, 1951},
-					{"Arrow", 68.3, 65.1, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
-					{"Arrow", 71.1, 21.9, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
-					{"Arrow", 76.3, 43.2, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
+					{"Arrow", 62.3, 7.9, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 6.1, 1952},
+					{"Arrow", 79.0, 57.5, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 4, 1952},
+					{"Arrow", 23.0, 49.5, L["Nagrand"] .. " " .. L["(via Aldor)"], nil, arTex, nil, nil, nil, nil, nil, 1.9, 1951},
+					{"Arrow", 68.3, 65.1, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.9, 1952},
+					{"Arrow", 71.1, 21.9, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 5.8, 1952},
+					{"Arrow", 76.3, 43.2, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 4.7, 1952},
 				},
 				--[[Terokkar Forest]] [1952] = {
 					{"FlightA", 59.4, 55.4, L["Allerian Stronghold"] .. ", " .. L["Terokkar Forest"], nil, tATex, nil, nil},
@@ -2124,10 +2130,12 @@
 					{"Spirit", 59.5, 42.6, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 44.6, 71.2, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 62.9, 81.2, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Arrow", 70.6, 49.4, L["Shadowmoon Valley"], nil, arTex, nil, nil, nil, nil, nil, 0, 1948},
-					{"Arrow", 58.3, 19.3, L["Hellfire Peninsula"] .. " " .. L["(via Razorthorn Trail)"], nil, arTex, nil, nil, nil, nil, nil, 0, 1944},
-					{"Arrow", 20.3, 56.3, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 0, 1951},
-					{"Arrow", 33.1, 6.2, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 0, 1946},
+					{"Arrow", 70.6, 49.4, L["Shadowmoon Valley"], nil, arTex, nil, nil, nil, nil, nil, 3.9, 1948},
+					{"Arrow", 58.3, 19.3, L["Hellfire Peninsula"] .. " " .. L["(via Razorthorn Trail)"], nil, arTex, nil, nil, nil, nil, nil, 5.0, 1944},
+					{"Arrow", 20.3, 56.3, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 0.3, 1951},
+					{"Arrow", 33.1, 6.2, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 0.6, 1946},
+					{"Arrow", 34.8, 13.4, L["Shattrath City"], nil, arTex, nil, nil, nil, nil, nil, 2.4, 1955},
+					{"Arrow", 38.2, 26.6, L["Shattrath City"], nil, arTex, nil, nil, nil, nil, nil, 1.4, 1955},
 				},
 				--[[Zangarmarsh]] [1946] = {
 					{"FlightA", 41.2, 28.8, L["Orebor Harborage"] .. ", " .. L["Zangarmarsh"], nil, tATex, nil, nil},
@@ -2141,11 +2149,12 @@
 					{"Spirit", 47.5, 50.3, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 65.1, 50.9, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 77.2, 64.1, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Arrow", 81.2, 64.4, L["Hellfire Peninsula"], nil, arTex, nil, nil, nil, nil, nil, 0, 1944},
-					{"Arrow", 82.0, 90.8, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 0, 1952},
-					{"Arrow", 69.6, 35.3, L["Blade's Edge Mountains"] .. " " .. L["(via Blades' Run)"], nil, arTex, nil, nil, nil, nil, nil, 0, 1949},
-					{"Arrow", 40.3, 27.4, L["Blade's Edge Mountains"] .. " " .. L["(via Blade Tooth Canyon)"], nil, arTex, nil, nil, nil, nil, nil, 0, 1949},
-					{"Arrow", 21.1, 70.5, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 0, 1951},
+					{"Arrow", 81.2, 64.4, L["Hellfire Peninsula"], nil, arTex, nil, nil, nil, nil, nil, 5.4, 1944},
+					{"Arrow", 82.0, 90.8, L["Terokkar Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.3, 1952},
+					{"Arrow", 69.6, 35.3, L["Blade's Edge Mountains"] .. " " .. L["(via Blades' Run)"], nil, arTex, nil, nil, nil, nil, nil, 5.4, 1949},
+					{"Arrow", 40.8, 31.0, L["Blade's Edge Mountains"] .. " " .. L["(via Blade Tooth Canyon)"], nil, arTex, nil, nil, nil, nil, nil, 5.4, 1949},
+					{"Arrow", 21.1, 70.5, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 3.1, 1951},
+					{"Arrow", 67.9, 86.9, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 2.6, 1951},
 				},
 
 			}
@@ -2195,7 +2204,7 @@
 							or LeaMapsLC["ShowTravelOpposing"] == "On" and playerFaction == "Alliance" and (pinInfo[1] == "FlightH" or pinInfo[1] == "FlightN" or pinInfo[1] == "TravelH" or pinInfo[1] == "TravelN")
 							or LeaMapsLC["ShowTravelOpposing"] == "On" and playerFaction == "Horde" and (pinInfo[1] == "FlightA" or pinInfo[1] == "FlightN" or pinInfo[1] == "TravelA" or pinInfo[1] == "TravelN")
 							or LeaMapsLC["ShowSpiritHealers"] == "On" and (pinInfo[1] == "Spirit")
-							or LeaMapsLC["ShowPathArrows"] == "On" and (pinInfo[1] == "Arrow")
+							or LeaMapsLC["ShowZoneCrossings"] == "On" and (pinInfo[1] == "Arrow")
 							then
 								local myPOI = {}
 								myPOI["position"] = CreateVector2D(pinInfo[2] / 100, pinInfo[3] / 100)
@@ -2338,7 +2347,7 @@
 			LeaMapsLC:MakeCB(poiFrame, "ShowTravelPoints", "Show travel points for same faction", 16, -112, false, "If checked, travel points for the same faction will be shown.|n|nThis includes flight points, boat harbors, zeppelin towers and tram stations.")
 			LeaMapsLC:MakeCB(poiFrame, "ShowTravelOpposing", "Show travel points for opposing faction", 16, -132, false, "If checked, travel points for the opposing faction will be shown.|n|nThis includes flight points, boat harbors, zeppelin towers and tram stations.")
 			LeaMapsLC:MakeCB(poiFrame, "ShowSpiritHealers", "Show spirit healers", 16, -152, false, "If checked, spirit healers will be shown.")
-			LeaMapsLC:MakeCB(poiFrame, "ShowPathArrows", "Show path arrows", 16, -172, false, "If checked, path arrows will be shown.")
+			LeaMapsLC:MakeCB(poiFrame, "ShowZoneCrossings", "Show zone crossings", 16, -172, false, "If checked, zone crossings will be shown.|n|nThese are clickable arrows that indicate the zone exit pathways.")
 
 			-- Function to refresh points of interest
 			local function SetPointsOfInterest()
@@ -2351,7 +2360,7 @@
 			LeaMapsCB["ShowTravelPoints"]:HookScript("OnClick", SetPointsOfInterest)
 			LeaMapsCB["ShowTravelOpposing"]:HookScript("OnClick", SetPointsOfInterest)
 			LeaMapsCB["ShowSpiritHealers"]:HookScript("OnClick", SetPointsOfInterest)
-			LeaMapsCB["ShowPathArrows"]:HookScript("OnClick", SetPointsOfInterest)
+			LeaMapsCB["ShowZoneCrossings"]:HookScript("OnClick", SetPointsOfInterest)
 			LeaMapsCB["ShowZoneLevels"]:HookScript("OnClick", SetPointsOfInterest)
 
 			-- Back to Main Menu button click
@@ -2366,7 +2375,7 @@
 				LeaMapsLC["ShowTravelPoints"] = "On"
 				LeaMapsLC["ShowTravelOpposing"] = "Off"
 				LeaMapsLC["ShowSpiritHealers"] = "On"
-				LeaMapsLC["ShowPathArrows"] = "On"
+				LeaMapsLC["ShowZoneCrossings"] = "On"
 				SetPointsOfInterest()
 				poiFrame:Hide(); poiFrame:Show()
 			end)
@@ -2379,7 +2388,7 @@
 					LeaMapsLC["ShowTravelPoints"] = "On"
 					LeaMapsLC["ShowTravelOpposing"] = "Off"
 					LeaMapsLC["ShowSpiritHealers"] = "On"
-					LeaMapsLC["ShowPathArrows"] = "On"
+					LeaMapsLC["ShowZoneCrossings"] = "On"
 					SetPointsOfInterest()
 					if poiFrame:IsShown() then poiFrame:Hide(); poiFrame:Show(); end
 				else
@@ -3665,7 +3674,7 @@
 				LeaMapsDB["ShowTravelPoints"] = "On"
 				LeaMapsDB["ShowTravelOpposing"] = "Off"
 				LeaMapsDB["ShowSpiritHealers"] = "On"
-				LeaMapsDB["ShowPathArrows"] = "On"
+				LeaMapsDB["ShowZoneCrossings"] = "On"
 				LeaMapsDB["ShowZoneLevels"] = "On"
 				LeaMapsDB["ShowFishingLevels"] = "On"
 				LeaMapsDB["ShowCoords"] = "On"
@@ -3777,7 +3786,7 @@
 			LeaMapsLC:LoadVarChk("ShowTravelPoints", "On")				-- Show travel points for same faction
 			LeaMapsLC:LoadVarChk("ShowTravelOpposing", "Off")			-- Show travel points for opposing faction
 			LeaMapsLC:LoadVarChk("ShowSpiritHealers", "On")				-- Show spirit healers
-			LeaMapsLC:LoadVarChk("ShowPathArrows", "On")				-- Show path arrows
+			LeaMapsLC:LoadVarChk("ShowZoneCrossings", "On")				-- Show zone crossings
 			LeaMapsLC:LoadVarChk("ShowZoneLevels", "On")				-- Show zone levels
 			LeaMapsLC:LoadVarChk("ShowFishingLevels", "On")				-- Show fishing levels
 			LeaMapsLC:LoadVarChk("ShowCoords", "On")					-- Show coordinates
@@ -3855,7 +3864,7 @@
 			LeaMapsDB["ShowTravelPoints"] = LeaMapsLC["ShowTravelPoints"]
 			LeaMapsDB["ShowTravelOpposing"] = LeaMapsLC["ShowTravelOpposing"]
 			LeaMapsDB["ShowSpiritHealers"] = LeaMapsLC["ShowSpiritHealers"]
-			LeaMapsDB["ShowPathArrows"] = LeaMapsLC["ShowPathArrows"]
+			LeaMapsDB["ShowZoneCrossings"] = LeaMapsLC["ShowZoneCrossings"]
 			LeaMapsDB["ShowZoneLevels"] = LeaMapsLC["ShowZoneLevels"]
 			LeaMapsDB["ShowFishingLevels"] = LeaMapsLC["ShowFishingLevels"]
 			LeaMapsDB["ShowCoords"] = LeaMapsLC["ShowCoords"]
