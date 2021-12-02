@@ -1,4 +1,4 @@
-2.5.71.alpha.1 - 1st December 2021
+2.5.71.alpha.2 - 2nd December 2021
 - Maintenance update.
 
 2.5.70 - 1st December 2021
