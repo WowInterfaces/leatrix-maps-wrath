@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.71.alpha.6 (4th December 2021)
+	-- 	Leatrix Maps 2.5.71.alpha.7 (4th December 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.71.alpha.6"
+	LeaMapsLC["AddonVer"] = "2.5.71.alpha.7"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1404,12 +1404,8 @@
 			WorldMapFrame.BorderFrame:SetFrameStrata("MEDIUM")
 			WorldMapFrame.BorderFrame:SetFrameLevel(1)
 			WorldMapFrame.IsMaximized = function() return false end
-
-			-- Replace map toggle handler if Move And Improve is not installed and enabled
-			if not select(4, GetAddOnInfo("D4KiR MoveAndImprove")) then
-				WorldMapFrame.HandleUserActionToggleSelf = function()
-					if WorldMapFrame:IsShown() then WorldMapFrame:Hide() else WorldMapFrame:Show() end
-				end
+			WorldMapFrame.HandleUserActionToggleSelf = function()
+				if WorldMapFrame:IsShown() then WorldMapFrame:Hide() else WorldMapFrame:Show() end
 			end
 
 			-- Handle open and close the map for sticky map frame
