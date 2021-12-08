@@ -1,5 +1,5 @@
-2.5.73 - 8th December 2021
-- Maintenance update.
+2.5.74.alpha.1 - 8th December 2021
+- Updated zone crossings for Exodar and Azuremyst Isle.
 
 2.5.70 - 1st December 2021
 - Added a new setting under 'Show points of interest' called 'Show zone crossings'.  If enabled, zone crossings will be shown.  These are clickable arrows indicating zone exit pathways.

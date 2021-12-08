@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.73 (8th December 2021)
+	-- 	Leatrix Maps 2.5.74.alpha.1 (8th December 2021)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.73"
+	LeaMapsLC["AddonVer"] = "2.5.74.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1996,7 +1996,8 @@
 				},
 				--[[The Exodar]] [1947] = {
 					{"FlightA", 68.5, 63.7, L["The Exodar"] .. ", " .. L["Azuremyst Isle"], nil, tATex, nil, nil},
-					{"Arrow", 76.0, 55.5, L["Azuremyst Isle"], nil, arTex, nil, nil, nil, nil, nil, 4.5, 1943},
+					{"Arrow", 76.0, 55.5, L["Azuremyst Isle"], L["Seat of the Naaru"], arTex, nil, nil, nil, nil, nil, 4.5, 1943},
+					{"Arrow", 35.0, 74.8, L["Azuremyst Isle"], L["The Vault of Lights"], arTex, nil, nil, nil, nil, nil, 0.9, 1943},
 				},
 				--[[Azuremyst Isle]] [1943] = {
 					{"FlightA", 31.9, 46.4, L["The Exodar"] .. ", " .. L["Azuremyst Isle"], nil, tATex, nil, nil},
@@ -2004,7 +2005,8 @@
 					{"Spirit", 39.2, 19.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 47.2, 55.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 77.7, 48.8, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Arrow", 36.9, 47.0, L["The Exodar"], nil, arTex, nil, nil, nil, nil, nil, 1.5, 1947},
+					{"Arrow", 36.9, 47.0, L["The Exodar"], L["Seat of the Naaru"], arTex, nil, nil, nil, nil, nil, 1.5, 1947},
+					{"Arrow", 24.7, 49.4, L["The Exodar"], L["The Vault of Lights"], arTex, nil, nil, nil, nil, nil, 5.8, 1947},
 					{"Arrow", 42.5, 5.4, L["Bloodmyst Isle"], nil, arTex, nil, nil, nil, nil, nil, 0.2, 1950},
 				},
 				--[[Bloodmyst Isle]] [1950] = {
