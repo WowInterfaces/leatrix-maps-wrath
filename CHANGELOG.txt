@@ -1,4 +1,4 @@
-2.5.74.alpha.1 - 8th December 2021
+2.5.75 - 16th December 2021
 - Updated zone crossings for Exodar and Azuremyst Isle.
 
 2.5.70 - 1st December 2021
