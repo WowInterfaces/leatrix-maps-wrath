@@ -1,4 +1,4 @@
-2.5.76.alpha.1 - 17th December 2021
+2.5.76 - 22nd December 2021
 - Added missing Duskwood to Deadwind pass zone crossing.
 
 2.5.75 - 16th December 2021
