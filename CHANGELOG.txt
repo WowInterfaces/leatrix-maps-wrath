@@ -1,5 +1,6 @@
-2.5.88 - 26th January 2022
-- Maintenance update.
+2.5.89.alpha.1 - 1st February 2022
+- Added zone crossings for Eversong Woods and Silvermoon City.
+- Added Orb of Translocation for Silvermoon City and Undercity.
 
 2.5.86 - 19th January 2022
 - Updated for game version 2.5.3.

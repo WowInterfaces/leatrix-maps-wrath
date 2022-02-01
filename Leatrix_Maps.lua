@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.88 (26th January 2022)
+	-- 	Leatrix Maps 2.5.89.alpha.1 (1st February 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.88"
+	LeaMapsLC["AddonVer"] = "2.5.89.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1774,6 +1774,7 @@
 					{"FlightH", 63.3, 48.5, L["Trade Quarter"] .. ", " .. L["Undercity"], nil, tHTex, nil, nil},
 					{"Spirit", 67.9, 14.0, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 66.2, 5.2, L["Tirisfal Glades"], nil, arTex, nil, nil, nil, nil, nil, 0, 1420},
+					{"TravelH", 54.9, 11.3, L["Silvermoon City"], L["Orb of Translocation"]},
 				},
 				--[[Isle of Quel'Danas]] [1957] = {
 					{"Spirit", 46.6, 32.7, L["Spirit Healer"], nil, spTex, nil, nil},
@@ -1787,6 +1788,7 @@
 					{"Spirit", 44.3, 71.2, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 60.0, 64.0, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 48.7, 91.0, L["Ghostlands"], nil, arTex, nil, nil, nil, nil, nil, 3, 1942},
+					{"Arrow", 56.7, 49.7, L["Silvermoon City"], nil, arTex, nil, nil, nil, nil, nil, 0.0, 1954},
 				},
 				--[[Ghostlands]] [1942] = {
 					{"FlightH", 45.4, 30.5, L["Tranquillien"] .. ", " .. L["Ghostlands"], nil, tHTex, nil, nil},
@@ -1797,6 +1799,10 @@
 					{"Spirit", 80.5, 69.1, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 47.5, 84.0, L["Eastern Plaguelands"], nil, arTex, nil, nil, nil, nil, nil, 3, 1423},
 					{"Arrow", 48.4, 13.2, L["Eversong Woods"], nil, arTex, nil, nil, nil, nil, nil, 0, 1941},
+				},
+				--[[Silvermoon City]] [1954] = {
+					{"TravelH", 49.5, 14.8, L["Undercity"], L["Orb of Translocation"]},
+					{"Arrow", 72.6, 85.9, L["Eversong Woods"], nil, arTex, nil, nil, nil, nil, nil, 3.2, 1941},
 				},
 
 				----------------------------------------------------------------------
