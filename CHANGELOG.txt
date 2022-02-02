@@ -1,4 +1,4 @@
-2.5.89.alpha.1 - 1st February 2022
+2.5.89 - 3rd February 2022
 - Added zone crossings for Eversong Woods and Silvermoon City.
 - Added Orb of Translocation for Silvermoon City and Undercity.
 
