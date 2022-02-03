@@ -1,3 +1,6 @@
+2.5.90.alpha.1 - 3rd February 2022
+- For 'Center map on player', releasing shift (after holding it down to prevent the map from centering) will no longer cause the map to center.  Centering will only will start again when you do something that requires a map update without shift being held down.  This includes zooming, panning, clicking an area of the map that isn't a button, toggling the map, etc.  This applies to both the world map and battleground map.
+
 2.5.89 - 3rd February 2022
 - Added zone crossings for Eversong Woods and Silvermoon City.
 - Added Orb of Translocation for Silvermoon City and Undercity.
