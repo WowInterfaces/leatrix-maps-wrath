@@ -1,4 +1,4 @@
-2.5.93 - 2nd March 2022
+2.5.94 - 9th March 2022
 - Maintenance update.
 
 2.5.90 - 9th February 2022
