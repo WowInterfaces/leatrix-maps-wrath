@@ -1,4 +1,4 @@
-2.5.104.alpha.1 - 10th May 2022
+2.5.104 - 12th May 2022
 - Maintenance update.
 
 2.5.96 - 30th March 2022
