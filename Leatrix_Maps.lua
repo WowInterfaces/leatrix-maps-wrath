@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.114.alpha.1 (10th July 2022)
+	-- 	Leatrix Maps 2.5.114.alpha.1 (11th July 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -1690,7 +1690,7 @@
 					{"Arrow", 53.3, 35.1, L["Ironforge"], nil, arTex, nil, nil, nil, nil, nil, 5.4, 1455},
 				},
 				--[[Searing Gorge]] [1427] = {
-					{"Dunraid", 34.8, 85.3, L["Blackrock Mountain"], L["Blackrock Depths"] .. ", " .. L["Blackwing Lair"] .. ", " .. L["Lower Blackrock Spire"] .. ", |n" .. L["Molten Core"] .. ", " .. L["Upper Blackrock Spire"], dnTex, 48, 60, 40, 48, 61},
+					{"Dunraid", 34.8, 85.3, L["Blackrock Mountain"], L["Blackrock Depths"]  .. " (" .. L["req"] .. ": 40)" .. ", " .. L["Blackwing Lair"] .. " (" .. L["req"] .. ": 55)" .. ", " .. L["Lower Blackrock Spire"] .. " (" .. L["req"] .. ": 45)" .. ", |n" .. L["Molten Core"] .. " (" .. L["req"] .. ": 50)" .. ", " .. L["Upper Blackrock Spire"] .. " (" .. L["req"] .. ": 45)", dnTex, 48, 60, nil, 48, 61},
 					{"FlightA", 37.9, 30.8, L["Thorium Point"] .. ", " .. L["Searing Gorge"], nil, tATex, nil, nil},
 					{"FlightH", 34.8, 30.9, L["Thorium Point"] .. ", " .. L["Searing Gorge"], nil, tHTex, nil, nil},
 					{"Spirit", 35.5, 22.8, L["Spirit Healer"], nil, spTex, nil, nil},
@@ -1700,7 +1700,7 @@
 					{"Arrow", 68.8, 53.9, L["Badlands"], nil, arTex, nil, nil, nil, nil, nil, 4.5, 1418},
 				},
 				--[[Burning Steppes]] [1428] = {
-					{"Dunraid", 29.4, 38.3, L["Blackrock Mountain"], L["Blackrock Depths"] .. ", " .. L["Blackwing Lair"] .. ", " .. L["Lower Blackrock Spire"] .. ", |n" .. L["Molten Core"] .. ", " .. L["Upper Blackrock Spire"], dnTex, 48, 60, 40, 48, 61},
+					{"Dunraid", 29.4, 38.3, L["Blackrock Mountain"], L["Blackrock Depths"]  .. " (" .. L["req"] .. ": 40)" .. ", " .. L["Blackwing Lair"] .. " (" .. L["req"] .. ": 55)" .. ", " .. L["Lower Blackrock Spire"] .. " (" .. L["req"] .. ": 45)" .. ", |n" .. L["Molten Core"] .. " (" .. L["req"] .. ": 50)" .. ", " .. L["Upper Blackrock Spire"] .. " (" .. L["req"] .. ": 45)", dnTex, 48, 60, 40, 48, 61},
 					{"FlightA", 84.3, 68.3, L["Morgan's Vigil"] .. ", " .. L["Burning Steppes"], nil, tATex, nil, nil},
 					{"FlightH", 65.7, 24.2, L["Flame Crest"] .. ", " .. L["Burning Steppes"], nil, tHTex, nil, nil},
 					{"Spirit", 64.1, 24.1, L["Spirit Healer"], nil, spTex, nil, nil},
@@ -1953,7 +1953,7 @@
 				},
 				--[[Tanaris]] [1446] = {
 					{"Dungeon", 38.7, 20.0, L["Zul'Farrak"], L["Dungeon"], dnTex, 42, 46, 35, 42, 50},
-					{"Dunraid", 65.7, 49.9, L["Caverns of Time"], L["Black Morass"] .. ", " .. L["Hyjal Summit"] .. ", " .. L["Old Hillsbrad"], dnTex, 66, 68, 66},
+					{"Dunraid", 65.7, 49.9, L["Caverns of Time"], L["Black Morass"]  .. " (" .. L["req"] .. ": 65)" .. ", " .. L["Hyjal Summit"]  .. " (" .. L["req"] .. ": 70)" .. ", " .. L["Old Hillsbrad"]  .. " (" .. L["req"] .. ": 66)", dnTex, 66, 68},
 					{"FlightA", 51.0, 29.3, L["Gadgetzan"] .. ", " .. L["Tanaris"], nil, tATex, nil, nil},
 					{"FlightH", 51.6, 25.4, L["Gadgetzan"] .. ", " .. L["Tanaris"], nil, tHTex, nil, nil},
 					{"Spirit", 53.9, 28.8, L["Spirit Healer"], nil, spTex, nil, nil},
@@ -2178,7 +2178,7 @@
 					{"FlightA", 67.8, 51.4, L["Telredor"] .. ", " .. L["Zangarmarsh"], nil, tATex, nil, nil},
 					{"FlightH", 33.0, 51.0, L["Zabra'jin"] .. ", " .. L["Zangarmarsh"], nil, tHTex, nil, nil},
 					{"FlightH", 84.8, 55.0, L["Swamprat Post"] .. ", " .. L["Zangarmarsh"], nil, tHTex, nil, nil},
-					{"Dunraid", 50.4, 40.9, L["Coilfang Reservoir"], L["Serpentshrine Cavern"] .. ", " .. L["Slave Pens"] .. ", " .. L["Steamvault"] .. ", " .. L["Underbog"], dnTex, 62, 70, 55},
+					{"Dunraid", 50.4, 40.9, L["Coilfang Reservoir"], L["Serpentshrine Cavern"]  .. " (" .. L["req"] .. ": 70)" .. ", " .. L["Slave Pens"]  .. " (" .. L["req"] .. ": 59)" .. ",|n" .. L["Steamvault"]  .. " (" .. L["req"] .. ": 65)" .. ", " .. L["Underbog"]  .. " (" .. L["req"] .. ": 60)", dnTex, 62, 70},
 					{"Spirit", 17.0, 48.1, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 36.8, 47.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 43.6, 31.7, L["Spirit Healer"], nil, spTex, nil, nil},
