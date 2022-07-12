@@ -266,19 +266,15 @@
 				end
 
 				-- Azeroth
-				for k, v in pairs(mapAzerothTable) do
-					if WorldMapFrame.mapID == 947 then
-						LeaMapsLC["ZoneMapContinentMenu"] = 4; cond:Show()
-						nodd:Show()
-					end
+				if WorldMapFrame.mapID == 947 then
+					LeaMapsLC["ZoneMapContinentMenu"] = 4; cond:Show()
+					nodd:Show()
 				end
 
 				-- Cosmic
-				for k, v in pairs(mapCosmicTable) do
-					if WorldMapFrame.mapID == 946 then
-						LeaMapsLC["ZoneMapContinentMenu"] = 5; cond:Show()
-						nodd:Show()
-					end
+				if WorldMapFrame.mapID == 946 then
+					LeaMapsLC["ZoneMapContinentMenu"] = 5; cond:Show()
+					nodd:Show()
 				end
 
 				-- Hide dropdown menu list items
