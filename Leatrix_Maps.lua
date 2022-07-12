@@ -65,6 +65,12 @@
 
 		if LeaMapsLC["ShowZoneMenu"] == "On" then
 
+			-- Continent translations
+			L["Eastern Kingdoms"] = POSTMASTER_PIPE_EASTERNKINGDOMS
+			L["Kalimdor"] = POSTMASTER_PIPE_KALIMDOR
+			L["Outland"] = POSTMASTER_PIPE_OUTLAND
+			L["Azeroth"] = AZEROTH
+
 			-- Create outer frame for dropdown menus
 			local outerFrame = CreateFrame("FRAME", nil, WorldMapFrame)
 			outerFrame:SetSize(360, 20)
