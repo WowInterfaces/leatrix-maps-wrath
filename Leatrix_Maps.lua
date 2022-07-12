@@ -4307,7 +4307,7 @@
 	-- Add content
 	LeaMapsLC:MakeTx(PageF, "Appearance", 16, -72)
 	LeaMapsLC:MakeCB(PageF, "NoMapBorder", "Remove map border", 16, -92, true, "If checked, the map border will be removed.")
-	LeaMapsLC:MakeCB(PageF, "ShowZoneMenu", "Show zone menu", 16, -112, true, "If checked, a zone dropdown menu will be shown in the map frame.|n|nIt will show the name of the map and allow you to see any zone map from the same continent.")
+	LeaMapsLC:MakeCB(PageF, "ShowZoneMenu", "Show zone menu", 16, -112, true, "If checked, zone and continent dropdown menus will be shown in the map frame.")
 	LeaMapsLC:MakeCB(PageF, "SetMapOpacity", "Set map opacity", 16, -132, false, "If checked, you will be able to set the opacity of the map.")
 
 	LeaMapsLC:MakeTx(PageF, "Icons", 16, -172)
