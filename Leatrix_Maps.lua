@@ -109,9 +109,7 @@
 			-- Create Kalimdor dropdown menu
 			LeaMapsLC["ZoneMapKalimdorMenu"] = 1
 
-			local mapKalimdorTable = {}
-			local mapKalimdorString = {}
-
+			local mapKalimdorTable, mapKalimdorString = {}, {}
 			local zones = C_Map.GetMapChildrenInfo(1414)
 			if (zones) then
 				for i, zoneInfo in ipairs(zones) do
@@ -137,9 +135,7 @@
 			-- Create Outland dropdown menu
 			LeaMapsLC["ZoneMapOutlandMenu"] = 1
 
-			local mapOutlandTable = {}
-			local mapOutlandString = {}
-
+			local mapOutlandTable, mapOutlandString = {}, {}
 			local zones = C_Map.GetMapChildrenInfo(1945)
 			if (zones) then
 				for i, zoneInfo in ipairs(zones) do
@@ -166,7 +162,6 @@
 			LeaMapsLC["ZoneMapContinentMenu"] = 1
 
 			local mapContinentTable, mapContinentString = {}, {}
-
 			tinsert(mapContinentString, 1, L["Eastern Kingdoms"])
 			tinsert(mapContinentTable, 1, {zonename = L["Eastern Kingdoms"], mapid = 1415})
 			tinsert(mapContinentString, 2, L["Kalimdor"])
@@ -228,7 +223,7 @@
 			-- Function to set dropdown menu
 			local function SetMapControls()
 
-				-- Show relevant dropdown menu
+				-- Hide dropdown menus
 				ekdd:Hide()
 				kmdd:Hide()
 				otdd:Hide()
