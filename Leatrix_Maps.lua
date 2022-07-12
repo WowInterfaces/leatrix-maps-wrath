@@ -76,7 +76,7 @@
 
 			-- Create No zones available dropdown menu
 			LeaMapsLC["ZoneMapNoneMenu"] = 1
-			local nodd = LeaMapsLC:CreateDropDown("ZoneMapNoneMenu", "", WorldMapFrame, 180, "TOP", -80, -35, {"No zones available."}, "")
+			local nodd = LeaMapsLC:CreateDropDown("ZoneMapNoneMenu", "", WorldMapFrame, 180, "TOP", -80, -35, {"---"}, "")
 			nodd:ClearAllPoints()
 			nodd:SetPoint("TOPRIGHT", outerFrame, "TOPRIGHT", 0, 0)
 
@@ -233,14 +233,13 @@
 				kmdd:Hide()
 				otdd:Hide()
 				cond:Hide()
-				nodd:Show()
+				nodd:Hide()
 
 				-- Eastern Kingdoms
 				for k, v in pairs(mapEasternTable) do
 					if v.mapid == WorldMapFrame.mapID then
 						LeaMapsLC["ZoneMapEasternMenu"] = k
 						ekdd:Show()
-						nodd:Hide()
 						LeaMapsLC["ZoneMapContinentMenu"] = 1; cond:Show()
 					end
 				end
@@ -250,7 +249,6 @@
 					if v.mapid == WorldMapFrame.mapID then
 						LeaMapsLC["ZoneMapKalimdorMenu"] = k
 						kmdd:Show()
-						nodd:Hide()
 						LeaMapsLC["ZoneMapContinentMenu"] = 2; cond:Show()
 					end
 				end
@@ -260,7 +258,6 @@
 					if v.mapid == WorldMapFrame.mapID then
 						LeaMapsLC["ZoneMapOutlandMenu"] = k
 						otdd:Show()
-						nodd:Hide()
 						LeaMapsLC["ZoneMapContinentMenu"] = 3; cond:Show()
 					end
 				end
