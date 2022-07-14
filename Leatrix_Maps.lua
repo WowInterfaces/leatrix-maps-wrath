@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.114"
+	LeaMapsLC["AddonVer"] = "2.5.115.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
