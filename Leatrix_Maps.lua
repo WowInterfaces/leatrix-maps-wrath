@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.115.alpha.1 (14th July 2022)
+	-- 	Leatrix Maps 2.5.115.alpha.2 (15th July 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.115.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.115.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -274,8 +274,9 @@
 
 			end
 
-			-- Set dropdown menu when map changes
+			-- Set dropdown menu when map changes and when map is shown
 			hooksecurefunc(WorldMapFrame, "OnMapChanged", SetMapControls)
+			WorldMapFrame:HookScript("OnShow", SetMapControls)
 
 		end
 
