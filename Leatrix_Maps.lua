@@ -195,10 +195,7 @@
 
 			-- Continent dropdown menu handler
 			LeaMapsCB["ListFrameZoneMapContinentMenu"]:HookScript("OnHide", function()
-				ekdd:Hide()
-				kmdd:Hide()
-				otdd:Hide()
-				nodd:Hide()
+				ekdd:Hide(); kmdd:Hide(); otdd:Hide(); nodd:Hide()
 				if LeaMapsLC["ZoneMapContinentMenu"] == 1 then
 					ekdd:Show()
 					WorldMapFrame:SetMapID(mapEasternTable[LeaMapsLC["ZoneMapEasternMenu"]].mapid)
@@ -221,11 +218,14 @@
 			local function SetMapControls()
 
 				-- Hide dropdown menus
-				ekdd:Hide()
-				kmdd:Hide()
-				otdd:Hide()
-				cond:Hide()
-				nodd:Hide()
+				ekdd:Hide(); kmdd:Hide(); otdd:Hide(); nodd:Hide(); cond:Hide()
+
+				-- Hide dropdown menu list items
+				LeaMapsCB["ListFrameZoneMapEasternMenu"]:Hide()
+				LeaMapsCB["ListFrameZoneMapKalimdorMenu"]:Hide()
+				LeaMapsCB["ListFrameZoneMapOutlandMenu"]:Hide()
+				LeaMapsCB["ListFrameZoneMapContinentMenu"]:Hide()
+				LeaMapsCB["ListFrameZoneMapNoneMenu"]:Hide()
 
 				-- Eastern Kingdoms
 				for k, v in pairs(mapEasternTable) do
@@ -233,6 +233,7 @@
 						LeaMapsLC["ZoneMapEasternMenu"] = k
 						ekdd:Show()
 						LeaMapsLC["ZoneMapContinentMenu"] = 1; cond:Show()
+						return
 					end
 				end
 
@@ -242,6 +243,7 @@
 						LeaMapsLC["ZoneMapKalimdorMenu"] = k
 						kmdd:Show()
 						LeaMapsLC["ZoneMapContinentMenu"] = 2; cond:Show()
+						return
 					end
 				end
 
@@ -251,27 +253,23 @@
 						LeaMapsLC["ZoneMapOutlandMenu"] = k
 						otdd:Show()
 						LeaMapsLC["ZoneMapContinentMenu"] = 3; cond:Show()
+						return
 					end
 				end
 
 				-- Azeroth
 				if WorldMapFrame.mapID == 947 then
-					LeaMapsLC["ZoneMapContinentMenu"] = 4; cond:Show()
 					nodd:Show()
+					LeaMapsLC["ZoneMapContinentMenu"] = 4; cond:Show()
+					return
 				end
 
 				-- Cosmic
 				if WorldMapFrame.mapID == 946 then
-					LeaMapsLC["ZoneMapContinentMenu"] = 5; cond:Show()
 					nodd:Show()
+					LeaMapsLC["ZoneMapContinentMenu"] = 5; cond:Show()
+					return
 				end
-
-				-- Hide dropdown menu list items
-				LeaMapsCB["ListFrameZoneMapEasternMenu"]:Hide()
-				LeaMapsCB["ListFrameZoneMapKalimdorMenu"]:Hide()
-				LeaMapsCB["ListFrameZoneMapOutlandMenu"]:Hide()
-				LeaMapsCB["ListFrameZoneMapContinentMenu"]:Hide()
-				LeaMapsCB["ListFrameZoneMapNoneMenu"]:Hide()
 
 			end
 
