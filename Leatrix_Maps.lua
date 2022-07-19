@@ -283,11 +283,11 @@
 				local E, S = unpack(ElvUI)
 				local S = E:GetModule('Skins')
 				if E.private.skins.blizzard.enable and E.private.skins.blizzard.worldmap then
-					S:HandleDropDownBox(ekdd.dd); ekdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -6, top = 0, bottom = 0 }});
-					S:HandleDropDownBox(kmdd.dd); kmdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -6, top = 0, bottom = 0 }});
-					S:HandleDropDownBox(otdd.dd); otdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -6, top = 0, bottom = 0 }});
-					S:HandleDropDownBox(cond.dd); cond.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -6, top = 0, bottom = 0 }});
-					S:HandleDropDownBox(nodd.dd); nodd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -6, top = 0, bottom = 0 }});
+					S:HandleDropDownBox(ekdd.dd); ekdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
+					S:HandleDropDownBox(kmdd.dd); kmdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
+					S:HandleDropDownBox(otdd.dd); otdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
+					S:HandleDropDownBox(cond.dd); cond.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
+					S:HandleDropDownBox(nodd.dd); nodd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
 					outerFrame:SetWidth(380)
 					ekdd.btn:SetHitRectInsets(ekdd.btn:GetHitRectInsets() - 10, 0, 0, 0)
 					kmdd.btn:SetHitRectInsets(kmdd.btn:GetHitRectInsets() - 10, 0, 0, 0)
