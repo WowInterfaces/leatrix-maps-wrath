@@ -1,6 +1,6 @@
-2.5.116.alpha.3 - 24th July 2022
+2.5.116 - 27th July 2022
 - For 'Unlock map frame', added a fix for Demodal preventing the map frame from being moved to the top edge of the screen.
-- Leatrix Maps will now attempt to run on Wrath Beta but note that it hasn't been tested and there are no Wrath features yet.
+- Leatrix Maps for BCC will now attempt to run on Wrath Beta but note that it hasn't been tested and there are no Wrath features yet because, unlike previous expansions and games, Blizzard is still refusing to give me access to Wrath Beta.  If I never get access to Wrath Beta, I will update all addons in a few weeks when the Wrath changes are public.
 
 2.5.115 - 20th July 2022
 - Fixed a minor cosmetic issue with 'Show zone menus' which may have sometimes caused menus to overlap.  Added skins for ElvUI.
