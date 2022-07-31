@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.117.alpha.1 (31st July 2022)
+	-- 	Leatrix Maps 2.5.117.alpha.2 (31st July 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.117.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.117.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -27,6 +27,13 @@
 				print(L["LEATRIX MAPS: WRONG VERSION INSTALLED!"])
 			end)
 			return
+		end
+		if gametocversion > 30000 then
+			-- Game client is Wrath Beta
+			LeaMapsLC.Wrath = true
+			C_Timer.After(2, function()
+				DEFAULT_CHAT_FRAME:AddMessage(L["This edition of Leatrix Maps is for BCC so some settings might not work yet in Wrath Classic.|n|nThere's no need to worry.  Leatrix Maps will be fully updated to support Wrath Classic in August 2022."], 1.0, 0.85, 0.0)
+			end)
 		end
 	end
 
