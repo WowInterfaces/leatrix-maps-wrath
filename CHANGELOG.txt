@@ -1,4 +1,4 @@
-2.5.117.alpha.2 - 31st July 2022
+2.5.117 - 3rd August 2022
 - Leatrix Maps will be updated for Wrath Beta during August 2022.
 
 2.5.116 - 27th July 2022
