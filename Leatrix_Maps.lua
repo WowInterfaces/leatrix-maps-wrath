@@ -197,8 +197,10 @@
 			table.sort(mapNorthrendTable, function(k, v) return k.zonename < v.zonename end)
 
 			tinsert(mapNorthrendString, 1, L["Northrend"])
-			if LeaMaps.Wrath then
+			if LeaMapsLC.Wrath then
 				tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 113})
+			else
+				tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 947})
 			end
 
 			local nrdd = LeaMapsLC:CreateDropDown("ZoneMapNorthrendMenu", "", WorldMapFrame, 180, "TOP", -80, -35, mapNorthrendString, "")
