@@ -174,11 +174,22 @@
 			LeaMapsLC["ZoneMapNorthrendMenu"] = 1
 
 			local mapNorthrendTable, mapNorthrendString = {}, {}
-			local zones = C_Map.GetMapChildrenInfo(113)
-			if (zones) then
-				for i, zoneInfo in ipairs(zones) do
-					tinsert(mapNorthrendTable, {zonename = zoneInfo.name, mapid = zoneInfo.mapID})
-					tinsert(mapNorthrendString, zoneInfo.name)
+
+			if LeaMapsLC.Wrath then
+				local zones = C_Map.GetMapChildrenInfo(113)
+				if (zones) then
+					for i, zoneInfo in ipairs(zones) do
+						tinsert(mapNorthrendTable, {zonename = zoneInfo.name, mapid = zoneInfo.mapID})
+						tinsert(mapNorthrendString, zoneInfo.name)
+					end
+				end
+			else
+				local zones = C_Map.GetMapChildrenInfo(947)
+				if (zones) then
+					for i, zoneInfo in ipairs(zones) do
+						tinsert(mapNorthrendTable, {zonename = zoneInfo.name, mapid = zoneInfo.mapID})
+						tinsert(mapNorthrendString, zoneInfo.name)
+					end
 				end
 			end
 
@@ -186,7 +197,9 @@
 			table.sort(mapNorthrendTable, function(k, v) return k.zonename < v.zonename end)
 
 			tinsert(mapNorthrendString, 1, L["Northrend"])
-			tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 113})
+			if LeaMaps.Wrath then
+				tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 113})
+			end
 
 			local nrdd = LeaMapsLC:CreateDropDown("ZoneMapNorthrendMenu", "", WorldMapFrame, 180, "TOP", -80, -35, mapNorthrendString, "")
 			nrdd:ClearAllPoints()
