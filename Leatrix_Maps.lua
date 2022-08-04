@@ -31,9 +31,6 @@
 		if gametocversion > 30000 then
 			-- Game client is Wrath Beta
 			LeaMapsLC.Wrath = true
-			C_Timer.After(2, function()
-				DEFAULT_CHAT_FRAME:AddMessage(L["This edition of Leatrix Maps is for BCC so some settings might not work yet in Wrath Classic.|n|nThere's no need to worry.  Leatrix Maps will be fully updated to support Wrath Classic in August 2022."], 1.0, 0.85, 0.0)
-			end)
 		end
 	end
 
@@ -2474,7 +2471,111 @@
 					{"Arrow", 67.9, 86.9, L["Nagrand"], nil, arTex, nil, nil, nil, nil, nil, 2.6, 1951},
 				},
 
+				----------------------------------------------------------------------
+				--	Northrend
+				----------------------------------------------------------------------
+
+				--[[Dalaran]] [125] = {
+					{"FlightN", 72.2, 45.8, L["Dalaran"], nil, tNTex, nil, nil}, -- Aludane Whitecloud
+					{"Dungeon", 66.9, 68.1, L["The Violet Hold"], L["Dungeon"], dnTex},
+				},
+
+				--[[Icecrown]] [118] = {
+					{"FlightN", 87.8, 78.1, L["The Argent Vanguard"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Aedan Moran
+					{"FlightN", 79.3, 72.3, L["Crusaders' Pinnacle"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Penumbrius
+					{"FlightN", 72.6, 22.8, L["Argent Tournament Grounds"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Helidan Lightwing
+					{"FlightN", 19.3, 47.8, L["Death's Rise"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Dreadwind
+					{"FlightN", 43.8, 24.4, L["The Shadow Vault"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Morlia Doomwing
+				},
+
+				--[[The Storm Peaks]] [120] = {
+					{"FlightA", 29.5, 74.5, L["Frosthold"] .. ", " .. L["The Storm Peaks"], nil, tATex, nil, nil}, -- Faldorf Bitterchill
+					{"FlightN", 40.8, 84.5, L["K3"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Skizzle Slickslide
+					{"FlightN", 62.6, 60.9, L["Dun Nifflelem"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Halvdan
+					{"FlightN", 44.5, 28.2, L["Ulduar"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Shavalius the Fancy
+					{"FlightN", 30.6, 36.3, L["Bouldercrag's Refuge"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Breck Rockbrow
+					{"FlightN", 65.4, 50.6, L["Camp Tunka'lo"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Hyeyoung Parka
+				},
+
+				--[[Borean Tundra]] [114] = {
+					{"FlightN", 33.1, 34.4, L["Transitus Shield"] .. ", " .. L["Coldarra"], nil, tNTex, nil, nil}, -- Warmage Adami
+					{"FlightA", 56.6, 20.1, L["Fizzcrank Airstrip"] .. ", " .. L["Borean Tundra"], nil, tATex, nil, nil}, -- Kara Thricestar
+					{"FlightN", 45.3, 34.5, L["Amber Lodge"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Surristrasz
+					{"FlightN", 78.5, 51.5, L["Unu'pe"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Bilko Driftspark
+					{"FlightA", 58.7, 68.3, L["Valiance Keep"] .. ", " .. L["Borean Tundra"], nil, tATex, nil, nil}, -- Tomas Riverwell
+					{"FlightN", 77.8, 37.8, L["Taunka'le Village"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Omu Spiritbreeze
+				},
+
+				--[[Sholazar Basin]] [119] = {
+					{"FlightN", 50.1, 61.4, L["River's Heart"] .. ", " .. L["Sholazar Basin"], nil, tNTex, nil, nil}, -- Tamara Wobblesprocket
+					{"FlightN", 25.2,58.5, L["Nesingwary Base Camp"] .. ", " .. L["Sholazar Basin"], nil, tNTex, nil, nil}, -- The Spirit of Gnomeregan
+				},
+
+				--[[Zul'Drak]] [121] = {
+					{"FlightN", 14.0, 73.6, L["Ebon Watch"] .. ", " .. L["Zul'Drak"], nil, tNTex, nil, nil}, -- Baneflight
+					{"FlightN", 32.2, 74.4, L["Light's Breach"] .. ", " .. L["Zul'Drak"], nil, tNTex, nil, nil}, -- Danica Saint
+					{"FlightN", 41.6, 64.4, L["The Argent Stand"] .. ", " .. L["Zul'Drak"], nil, tNTex, nil, nil}, -- Gurric
+					{"FlightN", 70.5, 23.3, L["Gundrak"] .. ", " .. L["Zul'Drak"], nil, tNTex, nil, nil}, -- Rafae
+					{"FlightN", 60.0, 56.7, L["Zim'Torga"] .. ", " .. L["Zul'Drak"], nil, tNTex, nil, nil}, -- Maaka
+				},
+
+				--[[Grizzly Hills]] [116] = {
+					{"FlightA", 31.3, 59.1, L["Amberpine Lodge"] .. ", " .. L["Grizzly Hills"], nil, tATex, nil, nil}, -- Vana Grey
+					{"FlightA", 59.9, 26.7, L["Westfall Brigade"] .. ", " .. L["Grizzly Hills"], nil, tATex, nil, nil}, -- Samuel Clearbook
+					{"FlightN", 65.0, 46.9, L["Camp Oneqwah"] .. ", " .. L["Grizzly Hills"], nil, tNTex, nil, nil}, -- Makki Wintergale
+				},
+
+				--[[Howlong Fjord]] [117] = {
+					{"FlightA", 59.8, 63.2, L["Valgarde Port"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- Pricilla Winterwind
+					{"FlightA", 60.1, 16.1, L["Fort Wildervar"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- James Ormsby
+					{"FlightA", 31.3, 44.0, L["Westguard Keep"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- Greer Orehammer
+					{"FlightN", 24.7, 57.8, L["Kamagua"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Kip Trawlskip
+					{"FlightN", 49.6, 11.6, L["Camp Winterhoof"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Celea Frozenmane
+				},
+
+				--[[Dragonblight]] [115] = {
+					{"FlightA", 29.2, 55.3, L["Stars' Rest"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Palena Silvercloud
+					{"FlightN", 48.5, 74.4, L["Moa'ki"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Cid Flounderfix
+					{"FlightN", 60.3, 51.6, L["Wyrmrest Temple"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Nethestrasz
+					{"FlightA", 39.5, 25.9, L["Fordragon Hold"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Derek Rammel
+					{"FlightA", 77.1, 49.8, L["Wintergarde Keep"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Rodney Wells
+				},
+
+				--[[Wintergrasp]] [123] = {
+					{"FlightA", 72.0, 31.0, L["Valiance Landing Camp"] .. ", " .. L["Wintergrasp"], nil, tATex, nil, nil}, -- Arzo Safeflight
+				},
+
+				--[[Crystalsong Forest]] [127] = {
+					{"FlightA", 72.2, 81.0, L["Windrunner's Overlook"] .. ", " .. L["Crystalsong Forest"], nil, tATex, nil, nil}, -- Galendror Whitewing
+				},
+
 			}
+
+			-- Fix Wrath Classic icons (these can be merged into the main table once the prepatch is live)
+			if LeaMapsLC.Wrath then
+
+				--[[Stormwind City]] PinData[1453] = {
+					{"Dungeon", 52.4, 70.0, L["The Stockade"], L["Dungeon"], dnTex, 23, 29, 15, 21, 29},
+					{"FlightA", 71.0, 72.5, L["Trade District"] .. ", " .. L["Stormwind"], nil, tATex, nil, nil},
+					{"TravelA", 66.4, 34.1, L["Tram to"] .. " " .. L["Tinker Town"] .. ", " .. L["Ironforge"], nil, fATex, nil, nil},
+					{"Arrow", 74.7, 93.4, L["Elwynn Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.8, 1429},
+				}
+
+				--[[Eastern Plaguelands]] PinData[1423] = {
+					{"Dungeon", 27.1, 15.7, L["Stratholme (Main Gate)"], L["Dungeon"], dnTex, 58, 60, 45, 56, 61}, {"Dungeon", 43.5, 19.4, L["Stratholme (Service Gate)"], L["Dungeon"], dnTex, 58, 60, 45, 56, 61}, 
+					{"FlightA", 75.9, 53.4, L["Light's Hope Chapel"] .. ", " .. L["Eastern Plaguelands"], nil, tATex, nil, nil},
+					{"FlightH", 74.5, 51.2, L["Light's Hope Chapel"] .. ", " .. L["Eastern Plaguelands"], nil, tHTex, nil, nil},
+					{"Spirit", 42.9, 38.9, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 35.0, 85.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 67.7, 60.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 15.8, 55.5, L["Spirit Healer"], nil, spTex, nil, nil}, -- New in Wrath
+					{"Arrow", 8.7, 66.2, L["Western Plaguelands"], nil, arTex, nil, nil, nil, nil, nil, 1.6, 1422},
+					{"Arrow", 54.2, 14.4, L["Ghostlands"], nil, arTex, nil, nil, nil, nil, nil, 0.4, 1942},
+					-- This spirit healer needs to be removed in Wrath
+					{"Spirit", 37.8, 70.1, L["Spirit Healer"], nil, spTex, nil, nil}, -- LeaMapsLC.Wrath (remove this in Wrath)
+				}
+
+			end
 
 			-- Add Caverns of Time portal to Shattrath if reputation with Keepers of Time is revered or higher
 			local name, description, standingID = GetFactionInfoByID(989)
