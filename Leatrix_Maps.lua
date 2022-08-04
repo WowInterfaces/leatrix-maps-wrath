@@ -73,6 +73,7 @@
 			L["Eastern Kingdoms"] = POSTMASTER_PIPE_EASTERNKINGDOMS
 			L["Kalimdor"] = POSTMASTER_PIPE_KALIMDOR
 			L["Outland"] = POSTMASTER_PIPE_OUTLAND
+			L["Northrend"] = POSTMASTER_PIPE_NORTHREND
 			L["Azeroth"] = AZEROTH
 
 			-- Create outer frame for dropdown menus
@@ -169,6 +170,32 @@
 				WorldMapFrame:SetMapID(mapOutlandTable[LeaMapsLC["ZoneMapOutlandMenu"]].mapid)
 			end)
 
+			-- Create Northrend dropdown menu
+			LeaMapsLC["ZoneMapNorthrendMenu"] = 1
+
+			local mapNorthrendTable, mapNorthrendString = {}, {}
+			local zones = C_Map.GetMapChildrenInfo(113)
+			if (zones) then
+				for i, zoneInfo in ipairs(zones) do
+					tinsert(mapNorthrendTable, {zonename = zoneInfo.name, mapid = zoneInfo.mapID})
+					tinsert(mapNorthrendString, zoneInfo.name)
+				end
+			end
+
+			table.sort(mapNorthrendString, function(k, v) return k < v end)
+			table.sort(mapNorthrendTable, function(k, v) return k.zonename < v.zonename end)
+
+			tinsert(mapNorthrendString, 1, L["Northrend"])
+			tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 113})
+
+			local nrdd = LeaMapsLC:CreateDropDown("ZoneMapNorthrendMenu", "", WorldMapFrame, 180, "TOP", -80, -35, mapNorthrendString, "")
+			nrdd:ClearAllPoints()
+			nrdd:SetPoint("TOPRIGHT", outerFrame, "TOPRIGHT", 0, 0)
+
+			LeaMapsCB["ListFrameZoneMapNorthrendMenu"]:HookScript("OnHide", function()
+				WorldMapFrame:SetMapID(mapNorthrendTable[LeaMapsLC["ZoneMapNorthrendMenu"]].mapid)
+			end)
+
 			-- Create continent dropdown menu
 			LeaMapsLC["ZoneMapContinentMenu"] = 1
 
@@ -179,10 +206,12 @@
 			tinsert(mapContinentTable, 2, {zonename = L["Kalimdor"], mapid = 1414})
 			tinsert(mapContinentString, 3, L["Outland"])
 			tinsert(mapContinentTable, 3, {zonename = L["Outland"], mapid = 1945})
-			tinsert(mapContinentString, 4, L["Azeroth"])
-			tinsert(mapContinentTable, 4, {zonename = L["Azeroth"], mapid = 947})
-			tinsert(mapContinentString, 5, L["Cosmic"])
-			tinsert(mapContinentTable, 5, {zonename = L["Cosmic"], mapid = 946})
+			tinsert(mapContinentString, 4, L["Northrend"])
+			tinsert(mapContinentTable, 4, {zonename = L["Northrend"], mapid = 113})
+			tinsert(mapContinentString, 5, L["Azeroth"])
+			tinsert(mapContinentTable, 5, {zonename = L["Azeroth"], mapid = 947})
+			tinsert(mapContinentString, 6, L["Cosmic"])
+			tinsert(mapContinentTable, 6, {zonename = L["Cosmic"], mapid = 946})
 
 			local cond = LeaMapsLC:CreateDropDown("ZoneMapContinentMenu", "", WorldMapFrame, 180, "TOP", -80, -35, mapContinentString, "")
 			cond:ClearAllPoints()
@@ -200,7 +229,7 @@
 
 			-- Continent dropdown menu handler
 			LeaMapsCB["ListFrameZoneMapContinentMenu"]:HookScript("OnHide", function()
-				ekdd:Hide(); kmdd:Hide(); otdd:Hide(); nodd:Hide()
+				ekdd:Hide(); kmdd:Hide(); otdd:Hide(); nrdd:Hide(); nodd:Hide()
 				if LeaMapsLC["ZoneMapContinentMenu"] == 1 then
 					ekdd:Show()
 					WorldMapFrame:SetMapID(mapEasternTable[LeaMapsLC["ZoneMapEasternMenu"]].mapid)
@@ -211,9 +240,12 @@
 					otdd:Show()
 					WorldMapFrame:SetMapID(mapOutlandTable[LeaMapsLC["ZoneMapOutlandMenu"]].mapid)
 				elseif LeaMapsLC["ZoneMapContinentMenu"] == 4 then
+					nrdd:Show()
+					WorldMapFrame:SetMapID(mapNorthrendTable[LeaMapsLC["ZoneMapNorthrendMenu"]].mapid)
+				elseif LeaMapsLC["ZoneMapContinentMenu"] == 5 then
 					nodd:Show()
 					WorldMapFrame:SetMapID(947)
-				elseif LeaMapsLC["ZoneMapContinentMenu"] == 5 then
+				elseif LeaMapsLC["ZoneMapContinentMenu"] == 6 then
 					nodd:Show()
 					WorldMapFrame:SetMapID(946)
 				end
@@ -223,12 +255,13 @@
 			local function SetMapControls()
 
 				-- Hide dropdown menus
-				ekdd:Hide(); kmdd:Hide(); otdd:Hide(); nodd:Hide(); cond:Hide()
+				ekdd:Hide(); kmdd:Hide(); otdd:Hide(); nodd:Hide(); nrdd:Hide(); cond:Hide()
 
 				-- Hide dropdown menu list items
 				LeaMapsCB["ListFrameZoneMapEasternMenu"]:Hide()
 				LeaMapsCB["ListFrameZoneMapKalimdorMenu"]:Hide()
 				LeaMapsCB["ListFrameZoneMapOutlandMenu"]:Hide()
+				LeaMapsCB["ListFrameZoneMapNorthrendMenu"]:Hide()
 				LeaMapsCB["ListFrameZoneMapContinentMenu"]:Hide()
 				LeaMapsCB["ListFrameZoneMapNoneMenu"]:Hide()
 
@@ -262,17 +295,27 @@
 					end
 				end
 
+				-- Northrend
+				for k, v in pairs(mapNorthrendTable) do
+					if v.mapid == WorldMapFrame.mapID then
+						LeaMapsLC["ZoneMapNorthrendMenu"] = k
+						nrdd:Show()
+						LeaMapsLC["ZoneMapContinentMenu"] = 4; cond:Show()
+						return
+					end
+				end
+
 				-- Azeroth
 				if WorldMapFrame.mapID == 947 then
 					nodd:Show()
-					LeaMapsLC["ZoneMapContinentMenu"] = 4; cond:Show()
+					LeaMapsLC["ZoneMapContinentMenu"] = 5; cond:Show()
 					return
 				end
 
 				-- Cosmic
 				if WorldMapFrame.mapID == 946 then
 					nodd:Show()
-					LeaMapsLC["ZoneMapContinentMenu"] = 5; cond:Show()
+					LeaMapsLC["ZoneMapContinentMenu"] = 6; cond:Show()
 					return
 				end
 
