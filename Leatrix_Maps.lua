@@ -176,6 +176,7 @@
 			local mapNorthrendTable, mapNorthrendString = {}, {}
 
 			if LeaMapsLC.Wrath then
+				-- This is Wrath so create a Northrend table
 				local zones = C_Map.GetMapChildrenInfo(113)
 				if (zones) then
 					for i, zoneInfo in ipairs(zones) do
@@ -184,6 +185,7 @@
 					end
 				end
 			else
+				-- It's not Wrath so just create a table based on the Azeroth map (it won't be used anyway)
 				local zones = C_Map.GetMapChildrenInfo(947)
 				if (zones) then
 					for i, zoneInfo in ipairs(zones) do
@@ -199,8 +201,6 @@
 			tinsert(mapNorthrendString, 1, L["Northrend"])
 			if LeaMapsLC.Wrath then
 				tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 113})
-			else
-				tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 947})
 			end
 
 			local nrdd = LeaMapsLC:CreateDropDown("ZoneMapNorthrendMenu", "", WorldMapFrame, 180, "TOP", -80, -35, mapNorthrendString, "")
@@ -3787,6 +3787,12 @@
 			dditem.f = dditem:CreateFontString(nil, 'ARTWORK', 'GameFontHighlight')
 			dditem.f:SetPoint('LEFT', 16, 0)
 			dditem.f:SetText(items[k])
+
+			-- Temporarily disable Northrend menu item for BCC client
+			if not LeaMapsLC.Wrath and items[k] == POSTMASTER_PIPE_NORTHREND then
+				dditem:Disable()
+				dditem:SetAlpha(0.5)
+			end
 
 			dditem.f:SetWordWrap(false)
 			dditem.f:SetJustifyH("LEFT")
