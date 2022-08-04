@@ -1,4 +1,4 @@
-2.5.118.alpha.1 - 4th August 2022
+2.5.118.alpha.2 - 4th August 2022
 - Updated for Wrath Beta.
 
 2.5.117 - 3rd August 2022
