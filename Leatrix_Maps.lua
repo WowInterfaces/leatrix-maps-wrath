@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.118.alpha.3 (5th August 2022)
+	-- 	Leatrix Maps 2.5.118.alpha.4 (6th August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.118.alpha.3"
+	LeaMapsLC["AddonVer"] = "2.5.118.alpha.4"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2545,7 +2545,9 @@
 
 				--[[Dalaran]] [125] = {
 					{"FlightN", 72.2, 45.8, L["Dalaran"], nil, tNTex, nil, nil}, -- Aludane Whitecloud
-					{"Dungeon", 66.9, 68.1, L["The Violet Hold"], L["Dungeon"], dnTex},
+					{"Dungeon", 66.8, 68.2, L["The Violet Hold"], L["Dungeon"], dnTex},
+					{"TravelA", 37.8, 62.2, L["Portals"], L["Stormwind"] .. ", " .. L["Ironforge"] .. ", " .. L["Darnassus"] .. ", " .. L["Exodar"] .. ", " .. L["Shattrath"], pATex},
+					{"TravelH", 57.8, 24.5, L["Portals"], L["Orgrimmar"] .. ", " .. L["Undercity"] .. ", " .. L["Shattrath"] .. ", " .. L["Thunder Bluff"] .. ", " .. L["Silvermoon"], pHTex},
 				},
 
 				--[[Icecrown]] [118] = {
@@ -2554,6 +2556,10 @@
 					{"FlightN", 72.6, 22.8, L["Argent Tournament Grounds"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Helidan Lightwing
 					{"FlightN", 19.3, 47.8, L["Death's Rise"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Dreadwind
 					{"FlightN", 43.8, 24.4, L["The Shadow Vault"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Morlia Doomwing
+					{"Raid", 53.3, 85.5, L["Icecrown Citadel"], L["Raid"], rdTex},
+					{"Dungeon", 52.6, 89.4, L["The Frozen Halls"], L["The Forge of Souls"] .. ", " .. L["The Pit of Saron"] .. ",|n" .. L["The Halls of Reflection"], dnTex},
+					{"Dungeon", 74.2, 20.5, L["Trial of the Champion"], L["Dungeon"], dnTex},
+					{"Raid", 75.1, 21.8, L["Trial of the Crusader"], L["Raid"], rdTex},
 				},
 
 				--[[The Storm Peaks]] [120] = {
@@ -2563,6 +2569,9 @@
 					{"FlightN", 44.5, 28.2, L["Ulduar"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Shavalius the Fancy
 					{"FlightN", 30.6, 36.3, L["Bouldercrag's Refuge"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Breck Rockbrow
 					{"FlightN", 65.4, 50.6, L["Camp Tunka'lo"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Hyeyoung Parka
+					{"Dungeon", 39.6, 26.9, L["Halls of Stone"], L["Dungeon"], dnTex},
+					{"Dungeon", 45.4, 21.4, L["Halls of Lightning"], L["Dungeon"], dnTex},
+					{"Raid", 41.6, 17.8, L["Ulduar"], L["Raid"], rdTex},
 				},
 
 				--[[Borean Tundra]] [114] = {
@@ -2572,6 +2581,7 @@
 					{"FlightN", 78.5, 51.5, L["Unu'pe"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Bilko Driftspark
 					{"FlightA", 58.7, 68.3, L["Valiance Keep"] .. ", " .. L["Borean Tundra"], nil, tATex, nil, nil}, -- Tomas Riverwell
 					{"FlightN", 77.8, 37.8, L["Taunka'le Village"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Omu Spiritbreeze
+					{"Dungeon", 27.6, 26.6, L["The Nexus"], L["The Nexus"] .. ", " .. L["The Oculus"] .. ",|n" .. L["The Eye of Eternity"], dnTex},
 				},
 
 				--[[Sholazar Basin]] [119] = {
@@ -2585,12 +2595,16 @@
 					{"FlightN", 41.6, 64.4, L["The Argent Stand"] .. ", " .. L["Zul'Drak"], nil, tNTex, nil, nil}, -- Gurric
 					{"FlightN", 70.5, 23.3, L["Gundrak"] .. ", " .. L["Zul'Drak"], nil, tNTex, nil, nil}, -- Rafae
 					{"FlightN", 60.0, 56.7, L["Zim'Torga"] .. ", " .. L["Zul'Drak"], nil, tNTex, nil, nil}, -- Maaka
+					{"Dungeon", 29.0, 83.9, L["Drak'Tharon Keep"], L["Dungeon"], dnTex},
+					{"Dungeon", 76.2, 21.1, L["Gundrak"], L["Dungeon"], dnTex},
+					{"Dungeon", 81.2, 28.9, L["Gundrak (rear entrance)"], L["Dungeon"], dnTex},
 				},
 
 				--[[Grizzly Hills]] [116] = {
 					{"FlightA", 31.3, 59.1, L["Amberpine Lodge"] .. ", " .. L["Grizzly Hills"], nil, tATex, nil, nil}, -- Vana Grey
 					{"FlightA", 59.9, 26.7, L["Westfall Brigade"] .. ", " .. L["Grizzly Hills"], nil, tATex, nil, nil}, -- Samuel Clearbook
 					{"FlightN", 65.0, 46.9, L["Camp Oneqwah"] .. ", " .. L["Grizzly Hills"], nil, tNTex, nil, nil}, -- Makki Wintergale
+					{"Dungeon", 17.5, 27.0, L["Drak'Tharon Keep"], L["Dungeon"], dnTex},
 				},
 
 				--[[Howlong Fjord]] [117] = {
@@ -2599,6 +2613,7 @@
 					{"FlightA", 31.3, 44.0, L["Westguard Keep"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- Greer Orehammer
 					{"FlightN", 24.7, 57.8, L["Kamagua"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Kip Trawlskip
 					{"FlightN", 49.6, 11.6, L["Camp Winterhoof"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Celea Frozenmane
+					{"Dungeon", 57.3, 46.8, L["Utgarde Keep"], L["Utgarde Keep"] .. ", " .. L["Utgarde Pinnacle"], dnTex},
 				},
 
 				--[[Dragonblight]] [115] = {
@@ -2607,10 +2622,14 @@
 					{"FlightN", 60.3, 51.6, L["Wyrmrest Temple"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Nethestrasz
 					{"FlightA", 39.5, 25.9, L["Fordragon Hold"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Derek Rammel
 					{"FlightA", 77.1, 49.8, L["Wintergarde Keep"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Rodney Wells
+					{"Raid", 59.6, 51.1, L["Wyrmrest Temple"], L["The Ruby Sanctum"] .. ", " .. L["The Obsidian Sanctum"], rdTex},
+					{"Raid", 87.4, 51.1, L["Naxxramas"], L["Raid"], rdTex},
+					{"Dungeon", 26.2, 49.6, L["Azjol-Nerub"], L["Azjol-Nerub"] .. ", " .. L["The Old Kingdom"], dnTex},
 				},
 
 				--[[Wintergrasp]] [123] = {
 					{"FlightA", 72.0, 31.0, L["Valiance Landing Camp"] .. ", " .. L["Wintergrasp"], nil, tATex, nil, nil}, -- Arzo Safeflight
+					{"Raid", 50.5, 16.4, L["Vault of Archavon"], L["Raid"], rdTex},
 				},
 
 				--[[Crystalsong Forest]] [127] = {
@@ -2641,6 +2660,7 @@
 					{"Arrow", 54.2, 14.4, L["Ghostlands"], nil, arTex, nil, nil, nil, nil, nil, 0.4, 1942},
 					-- This spirit healer needs to be removed in Wrath
 					{"Spirit", 37.8, 70.1, L["Spirit Healer"], nil, spTex, nil, nil}, -- LeaMapsLC.Wrath (remove this in Wrath)
+					{"FlightN", 83.9, 50.4, L["Acherus: The Ebon Hold"] .. ", " .. L["Eastern Plaguelands"], nil, tNTex, nil, nil},
 				}
 
 			end
