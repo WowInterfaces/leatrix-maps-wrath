@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.118.alpha.4 (6th August 2022)
+	-- 	Leatrix Maps 2.5.118.alpha.5 (7th August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.118.alpha.4"
+	LeaMapsLC["AddonVer"] = "2.5.118.alpha.5"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2543,11 +2543,74 @@
 				--	Northrend
 				----------------------------------------------------------------------
 
+				--[[Borean Tundra]] [114] = {
+					{"FlightN", 33.1, 34.4, L["Transitus Shield"] .. ", " .. L["Coldarra"], nil, tNTex, nil, nil}, -- Warmage Adami
+					{"FlightA", 56.6, 20.1, L["Fizzcrank Airstrip"] .. ", " .. L["Borean Tundra"], nil, tATex, nil, nil}, -- Kara Thricestar
+					{"FlightN", 45.3, 34.5, L["Amber Lodge"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Surristrasz
+					{"FlightN", 78.5, 51.5, L["Unu'pe"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Bilko Driftspark
+					{"FlightA", 58.7, 68.3, L["Valiance Keep"] .. ", " .. L["Borean Tundra"], nil, tATex, nil, nil}, -- Tomas Riverwell
+					{"FlightN", 77.8, 37.8, L["Taunka'le Village"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Omu Spiritbreeze
+					{"Dungeon", 27.6, 26.6, L["The Nexus"], L["The Nexus"] .. ", " .. L["The Oculus"] .. ",|n" .. L["The Eye of Eternity"], dnTex},
+					{"Arrow", 52.5, 7.6, L["Sholazar Basin"], nil, arTex, nil, nil, nil, nil, nil, 6.1, 119},
+					{"Arrow", 93.4, 35.7, L["Dragonblight"], nil, arTex, nil, nil, nil, nil, nil, 4.9, 115},
+				},
+
+				--[[Crystalsong Forest]] [127] = {
+					{"FlightA", 72.2, 81.0, L["Windrunner's Overlook"] .. ", " .. L["Crystalsong Forest"], nil, tATex, nil, nil}, -- Galendror Whitewing
+					{"Arrow", 47.1, 68.4, L["Dragonblight"], nil, arTex, nil, nil, nil, nil, nil, 2.7, 115},
+					{"Arrow", 58.7, 33.7, L["Icecrown"], nil, arTex, nil, nil, nil, nil, nil, 6.2, 118},
+					{"Arrow", 70.4, 35.7, L["The Storm Peaks"], nil, arTex, nil, nil, nil, nil, nil, 5.9, 120},
+					{"Arrow", 93.2, 58.4, L["Zul'Drak"], nil, arTex, nil, nil, nil, nil, nil, 4.6, 121},
+					{"Arrow", 85.7, 44.7, L["The Storm Peaks"], nil, arTex, nil, nil, nil, nil, nil, 0.3, 120},
+				},
+
 				--[[Dalaran]] [125] = {
 					{"FlightN", 72.2, 45.8, L["Dalaran"], nil, tNTex, nil, nil}, -- Aludane Whitecloud
 					{"Dungeon", 66.8, 68.2, L["The Violet Hold"], L["Dungeon"], dnTex},
 					{"TravelA", 37.8, 62.2, L["Portals"], L["Stormwind"] .. ", " .. L["Ironforge"] .. ", " .. L["Darnassus"] .. ", " .. L["Exodar"] .. ", " .. L["Shattrath"], pATex},
 					{"TravelH", 57.8, 24.5, L["Portals"], L["Orgrimmar"] .. ", " .. L["Undercity"] .. ", " .. L["Shattrath"] .. ", " .. L["Thunder Bluff"] .. ", " .. L["Silvermoon"], pHTex},
+				},
+
+				--[[Dragonblight]] [115] = {
+					{"FlightA", 29.2, 55.3, L["Stars' Rest"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Palena Silvercloud
+					{"FlightN", 48.5, 74.4, L["Moa'ki"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Cid Flounderfix
+					{"FlightN", 60.3, 51.6, L["Wyrmrest Temple"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Nethestrasz
+					{"FlightA", 39.5, 25.9, L["Fordragon Hold"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Derek Rammel
+					{"FlightA", 77.1, 49.8, L["Wintergarde Keep"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Rodney Wells
+					{"Raid", 59.6, 51.1, L["Wyrmrest Temple"], L["The Ruby Sanctum"] .. ", " .. L["The Obsidian Sanctum"], rdTex},
+					{"Raid", 87.4, 51.1, L["Naxxramas"], L["Raid"], rdTex},
+					{"Dungeon", 26.2, 49.6, L["Azjol-Nerub"], L["Azjol-Nerub"] .. ", " .. L["The Old Kingdom"], dnTex},
+					{"Arrow", 92.3, 64.4, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 4.8, 116},
+					{"Arrow", 88.8, 24.4, L["Zul'Drak"], nil, arTex, nil, nil, nil, nil, nil, 5.6, 121},
+					{"Arrow", 61.1, 10.5, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 5.6, 127},
+					{"Arrow", 12.4, 55.7, L["Borean Tundra"], nil, arTex, nil, nil, nil, nil, nil, 1.9, 114},
+				},
+
+				--[[Grizzly Hills]] [116] = {
+					{"FlightA", 31.3, 59.1, L["Amberpine Lodge"] .. ", " .. L["Grizzly Hills"], nil, tATex, nil, nil}, -- Vana Grey
+					{"FlightA", 59.9, 26.7, L["Westfall Brigade"] .. ", " .. L["Grizzly Hills"], nil, tATex, nil, nil}, -- Samuel Clearbook
+					{"FlightN", 65.0, 46.9, L["Camp Oneqwah"] .. ", " .. L["Grizzly Hills"], nil, tNTex, nil, nil}, -- Makki Wintergale
+					{"Dungeon", 17.5, 27.0, L["Drak'Tharon Keep"], L["Dungeon"], dnTex},
+					{"Arrow", 9.8, 66.8, L["Dragonblight"], nil, arTex, nil, nil, nil, nil, nil, 1.6, 115},
+					{"Arrow", 9.6, 31.8, L["Dragonblight"], nil, arTex, nil, nil, nil, nil, nil, 1.6, 115},
+					{"Arrow", 34, 81.2, L["Howling Fjord"], nil, arTex, nil, nil, nil, nil, nil, 3.3, 117},
+					{"Arrow", 67.2, 69.5, L["Howling Fjord"], nil, arTex, nil, nil, nil, nil, nil, 3.2, 117},
+					{"Arrow", 87.9, 69.7, L["Howling Fjord"], nil, arTex, nil, nil, nil, nil, nil, 3.9, 117},
+					{"Arrow", 60.1, 17.1, L["Zul'Drak"], nil, arTex, nil, nil, nil, nil, nil, 0.6, 121},
+					{"Arrow", 44.5, 28, L["Zul'Drak"], nil, arTex, nil, nil, nil, nil, nil, 0.7, 121},
+					{"Arrow", 18.1, 30.1, L["Zul'Drak"], L["Drak'Tharon Keep"], arTex, nil, nil, nil, nil, nil, 0.0, 121},
+				},
+
+				--[[Howlong Fjord]] [117] = {
+					{"FlightA", 59.8, 63.2, L["Valgarde Port"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- Pricilla Winterwind
+					{"FlightA", 60.1, 16.1, L["Fort Wildervar"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- James Ormsby
+					{"FlightA", 31.3, 44.0, L["Westguard Keep"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- Greer Orehammer
+					{"FlightN", 24.7, 57.8, L["Kamagua"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Kip Trawlskip
+					{"FlightN", 49.6, 11.6, L["Camp Winterhoof"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Celea Frozenmane
+					{"Dungeon", 57.3, 46.8, L["Utgarde Keep"], L["Utgarde Keep"] .. ", " .. L["Utgarde Pinnacle"], dnTex},
+					{"Arrow", 24.7, 11.4, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 0.3, 116},
+					{"Arrow", 53.7, 2.7, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 0.0, 116},
+					{"Arrow", 72.9, 2.9, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 0.7, 116},
 				},
 
 				--[[Icecrown]] [118] = {
@@ -2560,6 +2623,14 @@
 					{"Dungeon", 52.6, 89.4, L["The Frozen Halls"], L["The Forge of Souls"] .. ", " .. L["The Pit of Saron"] .. ",|n" .. L["The Halls of Reflection"], dnTex},
 					{"Dungeon", 74.2, 20.5, L["Trial of the Champion"], L["Dungeon"], dnTex},
 					{"Raid", 75.1, 21.8, L["Trial of the Crusader"], L["Raid"], rdTex},
+					{"Arrow", 89.2, 82.2, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.4, 127},
+					{"Arrow", 80.7, 24.9, L["The Storm Peaks"], L["Head southeast from here and go up the mountain."], arTex, nil, nil, nil, nil, nil, 4.7, 120},
+				},
+
+				--[[Sholazar Basin]] [119] = {
+					{"FlightN", 50.1, 61.4, L["River's Heart"] .. ", " .. L["Sholazar Basin"], nil, tNTex, nil, nil}, -- Tamara Wobblesprocket
+					{"FlightN", 25.2,58.5, L["Nesingwary Base Camp"] .. ", " .. L["Sholazar Basin"], nil, tNTex, nil, nil}, -- The Spirit of Gnomeregan
+					{"Arrow", 31.6, 89.5, L["Borean Tundra"], nil, arTex, nil, nil, nil, nil, nil, 3.4, 114},
 				},
 
 				--[[The Storm Peaks]] [120] = {
@@ -2572,21 +2643,14 @@
 					{"Dungeon", 39.6, 26.9, L["Halls of Stone"], L["Dungeon"], dnTex},
 					{"Dungeon", 45.4, 21.4, L["Halls of Lightning"], L["Dungeon"], dnTex},
 					{"Raid", 41.6, 17.8, L["Ulduar"], L["Raid"], rdTex},
+					{"Arrow", 30.4, 93.8, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 2.4, 127},
+					{"Arrow", 37.8, 90.2, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.6, 127},
+					{"Arrow", 22.2, 36.4, L["Icecrown"], L["Head down the mounta from here."], arTex, nil, nil, nil, nil, nil, 2.1, 118},
 				},
 
-				--[[Borean Tundra]] [114] = {
-					{"FlightN", 33.1, 34.4, L["Transitus Shield"] .. ", " .. L["Coldarra"], nil, tNTex, nil, nil}, -- Warmage Adami
-					{"FlightA", 56.6, 20.1, L["Fizzcrank Airstrip"] .. ", " .. L["Borean Tundra"], nil, tATex, nil, nil}, -- Kara Thricestar
-					{"FlightN", 45.3, 34.5, L["Amber Lodge"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Surristrasz
-					{"FlightN", 78.5, 51.5, L["Unu'pe"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Bilko Driftspark
-					{"FlightA", 58.7, 68.3, L["Valiance Keep"] .. ", " .. L["Borean Tundra"], nil, tATex, nil, nil}, -- Tomas Riverwell
-					{"FlightN", 77.8, 37.8, L["Taunka'le Village"] .. ", " .. L["Borean Tundra"], nil, tNTex, nil, nil}, -- Omu Spiritbreeze
-					{"Dungeon", 27.6, 26.6, L["The Nexus"], L["The Nexus"] .. ", " .. L["The Oculus"] .. ",|n" .. L["The Eye of Eternity"], dnTex},
-				},
-
-				--[[Sholazar Basin]] [119] = {
-					{"FlightN", 50.1, 61.4, L["River's Heart"] .. ", " .. L["Sholazar Basin"], nil, tNTex, nil, nil}, -- Tamara Wobblesprocket
-					{"FlightN", 25.2,58.5, L["Nesingwary Base Camp"] .. ", " .. L["Sholazar Basin"], nil, tNTex, nil, nil}, -- The Spirit of Gnomeregan
+				--[[Wintergrasp]] [123] = {
+					{"FlightA", 72.0, 31.0, L["Valiance Landing Camp"] .. ", " .. L["Wintergrasp"], nil, tATex, nil, nil}, -- Arzo Safeflight
+					{"Raid", 50.5, 16.4, L["Vault of Archavon"], L["Raid"], rdTex},
 				},
 
 				--[[Zul'Drak]] [121] = {
@@ -2598,42 +2662,11 @@
 					{"Dungeon", 29.0, 83.9, L["Drak'Tharon Keep"], L["Dungeon"], dnTex},
 					{"Dungeon", 76.2, 21.1, L["Gundrak"], L["Dungeon"], dnTex},
 					{"Dungeon", 81.2, 28.9, L["Gundrak (rear entrance)"], L["Dungeon"], dnTex},
-				},
-
-				--[[Grizzly Hills]] [116] = {
-					{"FlightA", 31.3, 59.1, L["Amberpine Lodge"] .. ", " .. L["Grizzly Hills"], nil, tATex, nil, nil}, -- Vana Grey
-					{"FlightA", 59.9, 26.7, L["Westfall Brigade"] .. ", " .. L["Grizzly Hills"], nil, tATex, nil, nil}, -- Samuel Clearbook
-					{"FlightN", 65.0, 46.9, L["Camp Oneqwah"] .. ", " .. L["Grizzly Hills"], nil, tNTex, nil, nil}, -- Makki Wintergale
-					{"Dungeon", 17.5, 27.0, L["Drak'Tharon Keep"], L["Dungeon"], dnTex},
-				},
-
-				--[[Howlong Fjord]] [117] = {
-					{"FlightA", 59.8, 63.2, L["Valgarde Port"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- Pricilla Winterwind
-					{"FlightA", 60.1, 16.1, L["Fort Wildervar"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- James Ormsby
-					{"FlightA", 31.3, 44.0, L["Westguard Keep"] .. ", " .. L["Howling Fjord"], nil, tATex, nil, nil}, -- Greer Orehammer
-					{"FlightN", 24.7, 57.8, L["Kamagua"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Kip Trawlskip
-					{"FlightN", 49.6, 11.6, L["Camp Winterhoof"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Celea Frozenmane
-					{"Dungeon", 57.3, 46.8, L["Utgarde Keep"], L["Utgarde Keep"] .. ", " .. L["Utgarde Pinnacle"], dnTex},
-				},
-
-				--[[Dragonblight]] [115] = {
-					{"FlightA", 29.2, 55.3, L["Stars' Rest"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Palena Silvercloud
-					{"FlightN", 48.5, 74.4, L["Moa'ki"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Cid Flounderfix
-					{"FlightN", 60.3, 51.6, L["Wyrmrest Temple"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Nethestrasz
-					{"FlightA", 39.5, 25.9, L["Fordragon Hold"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Derek Rammel
-					{"FlightA", 77.1, 49.8, L["Wintergarde Keep"] .. ", " .. L["Dragonblight"], nil, tATex, nil, nil}, -- Rodney Wells
-					{"Raid", 59.6, 51.1, L["Wyrmrest Temple"], L["The Ruby Sanctum"] .. ", " .. L["The Obsidian Sanctum"], rdTex},
-					{"Raid", 87.4, 51.1, L["Naxxramas"], L["Raid"], rdTex},
-					{"Dungeon", 26.2, 49.6, L["Azjol-Nerub"], L["Azjol-Nerub"] .. ", " .. L["The Old Kingdom"], dnTex},
-				},
-
-				--[[Wintergrasp]] [123] = {
-					{"FlightA", 72.0, 31.0, L["Valiance Landing Camp"] .. ", " .. L["Wintergrasp"], nil, tATex, nil, nil}, -- Arzo Safeflight
-					{"Raid", 50.5, 16.4, L["Vault of Archavon"], L["Raid"], rdTex},
-				},
-
-				--[[Crystalsong Forest]] [127] = {
-					{"FlightA", 72.2, 81.0, L["Windrunner's Overlook"] .. ", " .. L["Crystalsong Forest"], nil, tATex, nil, nil}, -- Galendror Whitewing
+					{"Arrow", 71.2, 78.3, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 4.0, 116},
+					{"Arrow", 55.2, 91, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 3.8, 116},
+					{"Arrow", 29, 87.1, L["Grizzly Hills"], L["Drak'Tharon Keep"], arTex, nil, nil, nil, nil, nil, 3.2, 116},
+					{"Arrow", 17.6, 85.3, L["Dragonblight"], nil, arTex, nil, nil, nil, nil, nil, 2.4, 115},
+					{"Arrow", 12.5, 67.1, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 1.6, 127},
 				},
 
 			}
