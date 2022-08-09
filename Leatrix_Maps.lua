@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.118.alpha.6 (7th August 2022)
+	-- 	Leatrix Maps 2.5.118.alpha.7 (9th August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.118.alpha.6"
+	LeaMapsLC["AddonVer"] = "2.5.118.alpha.7"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -348,12 +348,14 @@
 					S:HandleDropDownBox(ekdd.dd); ekdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
 					S:HandleDropDownBox(kmdd.dd); kmdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
 					S:HandleDropDownBox(otdd.dd); otdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
+					S:HandleDropDownBox(nrdd.dd); nrdd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
 					S:HandleDropDownBox(cond.dd); cond.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
 					S:HandleDropDownBox(nodd.dd); nodd.bg:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = -7, top = 0, bottom = 0 }});
 					outerFrame:SetWidth(380)
 					ekdd.btn:SetHitRectInsets(ekdd.btn:GetHitRectInsets() - 10, 0, 0, 0)
 					kmdd.btn:SetHitRectInsets(kmdd.btn:GetHitRectInsets() - 10, 0, 0, 0)
 					otdd.btn:SetHitRectInsets(otdd.btn:GetHitRectInsets() - 10, 0, 0, 0)
+					nrdd.btn:SetHitRectInsets(nrdd.btn:GetHitRectInsets() - 10, 0, 0, 0)
 					cond.btn:SetHitRectInsets(cond.btn:GetHitRectInsets() - 10, 0, 0, 0)
 					nodd.btn:SetHitRectInsets(nodd.btn:GetHitRectInsets() - 10, 0, 0, 0)
 				end
@@ -2691,6 +2693,19 @@
 					{"FlightA", 71.0, 72.5, L["Trade District"] .. ", " .. L["Stormwind"], nil, tATex, nil, nil},
 					{"TravelA", 66.4, 34.1, L["Tram to"] .. " " .. L["Tinker Town"] .. ", " .. L["Ironforge"], nil, fATex, nil, nil},
 					{"Arrow", 74.7, 93.4, L["Elwynn Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.8, 1429},
+					{"TravelA", 22.5, 56.1, L["Boat to"] .. " " .. L["Auberdine"] .. ", " .. L["Darkshore"], nil, fATex, nil, nil},
+					{"TravelA", 18.1, 25.5, L["Boat to"] .. " " .. L["Valiance Keep"] .. ", " .. L["Borean Tundra"], nil, fATex, nil, nil},
+					{"TravelA", 49.0, 87.3, L["Blasted Lands"], L["Portal"], pATex},
+				}
+
+				--[[Wetlands]] PinData[1437] = {
+					{"FlightA", 9.5, 59.7, L["Menethil Harbor"] .. ", " .. L["Wetlands"], nil, tATex, nil, nil},
+					{"TravelA", 5.0, 63.5, L["Boat to"] .. " " .. L["Theramore Isle"] .. ", " .. L["Dustwallow Marsh"], nil, fATex, nil, nil},
+					{"TravelA", 4.6, 57.1, L["Boat to"] .. " " .. L["Valgarde"] .. ", " .. L["Howling Fjord"], nil, fATex, nil, nil},
+					{"Spirit", 11.0, 43.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 49.3, 41.8, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 51.3, 10.3, L["Arathi Highlands"], L["Thandol Span"], arTex, nil, nil, nil, nil, nil, 0, 1417},
+					{"Arrow", 56.0, 70.3, L["Loch Modan"], L["Dun Algaz"], arTex, nil, nil, nil, nil, nil, 1.8, 1432},
 				}
 
 				--[[Eastern Plaguelands]] PinData[1423] = {
@@ -2706,6 +2721,59 @@
 					-- This spirit healer needs to be removed in Wrath
 					{"Spirit", 37.8, 70.1, L["Spirit Healer"], nil, spTex, nil, nil}, -- LeaMapsLC.Wrath (remove this in Wrath)
 					{"FlightN", 83.9, 50.4, L["Acherus: The Ebon Hold"] .. ", " .. L["Eastern Plaguelands"], nil, tNTex, nil, nil},
+				}
+
+				--[[Orgrimmar]] PinData[1454] = {
+					{"Dungeon", 52.6, 49.0, L["Ragefire Chasm"], L["Dungeon"], dnTex, 13, 16, 8, 13, 20},
+					{"FlightH", 45.1, 63.9, L["Valley of Strength"] .. ", " .. L["Orgrimmar"], nil, tHTex, nil, nil},
+					{"Arrow", 52.4, 83.7, L["Durotar"], nil, arTex, nil, nil, nil, nil, nil, 3, 1411},
+					{"Arrow", 18.1, 60.6, L["The Barrens"], nil, arTex, nil, nil, nil, nil, nil, 2.1, 1413},
+					{"TravelH", 38.1, 85.7, L["Blasted Lands"], L["Portal"], pHTex},
+				}
+
+				--[[Undercity]] PinData[1458] = {
+					{"FlightH", 63.3, 48.5, L["Trade Quarter"] .. ", " .. L["Undercity"], nil, tHTex, nil, nil},
+					{"Spirit", 67.9, 14.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 66.2, 5.2, L["Tirisfal Glades"], nil, arTex, nil, nil, nil, nil, nil, 0, 1420},
+					{"TravelH", 54.9, 11.3, L["Silvermoon City"], L["Orb of Translocation"]},
+					{"TravelH", 85.3, 17.0, L["Blasted Lands"], L["Portal"], pHTex},
+				}
+
+				--[[Tirisfal Glades]] PinData[1420] = {
+					{"Dungeon", 82.6, 33.8, L["Scarlet Monastery"], L["Dungeon"], dnTex, 30, 40, 20, 28, 44},
+					{"TravelH", 60.7, 58.8, L["Zeppelin to"] .. " " .. L["Orgrimmar"] .. ", " .. L["Durotar"], nil, fHTex, nil, nil},
+					{"TravelH", 61.9, 59.1, L["Zeppelin to"] .. " " .. L["Grom'gol Base Camp"] .. ", " .. L["Stranglethorn Vale"], nil, fHTex, nil, nil},
+					{"Spirit", 30.8, 64.9, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 56.2, 49.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 79.0, 41.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 62.3, 67.0, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 82.0, 69.6, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 83.4, 70.6, L["Western Plaguelands"], L["The Bulwark"], arTex, nil, nil, nil, nil, nil, 4.7, 1422},
+					{"Arrow", 61.9, 65.0, L["Undercity"], nil, arTex, nil, nil, nil, nil, nil, 3, 1458},
+					{"Arrow", 54.9, 72.7, L["Silverpine Forest"], nil, arTex, nil, nil, nil, nil, nil, 3, 1421},
+					{"TravelH", 59.1, 59.0, L["Zeppelin to"] .. " " .. L["Vengeance Landing"] .. ", " .. L["Howling Fjord"], nil, fHTex, nil, nil},
+				}
+
+				--[[Thunder Bluff]] PinData[1456] = {
+					{"FlightH", 47.0, 49.8, L["Central Mesa"] .. ", " .. L["Thunder Bluff"], nil, tHTex, nil, nil},
+					{"Spirit", 56.7, 19.1, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 35.7, 62.8, L["Mulgore"], "South", arTex, nil, nil, nil, nil, nil, 2.0, 1412},
+					{"Arrow", 51.3, 31.3, L["Mulgore"], "North", arTex, nil, nil, nil, nil, nil, 5.7, 1412},
+					{"TravelH", 23.2, 13.5, L["Blasted Lands"], L["Portal"], pHTex},
+					{"TravelH", 15.2, 25.7, L["Zeppelin to"] .. " " .. L["Orgrimmar"] .. ", " .. L["Durotar"], nil, fHTex, nil, nil},
+				}
+
+				--[[Durotar]] PinData[1411] = {
+					{"TravelH", 50.9, 13.9, L["Zeppelin to"] .. " " .. L["Undercity"] .. ", " .. L["Tirisfal Glades"], nil, fHTex, nil, nil, nil, nil},
+					{"TravelH", 50.6, 12.6, L["Zeppelin to"] .. " " .. L["Grom'gol Base Camp"] .. ", " .. L["Stranglethorn Vale"], nil, fHTex, nil, nil, nil, nil},
+					{"Spirit", 47.4, 17.9, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 53.5, 44.5, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 44.2, 69.4, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Spirit", 57.2, 73.3, L["Spirit Healer"], nil, spTex, nil, nil},
+					{"Arrow", 35.1, 42.4, L["The Barrens"], nil, arTex, nil, nil, nil, nil, nil, 1.5, 1413},
+					{"Arrow", 45.5, 12.3, L["Orgrimmar"], nil, arTex, nil, nil, nil, nil, nil, 0, 1454},
+					{"TravelH", 41.4, 17.8, L["Zeppelin to"] .. " " .. L["Warsong Hold"] .. ", " .. L["Borean Tundra"], nil, fHTex, nil, nil},
+					{"TravelH", 41.4, 18.7, L["Zeppelin to"] .. " " .. L["Thunder Bluff"] .. ", " .. L["Orgrimmar"], nil, fHTex, nil, nil},
 				}
 
 			end
