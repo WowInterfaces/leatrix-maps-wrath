@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.119.alpha.1 (11th August 2022)
+	-- 	Leatrix Maps 2.5.119.alpha.2 (12th August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.119.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.119.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2990,6 +2990,12 @@
 			LeaMapsLC:MakeCB(poiFrame, "ShowTravelOpposing", "Show travel points for opposing faction", 16, -132, false, "If checked, travel points for the opposing faction will be shown.|n|nThis includes flight points, boat harbors, zeppelin towers and tram stations.")
 			LeaMapsLC:MakeCB(poiFrame, "ShowSpiritHealers", "Show spirit healers", 16, -152, false, "If checked, spirit healers will be shown.")
 			LeaMapsLC:MakeCB(poiFrame, "ShowZoneCrossings", "Show zone crossings", 16, -172, false, "If checked, zone crossings will be shown.|n|nThese are clickable arrows that indicate the zone exit pathways.")
+
+			if LeaMapsLC.Wrath then
+				-- Remove Show spirit healers option in Wrath
+				LeaMapsLC["ShowSpiritHealers"] = "Off"
+				LeaMapsLC:LockItem(LeaMapsCB["ShowSpiritHealers"], true)
+			end
 
 			-- Function to refresh points of interest
 			local function SetPointsOfInterest()
