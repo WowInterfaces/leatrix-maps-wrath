@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.119.alpha.2 (12th August 2022)
+	-- 	Leatrix Maps 2.5.119.alpha.3 (12th August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.119.alpha.2"
+	LeaMapsLC["AddonVer"] = "2.5.119.alpha.3"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1373,6 +1373,20 @@
 				--[[Shadowmoon Valley]]		[1948] = {minLevel = 67, 	maxLevel = 70,		minFish = "280",},
 				--[[Terokkar Forest]]		[1952] = {minLevel = 62, 	maxLevel = 70,		minFish = "355 (405)",},
 				--[[Zangarmarsh]]			[1946] = {minLevel = 60, 	maxLevel = 63,		minFish = "305 (355)",},
+
+				-- Northrend
+				-- Zone levels: https://www.wowhead.com/wotlk/zones/levels-68-80
+				-- Fishing levels: https://www.wowhead.com/wotlk/guides/fishing-profession-overview#fishing-table-by-zone
+				--[[Borean Tundra]]			[114] = {minLevel = 70, 	maxLevel = 72,		minFish = "380 (475)",},
+				--[[Scolazar Basin]]		[119] = {minLevel = 75, 	maxLevel = 80,		minFish = "430 (525)",},
+				--[[Icecrown]]				[118] = {minLevel = 77, 	maxLevel = 80,},
+				--[[The Storm Peaks]]		[120] = {minLevel = 73, 	maxLevel = 77,},
+				--[[Zul'Drak]]				[121] = {minLevel = 73, 	maxLevel = 77,},
+				--[[Grizzly Hills]]			[116] = {minLevel = 73, 	maxLevel = 75,		minFish = "380 (475)",},
+				--[[Howling Fjord]]			[117] = {minLevel = 68, 	maxLevel = 72,		minFish = "380 (475)",},
+				--[[Dragonblight]]			[115] = {minLevel = 71, 	maxLevel = 80,		minFish = "380 (475)",},
+				--[[Crystalsong Forest]]	[127] = {minLevel = 80, 	maxLevel = 80,		minFish = "405 (500)",},
+				--[[Wintergrasp]]			[123] = {minLevel = 80, 	maxLevel = 80,		minFish = "430 (525)",},
 
 			}
 

@@ -1,4 +1,4 @@
-2.5.119.alpha.2 - 12th August 2022
+2.5.119.alpha.3 - 12th August 2022
 - Wrath: Added new flight points in Tirisfal Glades and Western Plaguelands.
 - Wrath: The 'Show spirit healers' setting is disabled.
 - For Wrath, it's best to use alpha releases during Wrath Beta/prepatch so that you get the latest development updates.  To switch to alpha releases, open CurseForge App, right-click Leatrix Maps in your Wrath addon listing and change release type to Alpha.  You can change it back to Release once Wrath is live for everyone.
