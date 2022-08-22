@@ -2603,8 +2603,11 @@
 					{"FlightH", 76.5, 62.2, L["Venomspite"] .. ", " .. L["Dragonblight"], nil, tHTex, nil, nil}, -- Junter Weiss
 					{"FlightN", 48.5, 74.4, L["Moa'ki"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Cid Flounderfix
 					{"FlightN", 60.3, 51.6, L["Wyrmrest Temple"] .. ", " .. L["Dragonblight"], nil, tNTex, nil, nil}, -- Nethestrasz
-					{"Raid", 59.6, 51.1, L["Wyrmrest Temple"], L["The Ruby Sanctum"] .. ", " .. L["The Obsidian Sanctum"], rdTex},
-					{"Raid", 87.4, 51.1, L["Naxxramas"], L["Raid"], rdTex},
+					{"Raid", 59.6, 51.1, L["Wyrmrest Temple"],
+						L["The Ruby Sanctum"] .. " (80) (" .. L["req"] .. ": 80)" .. "|n" ..
+						L["The Obsidian Sanctum"] .. " (80) (" .. L["req"] .. ": 80)",
+						rdTex, 80, 80},
+					{"Raid", 87.4, 51.1, L["Naxxramas"], L["Raid"], rdTex, 80, 80, 80},
 					{"Dungeon", 26.2, 49.6, 
 						L["Azjol-Nerub"], L["Azjol-Nerub"]  .. " (72-74) (" .. L["req"] .. ": 70)" .. "|n" ..
 						L["The Old Kingdom"]  .. " (73-75) (" .. L["req"] .. ": 71)",
@@ -2655,14 +2658,14 @@
 					{"FlightN", 79.3, 72.3, L["Crusaders' Pinnacle"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Penumbrius
 					{"FlightN", 19.3, 47.8, L["Death's Rise"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Dreadwind
 					{"FlightN", 43.8, 24.4, L["The Shadow Vault"] .. ", " .. L["Icecrown"], nil, tNTex, nil, nil}, -- Morlia Doomwing
-					{"Raid", 53.3, 85.5, L["Icecrown Citadel"], L["Raid"], rdTex},
+					{"Raid", 53.3, 85.5, L["Icecrown Citadel"], L["Raid"], rdTex, 80, 80, 80},
 					{"Dungeon", 52.6, 89.4, L["The Frozen Halls"],
 						L["The Forge of Souls"] .. " (80) (" .. L["req"] .. ": 78)" .. "|n" ..
 						L["The Pit of Saron"] .. " (80) (" .. L["req"] .. ": 78)" .. "|n" ..
 						L["The Halls of Reflection"] .. " (80) (" .. L["req"] .. ": 78)",
 					dnTex, 80, 80},
 					{"Dungeon", 74.2, 20.5, L["Trial of the Champion"], L["Dungeon"], dnTex, 80, 80, 80},
-					{"Raid", 75.1, 21.8, L["Trial of the Crusader"], L["Raid"], rdTex},
+					{"Raid", 75.1, 21.8, L["Trial of the Crusader"], L["Raid"], rdTex, 80, 80, 80},
 					{"Arrow", 89.2, 82.2, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.4, 127},
 					{"Arrow", 80.7, 24.9, L["The Storm Peaks"], L["Head southeast from here and go up the mountain."], arTex, nil, nil, nil, nil, nil, 4.7, 120},
 				},
@@ -2683,7 +2686,7 @@
 					{"FlightN", 30.6, 36.3, L["Bouldercrag's Refuge"] .. ", " .. L["The Storm Peaks"], nil, tNTex, nil, nil}, -- Breck Rockbrow
 					{"Dungeon", 39.6, 26.9, L["Halls of Stone"], L["Dungeon"], dnTex, 77, 79, 73},
 					{"Dungeon", 45.4, 21.4, L["Halls of Lightning"], L["Dungeon"], dnTex, 78, 80, 75},
-					{"Raid", 41.6, 17.8, L["Ulduar"], L["Raid"], rdTex},
+					{"Raid", 41.6, 17.8, L["Ulduar"], L["Raid"], rdTex, 80, 80, 80},
 					{"Arrow", 30.4, 93.8, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 2.4, 127},
 					{"Arrow", 37.8, 90.2, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.6, 127},
 					{"Arrow", 22.2, 36.4, L["Icecrown"], L["Head down the mounta from here."], arTex, nil, nil, nil, nil, nil, 2.1, 118},
@@ -2692,7 +2695,7 @@
 				--[[Wintergrasp]] [123] = {
 					{"FlightA", 72.0, 31.0, L["Valiance Landing Camp"] .. ", " .. L["Wintergrasp"], nil, tATex, nil, nil}, -- Arzo Safeflight
 					{"FlightH", 21.6, 34.9, L["Warsong Camp"] .. ", " .. L["Wintergrasp"], nil, tHTex, nil, nil}, -- Herzo Safeflight
-					{"Raid", 50.5, 16.4, L["Vault of Archavon"], L["Raid"], rdTex},
+					{"Raid", 50.5, 16.4, L["Vault of Archavon"], L["Raid"], rdTex, 80, 80, 80},
 				},
 
 				--[[Zul'Drak (*)]] [121] = {
