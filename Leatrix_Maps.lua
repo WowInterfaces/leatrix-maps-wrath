@@ -2780,15 +2780,7 @@
 									local color
 									local dungeonReqLevel = pinInfo[9]
 									if dungeonReqLevel then
-										if playerLevel < dungeonReqLevel then
-											color = GetQuestDifficultyColor(dungeonReqLevel)
-										elseif playerLevel > dungeonReqLevel then
-											color = GetQuestDifficultyColor(dungeonReqLevel - 2)
-										else
-											color = QuestDifficultyColors["difficult"]
-										end
-										color = ConvertRGBtoColorString(color)
-										myPOI["description"] = myPOI["description"] .. color .." (" .. L["req"] .. ": " .. dungeonReqLevel .. ")" .. FONT_COLOR_CODE_CLOSE
+										myPOI["description"] = myPOI["description"] .." (" .. L["req"] .. ": " .. dungeonReqLevel .. ")"
 									end
 								end
 
@@ -2797,18 +2789,10 @@
 									local playerLevel = UnitLevel("player")
 									local color, name
 									local dungeonMinSum, dungeonMaxSum = pinInfo[10], pinInfo[11]
-									if playerLevel < dungeonMinSum then
-										color = GetQuestDifficultyColor(dungeonMinSum)
-									elseif playerLevel > dungeonMaxSum then
-										color = GetQuestDifficultyColor(dungeonMaxSum - 2)
-									else
-										color = QuestDifficultyColors["difficult"]
-									end
-									color = ConvertRGBtoColorString(color)
 									if dungeonMinSum ~= dungeonMaxSum then
-										myPOI["description"] = myPOI["description"] .. color.." (" .. L["sum"] .. ": " .. dungeonMinSum .. "-" .. dungeonMaxSum .. ")" .. FONT_COLOR_CODE_CLOSE
+										myPOI["description"] = myPOI["description"] .. " (" .. L["sum"] .. ": " .. dungeonMinSum .. "-" .. dungeonMaxSum .. ")"
 									else
-										myPOI["description"] = myPOI["description"] .. color.." (" .. L["sum"] .. ": " .. dungeonMaxSum .. ")" .. FONT_COLOR_CODE_CLOSE
+										myPOI["description"] = myPOI["description"] .. " (" .. L["sum"] .. ": " .. dungeonMaxSum .. ")"
 									end
 								end
 
