@@ -21,7 +21,7 @@
 	-- Check Wow version is valid
 	do
 		local gameversion, gamebuild, gamedate, gametocversion = GetBuildInfo()
-		if gametocversion and gametocversion < 20000 or gametocversion > 39999 then
+		if gametocversion and gametocversion < 30000 or gametocversion > 39999 then
 			-- Game client is not Wow Classic
 			C_Timer.After(2, function()
 				print(L["LEATRIX MAPS: WRONG VERSION INSTALLED!"])
@@ -174,24 +174,11 @@
 			LeaMapsLC["ZoneMapNorthrendMenu"] = 1
 
 			local mapNorthrendTable, mapNorthrendString = {}, {}
-
-			if LeaMapsLC.Wrath then
-				-- This is Wrath so create a Northrend table
-				local zones = C_Map.GetMapChildrenInfo(113)
-				if (zones) then
-					for i, zoneInfo in ipairs(zones) do
-						tinsert(mapNorthrendTable, {zonename = zoneInfo.name, mapid = zoneInfo.mapID})
-						tinsert(mapNorthrendString, zoneInfo.name)
-					end
-				end
-			else
-				-- It's not Wrath so just create a table based on the Azeroth map (it won't be used anyway)
-				local zones = C_Map.GetMapChildrenInfo(947)
-				if (zones) then
-					for i, zoneInfo in ipairs(zones) do
-						tinsert(mapNorthrendTable, {zonename = zoneInfo.name, mapid = zoneInfo.mapID})
-						tinsert(mapNorthrendString, zoneInfo.name)
-					end
+			local zones = C_Map.GetMapChildrenInfo(113)
+			if (zones) then
+				for i, zoneInfo in ipairs(zones) do
+					tinsert(mapNorthrendTable, {zonename = zoneInfo.name, mapid = zoneInfo.mapID})
+					tinsert(mapNorthrendString, zoneInfo.name)
 				end
 			end
 
@@ -199,9 +186,7 @@
 			table.sort(mapNorthrendTable, function(k, v) return k.zonename < v.zonename end)
 
 			tinsert(mapNorthrendString, 1, L["Northrend"])
-			if LeaMapsLC.Wrath then
-				tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 113})
-			end
+			tinsert(mapNorthrendTable, 1, {zonename = L["Northrend"], mapid = 113})
 
 			local nrdd = LeaMapsLC:CreateDropDown("ZoneMapNorthrendMenu", "", WorldMapFrame, 180, "TOP", -80, -35, mapNorthrendString, "")
 			nrdd:ClearAllPoints()
@@ -876,22 +861,12 @@
 				if wmapID and wmapID == 1414 or wmapID == 1415 or wmapID == 947 or wmapID == 1945 or wmapID == 113 then
 					if self.Texture and self.Texture:GetTexture() == 136441 then
 						local a, b, c, d, e, f, g, h = self.Texture:GetTexCoord()
-						if LeaMapsLC.Wrath then
-							if a == 0.35546875 and b == 0.00390625 and c == 0.35546875 and d == 0.0703125 and e == 0.421875 and f == 0.00390625 and g == 0.421875 and h == 0.0703125 then
-								-- Hide town icons
-								self:Hide()
-							elseif a == 0.42578125 and b == 0.00390625 and c == 0.42578125 and d == 0.0703125 and e == 0.4921875 and f == 0.00390625 and g == 0.4921875 and h == 0.0703125 then
-								-- Hide city icons
-								self:Hide()
-							end
-						else
-							if a == 0.5 and b == 0 and c == 0.5 and d == 0.125 and e == 0.625 and f == 0 and g == 0.625 and h == 0.125 then
-								-- Hide town icons
-								self:Hide()
-							elseif a == 0.625 and b == 0 and c == 0.625 and d == 0.125 and e == 0.75 and f == 0 and g == 0.75 and h == 0.125 then
-								-- Hide city icons
-								self:Hide()
-							end
+						if a == 0.35546875 and b == 0.00390625 and c == 0.35546875 and d == 0.0703125 and e == 0.421875 and f == 0.00390625 and g == 0.421875 and h == 0.0703125 then
+							-- Hide town icons
+							self:Hide()
+						elseif a == 0.42578125 and b == 0.00390625 and c == 0.42578125 and d == 0.0703125 and e == 0.4921875 and f == 0.00390625 and g == 0.4921875 and h == 0.0703125 then
+							-- Hide city icons
+							self:Hide()
 						end
 					end
 				end
