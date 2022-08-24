@@ -28,10 +28,6 @@
 			end)
 			return
 		end
-		if gametocversion > 30000 then
-			-- Game client is Wrath Beta
-			LeaMapsLC.Wrath = true
-		end
 	end
 
 	-- Set bindings translations
@@ -2898,14 +2894,12 @@
 			LeaMapsLC:MakeCB(poiFrame, "ShowDungeonIcons", "Show dungeons and raids", 16, -92, false, "If checked, dungeons and raids will be shown.")
 			LeaMapsLC:MakeCB(poiFrame, "ShowTravelPoints", "Show travel points for same faction", 16, -112, false, "If checked, travel points for the same faction will be shown.|n|nThis includes flight points, boat harbors, zeppelin towers and tram stations.")
 			LeaMapsLC:MakeCB(poiFrame, "ShowTravelOpposing", "Show travel points for opposing faction", 16, -132, false, "If checked, travel points for the opposing faction will be shown.|n|nThis includes flight points, boat harbors, zeppelin towers and tram stations.")
-			LeaMapsLC:MakeCB(poiFrame, "ShowSpiritHealers", "Show spirit healers", 16, -152, false, "If checked, spirit healers will be shown.")
-			LeaMapsLC:MakeCB(poiFrame, "ShowZoneCrossings", "Show zone crossings", 16, -172, false, "If checked, zone crossings will be shown.|n|nThese are clickable arrows that indicate the zone exit pathways.")
+			LeaMapsLC:MakeCB(poiFrame, "ShowZoneCrossings", "Show zone crossings", 16, -152, false, "If checked, zone crossings will be shown.|n|nThese are clickable arrows that indicate the zone exit pathways.")
+			LeaMapsLC:MakeCB(poiFrame, "ShowSpiritHealers", "Show spirit healers", 16, -172, false, "If checked, spirit healers will be shown.")
 
-			if LeaMapsLC.Wrath then
-				-- Remove Show spirit healers option in Wrath
-				LeaMapsLC["ShowSpiritHealers"] = "Off"
-				LeaMapsLC:LockItem(LeaMapsCB["ShowSpiritHealers"], true)
-			end
+			-- Hide spirit healers option for now
+			LeaMapsLC["ShowSpiritHealers"] = "Off"
+			LeaMapsCB["ShowSpiritHealers"]:Hide()
 
 			-- Function to refresh points of interest
 			local function SetPointsOfInterest()
@@ -3860,12 +3854,6 @@
 			dditem.f = dditem:CreateFontString(nil, 'ARTWORK', 'GameFontHighlight')
 			dditem.f:SetPoint('LEFT', 16, 0)
 			dditem.f:SetText(items[k])
-
-			-- Temporarily disable Northrend menu item for BCC client
-			if not LeaMapsLC.Wrath and items[k] == POSTMASTER_PIPE_NORTHREND then
-				dditem:Disable()
-				dditem:SetAlpha(0.5)
-			end
 
 			dditem.f:SetWordWrap(false)
 			dditem.f:SetJustifyH("LEFT")
