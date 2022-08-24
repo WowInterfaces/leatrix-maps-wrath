@@ -1,3 +1,6 @@
+2.5.121.alpha.1 - 24th August 2022
+- Wrath: Added Utgarde Keep icon.
+
 2.5.120 - 24th August 2022
 - Wrath: For 'Show dungeons and raids', the Northrend dungeon icons now show level information (recommended dungeon level, minimum level required to enter and meeting stone level, where known).
 
