@@ -1,5 +1,5 @@
-2.5.120.alpha.1 - 22nd August 2022
-- Wrath: Added dungeon level requirements to map.
+2.5.120 - 24th August 2022
+- Wrath: For 'Show dungeons and raids', the Northrend dungeon icons now show level information (recommended dungeon level, minimum level required to enter and meeting stone level, where known).
 
 2.5.119 - 17th August 2022
 - Wrath: Added new flight points in Tirisfal Glades and Western Plaguelands.

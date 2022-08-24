@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 2.5.120.alpha.1 (22nd August 2022)
+	-- 	Leatrix Maps 2.5.120 (24th August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "2.5.120.alpha.1"
+	LeaMapsLC["AddonVer"] = "2.5.120"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2608,7 +2608,7 @@
 						L["The Obsidian Sanctum"] .. " (80) (" .. L["req"] .. ": 80) (" .. L["sum"] .. ": 80)",
 						rdTex, 80, 80},
 					{"Raid", 87.4, 51.1, L["Naxxramas"], L["Raid"], rdTex, 80, 80, 77, 77, 80},
-					{"Dungeon", 26.2, 49.6, 
+					{"Dungeon", 26.2, 49.6,
 						L["Azjol-Nerub"], L["Azjol-Nerub"]  .. " (72-74) (" .. L["req"] .. ": 70) (" .. L["sum"] .. ": 70-80)" .. "|n" ..
 						L["The Old Kingdom"]  .. " (73-75) (" .. L["req"] .. ": 71) (" .. L["sum"] .. ": 70-80)",
 						dnTex, 72, 75},
@@ -2644,7 +2644,7 @@
 					{"FlightH", 79.0, 29.7, L["Vengeance Landing"] .. ", " .. L["Howling Fjord"], nil, tHTex, nil, nil}, -- Bat Handler Adeline
 					{"FlightN", 24.7, 57.8, L["Kamagua"] .. ", " .. L["Howling Fjord"], nil, tNTex, nil, nil}, -- Kip Trawlskip
 					{"Dungeon", 57.3, 46.8, L["Utgarde Keep"],
-						L["Utgarde Keep"]  .. " (69-72) (" .. L["req"] .. ": 67) (" .. L["sum"] .. ": 78-80)" .. "|n" ..
+						L["Utgarde Keep"]  .. " (69-72) (" .. L["req"] .. ": 67) (" .. L["sum"] .. ": 68-80)" .. "|n" ..
 						L["Utgarde Pinnacle"]  .. "(79-80) (" .. L["req"] .. ": 75) (" .. L["sum"] .. ": 78-80)",
 						dnTex, 69, 80},
 					{"Arrow", 24.7, 11.4, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 0.3, 116},
