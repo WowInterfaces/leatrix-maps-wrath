@@ -1,4 +1,4 @@
-3.0.00.alpha.1 - 24th August 2022
+3.0.00 - 29th August 2022
 - Welcome to Wrath of the Lich King!
 - Removed BCC transitional code.
 - Added Utgarde Keep icon.
