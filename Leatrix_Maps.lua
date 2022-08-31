@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 3.0.00 (29th August 2022)
+	-- 	Leatrix Maps 3.0.01.alpha.1 (31st August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "3.0.00"
+	LeaMapsLC["AddonVer"] = "3.0.01.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2208,6 +2208,7 @@
 					{"Arrow", 36.3, 27.5, L["Stonetalon Mountains"], nil, arTex, nil, nil, nil, nil, nil, 1.5, 1442},
 					{"Arrow", 48.8, 7.1, L["Ashenvale"], nil, arTex, nil, nil, nil, nil, nil, 0, 1440},
 					{"Arrow", 62.6, 19.2, L["Durotar"], nil, arTex, nil, nil, nil, nil, nil, 4.6, 1411},
+					{"Arrow", 63.7, 1.5, L["Ashenvale"], L["Southfury River"], arTex, nil, nil, nil, nil, nil, 6.3, 1440},
 				},
 				--[[Teldrassil]] [1438] = {
 					{"FlightA", 58.4, 94.0, L["Rut'theran Village"] .. ", " .. L["Teldrassil"], nil, tATex, nil, nil},
@@ -2215,6 +2216,7 @@
 					{"Spirit", 58.7, 42.3, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 56.2, 63.3, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 36.2, 54.4, L["Darnassus"], nil, arTex, nil, nil, nil, nil, nil, 1.5, 1457},
+					{"Arrow", 56, 89.9, L["Darnassus"], L["Rut'Theran Village"], arTex, nil, nil, nil, nil, nil, 0.2, 1457},
 					-- Rut'theran Village Spirit Healer (56, 92.1)
 				},
 				--[[Darkshore]] [1439] = {
@@ -2225,6 +2227,7 @@
 					{"Spirit", 41.8, 36.6, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 43.6, 92.4, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 43.3, 94.0, L["Ashenvale"], nil, arTex, nil, nil, nil, nil, nil, 4, 1440},
+					{"Arrow", 37.6, 95, L["Ashenvale"], L["Twilight Vale"], arTex, nil, nil, nil, nil, nil, 3.1, 1440},
 				},
 				--[[Ashenvale]] [1440] = {
 					{"Dungeon", 14.5, 14.2, L["Blackfathom Deeps"], L["Dungeon"], dnTex, 22, 24, 19, 20, 28},
@@ -2239,6 +2242,8 @@
 					{"Arrow", 55.8, 30.2, L["Felwood"], nil, arTex, nil, nil, nil, nil, nil, 0, 1448},
 					{"Arrow", 94.2, 47.3, L["Azshara"], nil, arTex, nil, nil, nil, nil, nil, 4.4, 1447},
 					{"Arrow", 68.6, 86.8, L["The Barrens"], nil, arTex, nil, nil, nil, nil, nil, 3.2, 1413},
+					{"Arrow", 94.5, 76.3, L["The Barrens"], L["Southfury River"], arTex, nil, nil, nil, nil, nil, 3.6, 1413},
+					{"Arrow", 20.5, 16.4, L["Darkshore"], L["Twilight Vale"], arTex, nil, nil, nil, nil, nil, 5.8, 1439},
 				},
 				--[[Thousand Needles]] [1441] = {
 					{"FlightH", 45.1, 49.1, L["Freewind Post"] .. ", " .. L["Thousand Needles"], nil, tHTex, nil, nil},
@@ -2320,7 +2325,7 @@
 					{"FlightN", 51.4, 82.2, L["Emerald Sanctuary"] .. ", " .. L["Felwood"], nil, tNTex, nil, nil},
 					{"Spirit", 49.5, 31.1, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 56.8, 87.0, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Arrow", 65.0, 8.3, L["Winterspring"], L["Timbermaw Hold"], arTex, nil, nil, nil, nil, nil, 5.9, 1452},
+					{"Arrow", 65.0, 8.3, L["Winterspring"] .. ", " .. L["Moonglade"], L["Timbermaw Hold"], arTex, nil, nil, nil, nil, nil, 5.9, 1452},
 					{"Arrow", 54.5, 89.2, L["Ashenvale"], nil, arTex, nil, nil, nil, nil, nil, 3, 1440},
 				},
 				--[[Un'Goro Crater]] [1449] = {
@@ -2352,13 +2357,13 @@
 					{"Spirit", 29.0, 43.0, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 61.5, 35.4, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 62.7, 61.3, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Arrow", 27.9, 34.5, L["Felwood"], L["Timbermaw Hold"], arTex, nil, nil, nil, nil, nil, 0.7, 1448},
+					{"Arrow", 27.9, 34.5, L["Felwood"] .. ", " .. L["Moonglade"], L["Timbermaw Hold"], arTex, nil, nil, nil, nil, nil, 0.7, 1448},
 				},
 				--[[Orgrimmar]] [1454] = {
 					{"Dungeon", 52.6, 49.0, L["Ragefire Chasm"], L["Dungeon"], dnTex, 13, 16, 8, 13, 20},
 					{"FlightH", 45.1, 63.9, L["Valley of Strength"] .. ", " .. L["Orgrimmar"], nil, tHTex, nil, nil},
 					{"Arrow", 52.4, 83.7, L["Durotar"], nil, arTex, nil, nil, nil, nil, nil, 3, 1411},
-					{"Arrow", 18.1, 60.6, L["The Barrens"], nil, arTex, nil, nil, nil, nil, nil, 2.1, 1413},
+					{"Arrow", 18.1, 60.6, L["The Barrens"], L["Southfury River"], arTex, nil, nil, nil, nil, nil, 2.1, 1413},
 					{"TravelH", 38.1, 85.7, L["Blasted Lands"], L["Portal"], pHTex},
 				},
 				--[[Thunder Bluff]] [1456] = {
@@ -2371,7 +2376,9 @@
 				},
 				--[[Darnassus]] [1457] = {
 					{"Spirit", 77.7, 25.9, L["Spirit Healer"], nil, spTex, nil, nil},
-					{"Arrow", 30.3, 41.4, L["Teldrassil"], nil, arTex, nil, nil, nil, nil, nil, 1.5, 1438},
+					{"Arrow", 30.3, 41.4, L["Teldrassil"], L["Rut'Theran Village"], arTex, nil, nil, nil, nil, nil, 1.5, 1438},
+					{"TravelA", 40.5, 81.7, L["Blasted Lands"], L["Portal"], pATex},
+					{"Arrow", 84.8, 37.8, L["Teldrassil"], nil, arTex, nil, nil, nil, nil, nil, 5.5, 1438},
 				},
 				--[[The Exodar]] [1947] = {
 					{"FlightA", 68.5, 63.7, L["The Exodar"] .. ", " .. L["Azuremyst Isle"], nil, tATex, nil, nil},
@@ -2442,6 +2449,8 @@
 					{"Spirit", 68.7, 27.1, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 40.3, 85.9, L["Terokkar Forest"], L["Razorthorn Trail"], arTex, nil, nil, nil, nil, nil, 2.7, 1952},
 					{"Arrow", 6.7, 50.4, L["Zangarmarsh"], nil, arTex, nil, nil, nil, nil, nil, 1.6, 1946},
+					{"TravelA", 88.6, 52.8, L["Stormwind City"], L["Portal"], pATex},
+					{"TravelH", 88.6, 47.7, L["Orgrimmar"], L["Portal"], pHTex},
 				},
 				--[[Nagrand]] [1951] = {
 					{"FlightA", 54.2, 75.0, L["Telaar"] .. ", " .. L["Nagrand"], nil, tATex, nil, nil},
