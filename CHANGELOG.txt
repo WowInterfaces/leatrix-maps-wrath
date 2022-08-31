@@ -1,3 +1,6 @@
+3.0.02 - 31st August 2022
+- Fixed an issue with Eastern Plaguelands explored map showing unexplored areas.
+
 3.0.01 - 31st August 2022
 - Added some points of interest icons.
 - Fixed an issue which caused a texture to be shown behind the map if the map border was enabled and map opacity was not 100%.
