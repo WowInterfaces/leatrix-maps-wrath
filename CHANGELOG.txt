@@ -1,3 +1,6 @@
+3.0.03 - 31st August 2022
+- Sometimes I wish I lived in Elwynn Forest.
+
 3.0.02 - 31st August 2022
 - Fixed an issue with Eastern Plaguelands explored map showing unexplored areas.
 

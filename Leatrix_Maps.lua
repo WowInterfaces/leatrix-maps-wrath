@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 3.0.02 (31st August 2022)
+	-- 	Leatrix Maps 3.0.03 (31st August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "3.0.02"
+	LeaMapsLC["AddonVer"] = "3.0.03"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -40,7 +40,7 @@
 	-- Main function
 	function LeaMapsLC:MainFunc()
 
-		-- Replace map border textures (temporary fix for Wrath)
+		-- Replace map border textures
 		local layout = {"Top", "Middle", "Bottom"}
 		for i = 1, select('#', WorldMapFrame.BorderFrame:GetRegions()) do
 			local region = select(i, WorldMapFrame.BorderFrame:GetRegions())
@@ -48,7 +48,8 @@
 				for k = 1, 3 do
 					for j = 1, 4 do
 						if region:GetTexture() == "Interface\\WorldMap\\UI-WorldMap-" .. layout[k] .. j then
-							region:SetTexture("Interface\\AddOns\\Leatrix_Maps\\UI-WorldMap-" .. layout[k] .. j .. ".blp")
+							region:SetTexture("Interface\\AddOns\\Leatrix_Maps\\Leatrix_Maps_Frame.blp")
+							region:SetTexCoord(j * 0.25 - 0.25, j * 0.25, k * 0.25 - 0.25, k * 0.25)
 						end
 					end
 				end
