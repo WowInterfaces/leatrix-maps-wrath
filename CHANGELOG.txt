@@ -1,5 +1,6 @@
-3.0.01.alpha.1 - 31st August 2022
+3.0.01 - 31st August 2022
 - Added some points of interest icons.
+- Fixed an issue which caused a texture to be shown behind the map if the map border was enabled and map opacity was not 100%.
 
 3.0.00 - 29th August 2022
 - Welcome to Wrath of the Lich King!

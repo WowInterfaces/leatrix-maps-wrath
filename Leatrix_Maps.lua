@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 3.0.01.alpha.1 (31st August 2022)
+	-- 	Leatrix Maps 3.0.01 (31st August 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "3.0.01.alpha.1"
+	LeaMapsLC["AddonVer"] = "3.0.01"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -39,6 +39,21 @@
 
 	-- Main function
 	function LeaMapsLC:MainFunc()
+
+		-- Replace map border textures (temporary fix for Wrath)
+		local layout = {"Top", "Middle", "Bottom"}
+		for i = 1, select('#', WorldMapFrame.BorderFrame:GetRegions()) do
+			local region = select(i, WorldMapFrame.BorderFrame:GetRegions())
+			if region.GetTexture then
+				for k = 1, 3 do
+					for j = 1, 4 do
+						if region:GetTexture() == "Interface\\WorldMap\\UI-WorldMap-" .. layout[k] .. j then
+							region:SetTexture("Interface\\AddOns\\Leatrix_Maps\\UI-WorldMap-" .. layout[k] .. j .. ".blp")
+						end
+					end
+				end
+			end
+		end
 
 		-- Load Battlefield addon
 		if not IsAddOnLoaded("Blizzard_BattlefieldMap") then
