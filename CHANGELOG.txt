@@ -1,4 +1,4 @@
-3.0.05.alpha.1 - 1st September 2022
+3.0.05 - 1st September 2022
 - Added points of interest.
 
 3.0.04 - 31st August 2022

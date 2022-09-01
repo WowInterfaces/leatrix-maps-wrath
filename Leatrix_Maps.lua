@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 3.0.05.alpha.1 (1st September 2022)
+	-- 	Leatrix Maps 3.0.05 (1st September 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "3.0.05.alpha.1"
+	LeaMapsLC["AddonVer"] = "3.0.05"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1957,6 +1957,7 @@
 				},
 				--[[Badlands]] [1418] = {
 					{"Dungeon", 44.6, 12.1, L["Uldaman"], L["Dungeon"], dnTex, 36, 40, 30, 36, 44},
+					{"Dungeon", 65.1, 43.4, L["Uldaman (side entrance)"], L["Dungeon"], dnTex, 36, 40, 30, 36, 44},
 					{"FlightH", 4.0, 44.8, L["Kargath"] .. ", " .. L["Badlands"], nil, tHTex, nil, nil},
 					{"Spirit", 56.7, 23.7, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Spirit", 8.4, 55.3, L["Spirit Healer"], nil, spTex, nil, nil},
@@ -2156,6 +2157,7 @@
 					{"FlightA", 55.5, 47.8, L["The Great Forge"] .. ", " .. L["Ironforge"], nil, tATex, nil, nil},
 					{"TravelA", 73.0, 50.2, L["Tram to"] .. " " .. L["Dwarven District"] .. ", " .. L["Stormwind"], nil, fATex, nil, nil},
 					{"Arrow", 21.9, 77.5, L["Dun Morogh"], nil, arTex, nil, nil, nil, nil, nil, 2.2, 1426},
+					{"TravelA", 27.3, 7.1, L["Blasted Lands"], L["Portal"], pATex},
 				},
 				--[[Undercity]] [1458] = {
 					{"FlightH", 63.3, 48.5, L["Trade Quarter"] .. ", " .. L["Undercity"], nil, tHTex, nil, nil},
@@ -2317,7 +2319,8 @@
 					{"Spirit", 73.0, 44.5, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 44.9, 7.7, L["Desolace"], nil, arTex, nil, nil, nil, nil, nil, 6, 1443},
 					{"Arrow", 88.7, 41.1, L["Thousand Needles"], nil, arTex, nil, nil, nil, nil, nil, 4.5, 1441},
-					-- {"Dungeon", 77.1, 36.9, L["Dire Maul (East)"], L["The Hidden Reach (requires Crescent Key)"], dnTex, 56, 60},
+					{"TravelN", 77.1, 36.9, L["Dire Maul East"], L["Portal"], pNTex},
+					--{"Dungeon", 77.1, 36.9, L["Dire Maul (East)"], L["The Hidden Reach (requires Crescent Key)"], dnTex, 55, 58},
 				},
 				--[[Dustwallow Marsh]] [1445] = {
 					{"Raid", 52.6, 76.8, L["Onyxia's Lair"], L["Raid"], rdTex, 60, 60, 50},
