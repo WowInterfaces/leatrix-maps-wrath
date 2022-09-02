@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 3.0.05 (1st September 2022)
+	-- 	Leatrix Maps 3.0.06.alpha.1 (2nd September 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "3.0.05"
+	LeaMapsLC["AddonVer"] = "3.0.06.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2716,7 +2716,7 @@
 					{"Raid", 41.6, 17.8, L["Ulduar"], L["Raid"], rdTex, 80, 80, 80, 75, 80},
 					{"Arrow", 30.4, 93.8, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 2.4, 127},
 					{"Arrow", 37.8, 90.2, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 3.6, 127},
-					{"Arrow", 22.2, 36.4, L["Icecrown"], L["Head down the mounta from here."], arTex, nil, nil, nil, nil, nil, 2.1, 118},
+					{"Arrow", 22.2, 36.4, L["Icecrown"], L["Head down the mountain from here."], arTex, nil, nil, nil, nil, nil, 2.1, 118},
 				},
 
 				--[[Wintergrasp]] [123] = {

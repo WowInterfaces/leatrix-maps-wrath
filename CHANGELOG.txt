@@ -1,3 +1,6 @@
+3.0.06.alpha.1 - 2nd September 2022
+- Chugga-chugga-chugga-chugga-choo-choo!
+
 3.0.05 - 1st September 2022
 - Added points of interest.
 
