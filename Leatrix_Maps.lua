@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 3.0.06.alpha.1 (2nd September 2022)
+	-- 	Leatrix Maps 3.0.06.alpha.2 (3rd September 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "3.0.06.alpha.1"
+	LeaMapsLC["AddonVer"] = "3.0.06.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2253,7 +2253,7 @@
 				},
 				--[[Darkshore]] [1439] = {
 					{"FlightA", 36.3, 45.6, L["Auberdine"] .. ", " .. L["Darkshore"], nil, tATex, nil, nil},
-					{"TravelA", 32.4, 43.8, L["Boat to"] .. " " .. L["Menethil Harbor"] .. ", " .. L["Wetlands"], nil, fATex, nil, nil, nil, nil},
+					{"TravelA", 32.4, 43.8, L["Boat to"] .. " " .. L["Stormwind City"] .. ", " .. L["Elwynn Forest"], nil, fATex, nil, nil, nil, nil},
 					{"TravelA", 33.2, 40.1, L["Boat to"] .. " " .. L["Rut'theran Village"] .. ", " .. L["Teldrassil"], nil, fATex, nil, nil, nil, nil},
 					{"TravelA", 30.7, 41.0, L["Boat to"] .. " " .. L["Valaar's Berth"] .. ", " .. L["Azuremyst Isle"], nil, fATex, nil, nil},
 					{"Spirit", 41.8, 36.6, L["Spirit Healer"], nil, spTex, nil, nil},
