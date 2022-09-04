@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 3.0.06.alpha.3 (4th September 2022)
+	-- 	Leatrix Maps 3.0.06.alpha.4 (4th September 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "3.0.06.alpha.3"
+	LeaMapsLC["AddonVer"] = "3.0.06.alpha.4"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2312,6 +2312,7 @@
 					{"Dungeon", 62.5, 24.9, L["Dire Maul (North)"], L["Dungeon"], dnTex, 57, 60, 45, 54, 61},
 					{"Dungeon", 60.3, 30.2, L["Dire Maul (West)"], L["Dungeon"], dnTex, 57, 60, 45, 54, 61},
 					{"Dungeon", 64.8, 30.2, L["Dire Maul (East)"], L["Dungeon"], dnTex, 55, 58, 45, 54, 61},
+					{"Dungeon", 77.1, 36.9, L["Dire Maul (East) (side entrance)"], L["Dungeon (requires Crescent Key)"], dnTex, 55, 58, 45, 54, 61},
 					{"TravelA", 43.3, 42.8, L["Boat to"] .. " " .. L["Feathermoon Stronghold"] .. ", " .. L["Feralas"], nil, fATex, nil, nil},
 					{"TravelA", 31.0, 39.8, L["Boat to"] .. " " .. L["The Forgotten Coast"] .. ", " .. L["Feralas"], nil, fATex, nil, nil},
 					{"Spirit", 31.8, 48.2, L["Spirit Healer"], nil, spTex, nil, nil},
@@ -2319,8 +2320,6 @@
 					{"Spirit", 73.0, 44.5, L["Spirit Healer"], nil, spTex, nil, nil},
 					{"Arrow", 44.9, 7.7, L["Desolace"], nil, arTex, nil, nil, nil, nil, nil, 6, 1443},
 					{"Arrow", 88.7, 41.1, L["Thousand Needles"], nil, arTex, nil, nil, nil, nil, nil, 4.5, 1441},
-					{"TravelN", 77.1, 36.9, L["Dire Maul East"], L["Portal"], pNTex},
-					--{"Dungeon", 77.1, 36.9, L["Dire Maul (East)"], L["The Hidden Reach (requires Crescent Key)"], dnTex, 55, 58},
 				},
 				--[[Dustwallow Marsh]] [1445] = {
 					{"Raid", 52.6, 76.8, L["Onyxia's Lair"], L["Raid"], rdTex, 60, 60, 50},
@@ -4330,7 +4329,7 @@
 			elseif str == "help" then
 				-- Show available commands
 				LeaMapsLC:Print("Leatrix Maps" .. "|n")
-				LeaMapsLC:Print(L["BCC"] .. " " .. LeaMapsLC["AddonVer"] .. "|n|n")
+				LeaMapsLC:Print(L["WC"] .. " " .. LeaMapsLC["AddonVer"] .. "|n|n")
 				LeaMapsLC:Print("/ltm reset - Reset the panel position.")
 				LeaMapsLC:Print("/ltm wipe - Wipe all settings and reload.")
 				LeaMapsLC:Print("/ltm help - Show this information.")
@@ -4597,7 +4596,7 @@
 	PageF.v:SetPoint('TOPLEFT', PageF.mt, 'BOTTOMLEFT', 0, -8)
 	PageF.v:SetPoint('RIGHT', PageF, -32, 0)
 	PageF.v:SetJustifyH('LEFT'); PageF.v:SetJustifyV('TOP')
-	PageF.v:SetNonSpaceWrap(true); PageF.v:SetText(L["BCC"] .. " " .. LeaMapsLC["AddonVer"])
+	PageF.v:SetNonSpaceWrap(true); PageF.v:SetText(L["WC"] .. " " .. LeaMapsLC["AddonVer"])
 
 	-- Add reload UI Button
 	local reloadb = LeaMapsLC:CreateButton("ReloadUIButton", PageF, "Reload", "BOTTOMRIGHT", -16, 10, 25, "Your UI needs to be reloaded for some of the changes to take effect.|n|nYou don't have to click the reload button immediately but you do need to click it when you are done making changes and you want the changes to take effect.")
