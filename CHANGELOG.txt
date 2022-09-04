@@ -1,4 +1,4 @@
-3.0.06.alpha.2 - 3rd September 2022
+3.0.06.alpha.3 - 4th September 2022
 - Chugga-chugga-chugga-chugga-choo-choo!
 
 3.0.05 - 1st September 2022
