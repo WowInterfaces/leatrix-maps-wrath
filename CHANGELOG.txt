@@ -1,4 +1,4 @@
-3.0.06.alpha.4 - 4th September 2022
+3.0.06 - 7th September 2022
 - Updated icon for Dire Maul East (side entrance).
 
 3.0.05 - 1st September 2022
