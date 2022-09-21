@@ -1,4 +1,4 @@
-3.0.08.alpha.2 - 19th September 2022
+3.0.08 - 21st September 2022
 - Updated dungeon and raid icon meeting stone requirements for Blackrock Mountain, Karazhan, Zul'Gurub, Zul'Aman, Onyxia's Lair, Caverns of Time and Ahn'Qiraj.
 - Added zone levels for Azuremyst Isle, Bloodmyst Isle, Eversong Woods, Ghostlands and Isle of Quel'Danas.
 - File structure updates.
