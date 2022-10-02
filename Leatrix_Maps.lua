@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 3.0.11 (28th September 2022)
+	-- 	Leatrix Maps 3.0.12.alpha.1 (2nd October 2022)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaDropList, LeaConfigList = {}, {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "3.0.11"
+	LeaMapsLC["AddonVer"] = "3.0.12.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -2554,6 +2554,7 @@
 			-- Lock some incompatible options
 			LeaMapsLC:LockItem(LeaMapsCB["NoMapBorder"], true)
 			LeaMapsLC:LockItem(LeaMapsCB["UnlockMapFrame"], true)
+			LeaMapsLC:LockItem(LeaMapsCB["UnlockMapFrameBtn"], true)
 			LeaMapsLC:LockItem(LeaMapsCB["StickyMapFrame"], true)
 			-- Lock reset map layout button
 			LeaMapsLC:LockItem(LeaMapsCB["resetMapPosBtn"], true)
@@ -2856,7 +2857,6 @@
 
 	-- Show tooltips for checkboxes
 	function LeaMapsLC:TipSee()
-		if not self:IsEnabled() then return end
 		GameTooltip:SetOwner(self, "ANCHOR_NONE")
 		local parent = self:GetParent()
 		local pscale = parent:GetEffectiveScale()
@@ -2873,7 +2873,6 @@
 
 	-- Show tooltips for configuration buttons and dropdown menus
 	function LeaMapsLC:ShowTooltip()
-		if not self:IsEnabled() then return end
 		GameTooltip:SetOwner(self, "ANCHOR_NONE")
 		local parent = LeaMapsLC["PageF"]
 		local pscale = parent:GetEffectiveScale()
