@@ -1,5 +1,5 @@
-3.0.22 - 5th October 2022
-- Maintenance update.
+3.0.23.alpha.1 - 7th October 2022
+- Updated Korean translations.
 
 3.0.08 - 21st September 2022
 - Updated dungeon and raid icon meeting stone requirements for Blackrock Mountain, Karazhan, Zul'Gurub, Zul'Aman, Onyxia's Lair, Caverns of Time and Ahn'Qiraj.
