@@ -696,6 +696,7 @@
 				dnTex, 69, 80},
 			{"Arrow", 52.5, 7.6, L["Sholazar Basin"], nil, arTex, nil, nil, nil, nil, nil, 6.1, 119},
 			{"Arrow", 93.4, 35.7, L["Dragonblight"], nil, arTex, nil, nil, nil, nil, nil, 4.9, 115},
+			{"TravelN", 78.9, 53.7, L["Boat to"] .. " " .. L["Moa'ki Harbor"] .. ", " .. L["Dragonblight"], nil, fNTex, nil, nil},
 		},
 
 		--[[Crystalsong Forest]] [127] = {
@@ -737,6 +738,8 @@
 			{"Arrow", 88.8, 24.4, L["Zul'Drak"], nil, arTex, nil, nil, nil, nil, nil, 5.6, 121},
 			{"Arrow", 61.1, 10.5, L["Crystalsong Forest"], nil, arTex, nil, nil, nil, nil, nil, 5.6, 127},
 			{"Arrow", 12.4, 55.7, L["Borean Tundra"], nil, arTex, nil, nil, nil, nil, nil, 1.9, 114},
+			{"TravelN", 49.6, 78.4, L["Boat to"] .. " " .. L["Kamagua"] .. ", " .. L["Howling Fjord"], nil, fNTex, nil, nil},
+			{"TravelN", 47.9, 78.7, L["Boat to"] .. " " .. L["Unu'pe"] .. ", " .. L["Borean Tundra"], nil, fNTex, nil, nil},
 		},
 
 		--[[Grizzly Hills]] [116] = {
@@ -769,6 +772,7 @@
 			{"Arrow", 24.7, 11.4, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 0.3, 116},
 			{"Arrow", 53.7, 2.7, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 0.0, 116},
 			{"Arrow", 72.9, 2.9, L["Grizzly Hills"], nil, arTex, nil, nil, nil, nil, nil, 0.7, 116},
+			{"TravelN", 23.5, 57.8, L["Boat to"] .. " " .. L["Moa'ki Harbor"] .. ", " .. L["Dragonblight"], nil, fNTex, nil, nil},
 		},
 
 		--[[Icecrown]] [118] = {

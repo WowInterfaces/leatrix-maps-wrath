@@ -1,6 +1,7 @@
-3.0.23.alpha.2 - 8th October 2022
+3.0.23.alpha.3 - 11th October 2022
 - Updated summon levels for all dungeons and raids.
 - Added summon level ranges to all Outland dungeons and raids.
+- Added the turtle boat dock locations in Borean Tundra, Dragonflight and Howling Fjord.
 - Updated Korean translations.
 
 3.0.08 - 21st September 2022
